@@ -105,7 +105,7 @@ export function Inquiry() {
 
                 {/* Lock / boot screen — fades out, then must release pointer events */}
                 <motion.div
-                  style={{ opacity: lockOpacity, pointerEvents: lockPointer as unknown as "auto" }}
+                  style={{ opacity: lockOpacity, pointerEvents: lockPointer }}
                   className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-ink text-cream"
                 >
                   <motion.div
@@ -120,7 +120,7 @@ export function Inquiry() {
 
                 {/* App interface — sits above lock once booted so inputs receive clicks */}
                 <motion.div
-                  style={{ opacity: appOpacity, scale: appScale, pointerEvents: appPointer as unknown as "auto" }}
+                  style={{ opacity: appOpacity, scale: appScale, pointerEvents: appPointer }}
                   className="absolute inset-0 z-40 flex flex-col bg-cream"
                 >
                   <AppInterface />
