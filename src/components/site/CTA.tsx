@@ -21,10 +21,10 @@ export function CTA() {
           Let’s start your journey today.
         </p>
         <a
-          href="mailto:hello@viralflux.co"
+          href="#inquiry"
           className="inline-flex items-center gap-3 mt-16 rounded-full bg-ink text-cream px-10 py-6 font-mono-label hover:bg-cream hover:text-ink transition-colors"
         >
-          hello@viralflux.co <span className="text-xl">↗</span>
+          Start an Inquiry <span className="text-xl">↗</span>
         </a>
       </div>
     </section>

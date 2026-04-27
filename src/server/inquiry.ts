@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 
-const WEBHOOK_URL = "https://discordapp.com/api/webhooks/1498257131969839154/iz4Cy5rpnUmy4eWW1somG6h6YoEiwVdxqUAOzgS8_yOukEEY7c2Gy_9WVKby48IB50VW";
+const WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "";
 
 export const submitInquiryFn = createServerFn({ method: "POST" })
   .inputValidator((data: {

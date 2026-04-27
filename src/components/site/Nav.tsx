@@ -19,7 +19,7 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <a href="#contact" className="font-mono-label rounded-full border border-cream px-5 py-2 text-cream hover:bg-lime hover:text-ink hover:border-lime transition-colors">
+        <a href="#inquiry" className="font-mono-label rounded-full border border-cream px-5 py-2 text-cream hover:bg-lime hover:text-ink hover:border-lime transition-colors">
           Let's talk →
         </a>
       </div>
