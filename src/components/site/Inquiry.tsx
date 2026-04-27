@@ -40,6 +40,9 @@ export function Inquiry() {
   const appOpacity = useTransform(p, [0.6, 0.78], [0, 1]);
   const appScale = useTransform(p, [0.6, 0.78], [1.04, 1]);
   const bootRingRotate = useTransform(p, [0.45, 0.65], [0, 360]);
+  // Once boot completes, release pointer events so inputs are clickable
+  const lockPointer = useTransform(p, (v) => (v > 0.62 ? "none" : "auto"));
+  const appPointer = useTransform(p, (v) => (v > 0.62 ? "auto" : "none"));
 
   // Side copy parallax
   const copyLeftY = useTransform(p, [0.4, 1], [60, 0]);
@@ -100,10 +103,10 @@ export function Inquiry() {
                 {/* Notch */}
                 <div className="absolute top-2 left-1/2 z-40 h-6 w-24 -translate-x-1/2 rounded-full bg-ink" />
 
-                {/* Lock / boot screen */}
+                {/* Lock / boot screen — fades out, then must release pointer events */}
                 <motion.div
-                  style={{ opacity: lockOpacity }}
-                  className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-ink text-cream"
+                  style={{ opacity: lockOpacity, pointerEvents: lockPointer as unknown as "auto" }}
+                  className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-ink text-cream"
                 >
                   <motion.div
                     style={{ rotate: bootRingRotate }}
@@ -115,10 +118,10 @@ export function Inquiry() {
                   <div className="font-mono-label mt-2 text-cream/60">booting studio</div>
                 </motion.div>
 
-                {/* App interface */}
+                {/* App interface — sits above lock once booted so inputs receive clicks */}
                 <motion.div
-                  style={{ opacity: appOpacity, scale: appScale }}
-                  className="absolute inset-0 z-10 flex flex-col bg-cream"
+                  style={{ opacity: appOpacity, scale: appScale, pointerEvents: appPointer as unknown as "auto" }}
+                  className="absolute inset-0 z-40 flex flex-col bg-cream"
                 >
                   <AppInterface />
                 </motion.div>
