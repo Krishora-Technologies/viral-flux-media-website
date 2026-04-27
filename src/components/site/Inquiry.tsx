@@ -41,8 +41,8 @@ export function Inquiry() {
   const appScale = useTransform(p, [0.6, 0.78], [1.04, 1]);
   const bootRingRotate = useTransform(p, [0.45, 0.65], [0, 360]);
   // Once boot completes, release pointer events so inputs are clickable
-  const lockPointer = useTransform(p, (v) => (v > 0.62 ? "none" : "auto"));
-  const appPointer = useTransform(p, (v) => (v > 0.62 ? "auto" : "none"));
+  const lockPointer = useTransform<number, "auto" | "none">(p, (v) => (v > 0.62 ? "none" : "auto"));
+  const appPointer = useTransform<number, "auto" | "none">(p, (v) => (v > 0.62 ? "auto" : "none"));
 
   // Side copy parallax
   const copyLeftY = useTransform(p, [0.4, 1], [60, 0]);
