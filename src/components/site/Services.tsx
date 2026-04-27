@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 const services = [
-  { n: "01", t: "Brand Strategy", d: "Positioning, voice, visual systems built to outlast the algorithm." },
-  { n: "02", t: "Content Studio", d: "In-house production. Stills, motion, edit. Shot weekly, never stale." },
-  { n: "03", t: "Community", d: "DMs, comments, crisis. Real humans, on brand, around the clock." },
-  { n: "04", t: "Paid & Performance", d: "Creative-led media. We test 40 hooks before you finish your coffee." },
-  { n: "05", t: "Talent & Influencer", d: "Curated partnerships, measured by audience, not vanity." },
-  { n: "06", t: "Analytics", d: "Bi-weekly reports that actually say something. No screenshot dumps." },
+  { n: "I", t: "Brand Strategy", d: "We define your voice, positioning, and content direction that stands out in crowded feeds." },
+  { n: "II", t: "Content Production", d: "Reels, posts, creatives — built for attention, not just aesthetics." },
+  { n: "III", t: "Social Media Management", d: "Daily posting, engagement, DMs — handled like your in-house team." },
+  { n: "IV", t: "Paid Ads & Performance", d: "We test, optimize, and scale ads that bring real ROI." },
+  { n: "V", t: "Influencer Marketing", d: "Right creators, right audience, real impact." },
+  { n: "VI", t: "Analytics & Growth", d: "We track what matters and double down on what works." },
 ];
 
 export function Services() {
@@ -15,7 +15,7 @@ export function Services() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
           <div className="md:col-span-4 md:sticky md:top-32 self-start">
-            <div className="font-mono-label text-muted-foreground mb-6">— Services / 006</div>
+            <div className="font-mono-label text-muted-foreground mb-6">— Services / VI</div>
             <h2 className="font-display text-5xl md:text-7xl font-light leading-[0.95]">
               Six things,<br />done <em className="text-lime not-italic">obsessively</em>.
             </h2>
@@ -28,14 +28,20 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="group flex items-start gap-6 border-t border-ink/15 py-8 hover:bg-ink hover:text-cream transition-colors duration-500 cursor-pointer px-2"
+                className="group flex flex-col md:flex-row items-start gap-4 md:gap-12 border-t border-ink/15 py-12 hover:bg-ink transition-colors duration-500 cursor-pointer px-4"
               >
-                <span className="font-mono-label text-muted-foreground group-hover:text-lime mt-2 shrink-0">{s.n}</span>
-                <div className="flex-1">
-                  <h3 className="font-display text-3xl md:text-4xl mb-2 italic font-light">{s.t}</h3>
-                  <p className="text-muted-foreground group-hover:text-cream/80 max-w-lg">{s.d}</p>
+                <div className="font-display text-7xl md:text-8xl text-lime font-light italic shrink-0 md:w-40">
+                  {s.n}
                 </div>
-                <span className="font-mono-label opacity-0 group-hover:opacity-100 transition-opacity self-center">↗</span>
+                <div className="flex-1">
+                  <h3 className="font-display text-4xl md:text-5xl mb-4 italic font-light group-hover:text-cream transition-colors">
+                    {s.t}
+                  </h3>
+                  <p className="text-muted-foreground group-hover:text-cream/80 max-w-xl text-lg md:text-xl leading-relaxed">
+                    {s.d}
+                  </p>
+                </div>
+                <span className="font-mono-label opacity-0 group-hover:opacity-100 transition-opacity self-center text-lime text-2xl">↗</span>
               </motion.div>
             ))}
           </div>

@@ -6,12 +6,11 @@ export function Footer() {
           <div className="col-span-2">
             <div className="font-display text-3xl">Viral Flux<span className="text-lime">.</span></div>
             <p className="font-mono-label text-cream/50 mt-4 leading-relaxed">
-              Social media studio<br />New York · Lisbon · Remote
+              Social media studio<br />Content · Influencer · Strategy
             </p>
           </div>
           {[
             { h: "Studio", l: ["About", "Careers", "Press"] },
-            { h: "Work", l: ["Case studies", "Clients", "Awards"] },
             { h: "Follow", l: ["Instagram", "TikTok", "LinkedIn"] },
           ].map((c) => (
             <div key={c.h}>
@@ -24,7 +23,7 @@ export function Footer() {
         </div>
         <div className="flex justify-between items-center pt-8 border-t border-cream/10 font-mono-label text-cream/40">
           <span>© 2026 Viral Flux Media</span>
-          <span>Built to be felt</span>
+          <span>Content that converts, not just looks good.</span>
         </div>
       </div>
     </footer>

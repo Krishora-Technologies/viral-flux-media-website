@@ -13,7 +13,7 @@ export function Nav() {
           Viral Flux<span className="text-lime">.</span>
         </a>
         <nav className="hidden gap-10 md:flex">
-          {["Work", "Services", "Process", "Studio"].map((l) => (
+          {["Services", "Process", "Studio"].map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} className="font-mono-label text-cream hover:text-lime transition-colors">
               {l}
             </a>

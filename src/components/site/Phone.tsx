@@ -1,4 +1,6 @@
-import { motion, MotionValue, useTransform } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, MotionValue, useTransform, AnimatePresence } from "framer-motion";
+import { AppInterface, Clock } from "./Inquiry";
 import post1 from "@/assets/post-1.jpg";
 import post2 from "@/assets/post-2.jpg";
 import post3 from "@/assets/post-3.jpg";
@@ -16,10 +18,22 @@ interface PhoneProps {
 }
 
 export function Phone({ progress }: PhoneProps) {
+  const [isFollowed, setIsFollowed] = useState(false);
+  const [showPower, setShowPower] = useState(false);
+  const [showApp, setShowApp] = useState(false);
+
   const saturate = useTransform(progress, [0, 1], [0, 1.15]);
   const filter = useTransform(saturate, (s) => `saturate(${s}) contrast(${0.95 + s * 0.1})`);
   const beforeOpacity = useTransform(progress, [0, 0.5, 1], [1, 0.5, 0]);
   const afterOpacity = useTransform(progress, [0, 0.5, 1], [0, 0.5, 1]);
+
+  const handleFollow = () => {
+    setIsFollowed(!isFollowed);
+    if (!isFollowed) {
+      setShowPower(true);
+      setTimeout(() => setShowPower(false), 2500);
+    }
+  };
 
   return (
     <div className="relative mx-auto" style={{ width: 320, height: 650 }}>
@@ -31,86 +45,153 @@ export function Phone({ progress }: PhoneProps) {
 
           {/* Status bar */}
           <div className="relative z-20 flex items-center justify-between px-6 pt-3 font-mono-label text-[10px] text-ink">
-            <span>9:41</span>
+            <span><Clock /></span>
             <span>VFM</span>
           </div>
 
-          {/* Screen content */}
-          <motion.div style={{ filter }} className="relative h-full w-full">
-            {/* IG header */}
-            <div className="flex items-center justify-between px-4 pt-3">
-              <div className="font-display text-base italic">viral.flux</div>
-              <div className="flex gap-3 text-ink">
-                <span className="text-lg">+</span>
-                <span className="text-lg">≡</span>
-              </div>
-            </div>
-
-            {/* Profile row */}
-            <div className="flex items-center gap-4 px-4 pt-4">
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-lime/0">
-                <motion.img style={{ opacity: beforeOpacity }} src={avatarBefore} alt="" className="absolute inset-0 h-full w-full object-cover" />
-                <motion.img style={{ opacity: afterOpacity }} src={avatarAfter} alt="" className="absolute inset-0 h-full w-full object-cover" />
-              </div>
-              <div className="flex flex-1 justify-around text-center">
-                <Stat label="posts" from={12} to={248} progress={progress} />
-                <Stat label="followers" from={342} to={184000} progress={progress} format />
-                <Stat label="following" from={891} to={412} progress={progress} />
-              </div>
-            </div>
-
-            {/* Bio */}
-            <div className="px-4 pt-3 text-[11px] leading-snug">
-              <div className="font-semibold">Maya Chen</div>
-              <BioMorph progress={progress} />
-            </div>
-
-            {/* CTA buttons */}
-            <div className="flex gap-2 px-4 pt-3">
+          <AnimatePresence mode="wait">
+            {showApp ? (
               <motion.div
-                style={{ backgroundColor: useTransform(progress, [0, 1], ["oklch(0.94 0.015 85)", "oklch(0.88 0.22 125)"]) }}
-                className="flex-1 rounded-md py-1.5 text-center text-[11px] font-semibold"
+                key="app"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="absolute inset-0 z-40 bg-cream pt-4"
               >
-                Follow
+                <div className="absolute top-8 right-6 z-50">
+                  <button 
+                    onClick={() => setShowApp(false)}
+                    className="flex h-6 w-6 items-center justify-center rounded-full bg-ink/5 text-xs font-bold text-ink/40"
+                  >
+                    ×
+                  </button>
+                </div>
+                <AppInterface onClose={() => setShowApp(false)} />
               </motion.div>
-              <div className="flex-1 rounded-md bg-paper py-1.5 text-center text-[11px] font-semibold">Message</div>
-              <div className="rounded-md bg-paper px-3 py-1.5 text-[11px]">▾</div>
-            </div>
+            ) : (
+              <motion.div 
+                key="profile"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                style={{ filter }} 
+                className="relative h-full w-full"
+              >
+                {/* IG header */}
+                <div className="flex items-center justify-between px-4 pt-3">
+                  <div className="font-display text-base italic">viral.flux</div>
+                  <div className="flex gap-3 text-ink">
+                    <span className="text-lg">+</span>
+                    <span className="text-lg">≡</span>
+                  </div>
+                </div>
 
-            {/* Grid */}
-            <div className="mt-4 grid grid-cols-3 gap-[2px] px-[2px]">
-              {posts.map((p, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + i * 0.05, duration: 0.6 }}
-                  className="relative aspect-square overflow-hidden"
-                >
-                  <img src={p} alt="" className="h-full w-full object-cover" loading="lazy" />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                {/* Profile row */}
+                <div className="flex items-center gap-4 px-4 pt-4">
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-lime/0">
+                    <motion.img style={{ opacity: beforeOpacity }} src={avatarBefore} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                    <motion.img style={{ opacity: afterOpacity }} src={avatarAfter} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                  </div>
+                  <div className="flex flex-1 justify-around text-center">
+                    <Stat label="posts" from={12} to={248} progress={progress} />
+                    <Stat label="followers" from={342} to={184000} progress={progress} format />
+                    <Stat label="following" from={891} to={412} progress={progress} />
+                  </div>
+                </div>
+
+                {/* Bio */}
+                <div className="px-4 pt-3 text-[11px] leading-snug">
+                  <div className="font-semibold">Maya Chen</div>
+                  <BioMorph progress={progress} />
+                </div>
+
+                {/* CTA buttons */}
+                <div className="flex gap-2 px-4 pt-3">
+                  <motion.button
+                    onClick={handleFollow}
+                    animate={{ 
+                      backgroundColor: isFollowed ? "oklch(0.25 0 0)" : "oklch(0.88 0.22 125)",
+                      color: isFollowed ? "white" : "black"
+                    }}
+                    className="flex-1 rounded-md py-1.5 text-center text-[11px] font-semibold transition-colors"
+                  >
+                    {isFollowed ? "Following" : "Follow"}
+                  </motion.button>
+                  <button 
+                    onClick={() => setShowApp(true)}
+                    className="flex-1 rounded-md bg-paper py-1.5 text-center text-[11px] font-semibold hover:bg-ink/5 transition-colors"
+                  >
+                    Inquiry
+                  </button>
+                  <div className="rounded-md bg-paper px-3 py-1.5 text-[11px]">▾</div>
+                </div>
+
+                {/* Grid */}
+                <div className="mt-4 grid grid-cols-3 gap-[2px] px-[2px]">
+                  {posts.map((p, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 + i * 0.05, duration: 0.6 }}
+                      className="relative aspect-square overflow-hidden"
+                    >
+                      <img src={p} alt="" className="h-full w-full object-cover" loading="lazy" />
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Power Message Overlay */}
+                <AnimatePresence>
+                  {showPower && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 1.1, y: -20 }}
+                      className="pointer-events-none absolute inset-x-0 top-1/2 z-50 flex -translate-y-1/2 flex-col items-center justify-center px-6 text-center"
+                    >
+                      <div className="rounded-2xl bg-ink/90 p-6 shadow-[0_0_40px_rgba(163,255,0,0.4)] backdrop-blur-md">
+                        <div className="font-display text-2xl italic text-lime drop-shadow-[0_0_10px_rgba(163,255,0,0.6)]">
+                          Power of<br />Viral Flux Media
+                        </div>
+                        <div className="mt-2 font-mono-label text-[9px] uppercase tracking-widest text-cream/60">
+                          Engines engaged
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-
       {/* Floating accent dots */}
-      <motion.div
-        style={{ opacity: afterOpacity }}
-        className="absolute -right-6 top-32 rounded-full bg-lime px-3 py-1 font-mono-label text-ink shadow-lg"
+      <motion.div 
+        animate={{ 
+          opacity: showApp ? 0 : 1,
+          scale: showApp ? 0.9 : 1,
+          pointerEvents: showApp ? "none" : "auto"
+        }}
+        transition={{ duration: 0.3 }}
       >
-        +52K this week
-      </motion.div>
-      <motion.div
-        style={{ opacity: afterOpacity }}
-        className="absolute -left-8 top-72 rounded-full bg-ink px-3 py-1 font-mono-label text-cream shadow-lg"
-      >
-        ✦ verified
+        <motion.div
+          style={{ opacity: afterOpacity }}
+          className="absolute -right-6 top-32 rounded-full bg-lime px-3 py-1 font-mono-label text-ink shadow-lg"
+        >
+          +52K this week
+        </motion.div>
+        <motion.div
+          style={{ opacity: afterOpacity }}
+          className="absolute -left-8 top-72 rounded-full bg-ink px-3 py-1 font-mono-label text-cream shadow-lg"
+        >
+          ✦ verified
+        </motion.div>
       </motion.div>
     </div>
   );
 }
+
 
 function Stat({ from, to, label, progress, format }: { from: number; to: number; label: string; progress: MotionValue<number>; format?: boolean }) {
   const value = useTransform(progress, [0, 1], [from, to]);

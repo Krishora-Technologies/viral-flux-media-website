@@ -2,10 +2,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const steps = [
-  { n: "I", t: "Listen", d: "Audit, archetype, audience deep-dive. Two weeks of looking before we touch a pixel." },
-  { n: "II", t: "Architect", d: "Strategy doc, content pillars, monthly themes. Everyone signs the same map." },
-  { n: "III", t: "Make", d: "Production sprints, iterative posts, weekly creative reviews. Always shooting." },
-  { n: "IV", t: "Measure", d: "Bi-weekly performance + qualitative read. Double down on what moves." },
+  { n: "I", t: "Research", d: "We deeply analyze your brand, audience, and competitors." },
+  { n: "II", t: "Strategy", d: "Content pillars, posting plan, hooks, and messaging." },
+  { n: "III", t: "Execution", d: "High-quality reels, posts, and daily engagement." },
+  { n: "IV", t: "Scale", d: "We track performance and scale what’s working." },
 ];
 
 export function Process() {
@@ -17,9 +17,9 @@ export function Process() {
     <section ref={ref} id="process" className="py-32 md:py-48">
       <div className="mx-auto max-w-[1200px] px-6 md:px-12">
         <div className="text-center mb-24">
-          <div className="font-mono-label text-muted-foreground mb-6">— How we work</div>
+          <div className="font-mono-label text-muted-foreground mb-6">in — How we work</div>
           <h2 className="font-display text-5xl md:text-7xl font-light leading-[0.95]">
-            Four moves.<br /><em className="text-lime not-italic">Repeated</em> with intent.
+            Four moves.<br /><em className="text-lime not-italic">Repeated</em> till you win.
           </h2>
         </div>
 

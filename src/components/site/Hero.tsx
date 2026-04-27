@@ -38,8 +38,8 @@ export function Hero() {
   const phoneScale = useTransform(combined, [0, 1], [0.95, 1.02]);
 
   return (
-    <section ref={sectionRef} className="relative" style={{ height: "260vh" }}>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+    <section ref={sectionRef} className="relative h-[150vh] md:h-[260vh]">
+      <div className="sticky top-0 flex h-screen items-start md:items-center pt-20 md:pt-0 overflow-hidden">
         {/* Background mark */}
         <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, -200]) }}
@@ -48,32 +48,65 @@ export function Hero() {
           <div className="font-display text-[28vw] leading-none text-ink/[0.04] select-none">FLUX</div>
         </motion.div>
 
-        <div className="relative mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-8 px-6 md:grid-cols-12 md:px-12">
+        <div className="relative mx-auto grid w-full max-w-[1600px] grid-cols-1 items-start md:items-center gap-4 md:gap-8 px-6 md:grid-cols-12 md:px-12">
           {/* Left copy */}
-          <motion.div style={{ y: titleY }} className="md:col-span-5">
-            <div className="font-mono-label mb-6 flex items-center gap-3 text-muted-foreground">
-              <span className="h-px w-8 bg-ink/40" /> Social, but make it cinema
+          <motion.div style={{ y: titleY }} className="md:col-span-5 z-10 pt-4 md:pt-0">
+            <div className="font-mono-label mb-3 md:mb-6 flex items-center gap-3 text-muted-foreground text-xs md:text-sm">
+              <span className="h-px w-8 bg-ink/40" /> We turn content into viral moments.
             </div>
-            <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] font-light leading-[0.92]">
-              Quiet feeds<br />
-              into <em className="text-lime not-italic">cultural</em><br />
+            <h1 className="font-display text-5xl md:text-[clamp(3rem,7vw,6.5rem)] font-light leading-[0.92]">
+              Silent feeds<br />
+              into <em className="text-lime not-italic">viral</em><br />
               <span className="italic">moments.</span>
             </h1>
-            <p className="mt-8 max-w-md text-base text-muted-foreground md:text-lg">
-              Viral Flux Media is a creative-led social studio. Tap a button — watch what we do to a profile.
+            <p className="mt-4 md:mt-8 max-w-md text-sm md:text-lg text-muted-foreground">
+                Viral Flux Media is a performance-driven social media studio. We turn brands into content machines that people can’t ignore.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              <ActionButton active={mode === "grow"} onClick={() => handleClick("grow")} label="Grow" sub="organic engine" />
-              <ActionButton active={mode === "viral"} onClick={() => handleClick("viral")} label="Viral Flux Media" sub="full studio" variant="dark" />
+            <div className="mt-5 md:mt-10 flex flex-wrap gap-3">
+              <ActionButton 
+                active={mode === "grow"} 
+                onClick={() => {
+                  handleClick("grow");
+                  const inquirySection = document.getElementById("inquiry");
+                  if (inquirySection) {
+                    const rect = inquirySection.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    // We want p ~ 0.65. 
+                    // p is from "start end" to "end end" (distance: height + innerHeight)
+                    // At p=0, scroll is sectionTop - innerHeight
+                    // At p=0.65, scroll is (sectionTop - innerHeight) + 0.65 * (height + innerHeight)
+                    const targetScroll = (scrollTop + rect.top - window.innerHeight) + (rect.height + window.innerHeight) * 0.65;
+                    
+                    window.scrollTo({
+                      top: targetScroll,
+                      behavior: "smooth"
+                    });
+                  }
+                }} 
+                label="Grow" 
+                sub="organic engine" 
+              />
+              <ActionButton 
+                active={mode === "viral"} 
+                onClick={() => {
+                  handleClick("viral");
+                  document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+                }} 
+                label="Viral Flux Media" 
+                sub="full studio" 
+                variant="dark" 
+              />
             </div>
           </motion.div>
 
           {/* Phone */}
-          <div className="md:col-span-7 flex justify-center">
-            <motion.div style={{ rotate: phoneRotate, scale: phoneScale }}>
-              <Phone progress={combined as any} />
-            </motion.div>
+          <div className="md:col-span-7 flex justify-center mt-0 md:mt-0">
+            <div className="scale-[0.45] sm:scale-[0.6] md:scale-100 origin-top">
+              <motion.div style={{ rotate: phoneRotate, scale: phoneScale }}>
+                <Phone progress={combined as any} />
+              </motion.div>
+            </div>
           </div>
         </div>
 
