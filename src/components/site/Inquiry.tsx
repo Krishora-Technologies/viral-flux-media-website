@@ -74,7 +74,7 @@ export function Inquiry() {
             </div>
             <h2 className="font-display text-[clamp(2.4rem,4.6vw,4.4rem)] font-light leading-[0.95]">
               Tell us<br />
-              what's <em className="not-italic text-lime">next.</em>
+              what&apos;s <em className="not-italic text-lime">next.</em>
             </h2>
             <p className="mt-6 max-w-xs text-sm text-muted-foreground">
               Drop a brief inside the device. We reply within one business day with a tailored plan.
@@ -265,7 +265,7 @@ export function AppInterface({ onClose }: { onClose?: () => void }) {
               </div>
               <div className="mt-5 font-display text-2xl">Brief received</div>
               <p className="mt-2 px-4 text-xs text-muted-foreground">
-                We'll be in touch within 24 hours with a custom proposal.
+                We&apos;ll be in touch within 24 hours with a custom proposal.
               </p>
             </motion.div>
           ) : step === 0 ? (

@@ -1,5 +1,24 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
+
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-sans",
+  display: "swap" 
+});
+
+const fraunces = Fraunces({ 
+  subsets: ["latin"], 
+  variable: "--font-display",
+  display: "swap" 
+});
+
+const jetbrains = JetBrains_Mono({ 
+  subsets: ["latin"], 
+  variable: "--font-mono",
+  display: "swap" 
+});
 
 export const metadata: Metadata = {
   title: "Viral Flux Media — Social growth, engineered.",
@@ -21,15 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap"
-        />
-      </head>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${jetbrains.variable}`}>
       <body className="antialiased relative">
         {children}
       </body>

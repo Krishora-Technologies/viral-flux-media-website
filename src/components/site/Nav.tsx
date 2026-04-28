@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function Nav() {
   return (
@@ -10,9 +11,9 @@ export function Nav() {
       className="fixed top-0 left-0 right-0 z-50 mix-blend-difference"
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6 md:px-12">
-        <a href="/" className="font-display text-xl tracking-tight text-cream">
+        <Link href="/" className="font-display text-xl tracking-tight text-cream">
           Viral Flux<span className="text-lime">.</span>
-        </a>
+        </Link>
         <nav className="hidden gap-10 md:flex">
           {["Services", "Process", "Studio"].map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} className="font-mono-label text-cream hover:text-lime transition-colors">
@@ -21,7 +22,7 @@ export function Nav() {
           ))}
         </nav>
         <a href="#inquiry" className="font-mono-label rounded-full border border-cream px-5 py-2 text-cream hover:bg-lime hover:text-ink hover:border-lime transition-colors">
-          Let's talk →
+          Let&apos;s talk →
         </a>
       </div>
     </motion.header>

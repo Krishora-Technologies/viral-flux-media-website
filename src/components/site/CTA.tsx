@@ -12,9 +12,9 @@ export function CTA() {
       <div className="mx-auto max-w-[1200px] px-6 md:px-12 text-center relative">
         <div className="font-mono-label text-ink/60 mb-8">— Ready when you are</div>
         <h2 className="font-display text-[clamp(3rem,9vw,9rem)] font-light leading-[0.9] text-ink">
-          Let's build<br />
+          Let&apos;s build<br />
           <em className="italic">something</em><br />
-          people can't<br />
+          people can&apos;t<br />
           <span className="underline decoration-2 underline-offset-[0.15em]">scroll past.</span>
         </h2>
         <p className="mt-10 text-ink/60 text-lg md:text-2xl max-w-2xl mx-auto font-light leading-snug">
