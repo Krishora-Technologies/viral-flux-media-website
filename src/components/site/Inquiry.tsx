@@ -1,7 +1,8 @@
+"use client";
+"use client";
+
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
-import { submitInquiryFn } from "@/server/inquiry";
-import { useServerFn } from "@tanstack/react-start";
 
 /**
  * InquirySection — phone descends from the hero with a slow 3D spin,
@@ -199,11 +200,19 @@ export function AppInterface({ onClose }: { onClose?: () => void }) {
     if (canContinue()) setStep((s) => Math.min(s + 1, 2));
   };
   const back = () => setStep((s) => Math.max(s - 1, 0));
-  const submitFn = useServerFn(submitInquiryFn);
   const submit = async () => {
     setIsSubmitting(true);
     try {
-      await submitFn({ data: form });
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
       setSent(true);
     } catch (e) {
       console.error(e);

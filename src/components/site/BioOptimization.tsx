@@ -1,3 +1,4 @@
+"use client";
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import { AppInterface } from "./Inquiry";
@@ -199,7 +200,7 @@ function OldBio() {
       {/* Profile Info */}
       <div className="flex items-center gap-4 mb-4">
         <div className="h-16 w-16 shrink-0 rounded-full overflow-hidden bg-gray-300">
-          <img src={avatarBefore} alt="Avatar" className="h-full w-full object-cover" />
+          <img src={avatarBefore.src} alt="Avatar" className="h-full w-full object-cover" />
         </div>
         <div className="flex flex-1 justify-around text-center text-sm">
           <div>
@@ -241,7 +242,7 @@ function OldBio() {
       <div className="grid grid-cols-3 gap-1">
         {posts.map((img, i) => (
           <div key={i} className="aspect-square bg-gray-200 overflow-hidden">
-            <img src={img} alt="" className="h-full w-full object-cover opacity-80" />
+            <img src={img.src} alt="" className="h-full w-full object-cover opacity-80" />
           </div>
         ))}
       </div>
@@ -279,7 +280,7 @@ function NewBio({
       <div className="flex items-center gap-5 mb-5">
         <div className="h-20 w-20 shrink-0 rounded-full border border-lime p-1">
            <div className="h-full w-full rounded-full overflow-hidden bg-ink/10">
-             <img src={avatarAfter} alt="Avatar" className="h-full w-full object-cover" />
+             <img src={avatarAfter.src} alt="Avatar" className="h-full w-full object-cover" />
            </div>
         </div>
         <div className="flex flex-1 justify-around text-center text-sm text-ink">
@@ -327,7 +328,7 @@ function NewBio({
       <div className="grid grid-cols-3 gap-[2px]">
         {posts.map((img, i) => (
           <div key={i} className="aspect-[4/5] bg-ink/5 relative overflow-hidden group">
-            <img src={img} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src={img.src} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
           </div>
         ))}

@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 
 const services = [
@@ -11,7 +12,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-32 md:py-48">
+    <section id="services" className="relative py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
           <div className="md:col-span-4 md:sticky md:top-32 self-start">

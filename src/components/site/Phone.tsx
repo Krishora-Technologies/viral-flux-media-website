@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { motion, MotionValue, useTransform, AnimatePresence } from "framer-motion";
 import { AppInterface, Clock } from "./Inquiry";
@@ -89,8 +90,8 @@ export function Phone({ progress }: PhoneProps) {
                 {/* Profile row */}
                 <div className="flex items-center gap-4 px-4 pt-4">
                   <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-lime/0">
-                    <motion.img style={{ opacity: beforeOpacity }} src={avatarBefore} alt="" className="absolute inset-0 h-full w-full object-cover" />
-                    <motion.img style={{ opacity: afterOpacity }} src={avatarAfter} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                    <motion.img style={{ opacity: beforeOpacity }} src={avatarBefore.src} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                    <motion.img style={{ opacity: afterOpacity }} src={avatarAfter.src} alt="" className="absolute inset-0 h-full w-full object-cover" />
                   </div>
                   <div className="flex flex-1 justify-around text-center">
                     <Stat label="posts" from={12} to={248} progress={progress} />
@@ -111,7 +112,7 @@ export function Phone({ progress }: PhoneProps) {
                     onClick={handleFollow}
                     animate={{ 
                       backgroundColor: isFollowed ? "oklch(0.25 0 0)" : "oklch(0.88 0.22 125)",
-                      color: isFollowed ? "white" : "black"
+                      color: isFollowed ? "oklch(1 0 0)" : "oklch(0 0 0)"
                     }}
                     className="flex-1 rounded-md py-1.5 text-center text-[11px] font-semibold transition-colors"
                   >
@@ -136,7 +137,7 @@ export function Phone({ progress }: PhoneProps) {
                       transition={{ delay: 0.3 + i * 0.05, duration: 0.6 }}
                       className="relative aspect-square overflow-hidden"
                     >
-                      <img src={p} alt="" className="h-full w-full object-cover" loading="lazy" />
+                      <img src={p.src} alt="" className="h-full w-full object-cover" loading="lazy" />
                     </motion.div>
                   ))}
                 </div>

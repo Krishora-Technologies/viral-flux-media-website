@@ -1,4 +1,5 @@
 "use client";
+"use client";
 
 export const LIME = "#c8f542";
 const W = 240, H = 96, P = 10; // viewBox + uniform padding

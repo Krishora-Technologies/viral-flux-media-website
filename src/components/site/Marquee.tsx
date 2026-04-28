@@ -1,3 +1,4 @@
+"use client";
 const items = ["Strategy", "✦", "Content", "✦", "Community", "✦", "Paid Social", "✦", "Influencer", "✦", "Production", "✦"];
 
 export function Marquee() {
