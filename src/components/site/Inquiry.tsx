@@ -44,18 +44,20 @@ export function Inquiry() {
   const copyLeftOpacity = useTransform(p, [0.4, 0.65], [0, 1]);
   const copyRightY = useTransform(p, [0.45, 1], [80, 0]);
   const copyRightOpacity = useTransform(p, [0.45, 0.7], [0, 1]);
+  const bgMarkOpacity = useTransform(p, [0.2, 0.6], [0, 1]);
 
   return (
     <section
       id="inquiry"
       ref={sectionRef}
       className="relative bg-cream h-[150vh] md:h-[260vh]"
+      style={{ position: "relative" }}
       aria-label="Start an inquiry"
     >
       {/* Background mark */}
       <div className="pointer-events-none sticky top-0 h-screen w-full overflow-hidden">
         <motion.div
-          style={{ opacity: useTransform(p, [0.2, 0.6], [0, 1]) }}
+          style={{ opacity: bgMarkOpacity }}
           className="absolute inset-x-0 top-1/2 -translate-y-1/2 text-center"
         >
           <div className="font-display text-[22vw] leading-none text-ink/[0.035] select-none">

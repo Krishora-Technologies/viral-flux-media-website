@@ -11,7 +11,7 @@ import { Footer } from "@/components/site/Footer";
 
 export default function Home() {
   return (
-    <main className="relative bg-cream text-ink">
+    <main className="relative bg-cream text-ink" style={{ position: "relative" }}>
       <Nav />
       <Hero />
       <BioOptimization />

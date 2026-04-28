@@ -37,13 +37,14 @@ export function Hero() {
   const titleY = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const phoneRotate = useTransform(combined, [0, 1], [-3, 0]);
   const phoneScale = useTransform(combined, [0, 1], [0.95, 1.02]);
+  const bgMarkY = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   return (
-    <section ref={sectionRef} className="relative h-[150vh] md:h-[260vh]">
+    <section ref={sectionRef} className="relative h-[150vh] md:h-[260vh]" style={{ position: "relative" }}>
       <div className="sticky top-0 flex h-screen items-start md:items-center pt-20 md:pt-0 overflow-hidden">
         {/* Background mark */}
         <motion.div
-          style={{ y: useTransform(scrollYProgress, [0, 1], [0, -200]) }}
+          style={{ y: bgMarkY }}
           className="pointer-events-none absolute inset-x-0 top-[-10%] flex justify-center"
         >
           <div className="font-display text-[28vw] leading-none text-ink/[0.04] select-none">FLUX</div>

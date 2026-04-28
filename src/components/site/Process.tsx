@@ -15,7 +15,7 @@ export function Process() {
   const lineHeight = useTransform(scrollYProgress, [0.1, 0.85], ["0%", "100%"]);
 
   return (
-    <section ref={ref} id="process" className="relative py-32 md:py-48">
+    <section ref={ref} id="process" className="relative py-32 md:py-48" style={{ position: "relative" }}>
       <div className="mx-auto max-w-[1200px] px-6 md:px-12">
         <div className="text-center mb-24">
           <div className="font-mono-label text-muted-foreground mb-6">in — How we work</div>

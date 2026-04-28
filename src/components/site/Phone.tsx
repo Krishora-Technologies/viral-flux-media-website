@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, MotionValue, useTransform, AnimatePresence } from "framer-motion";
 import { AppInterface, Clock } from "./Inquiry";
 import post1 from "@/assets/post-1.jpg";
@@ -12,6 +13,7 @@ import avatarBefore from "@/assets/avatar-before.jpg";
 import avatarAfter from "@/assets/avatar-after.jpg";
 
 const posts = [post1, post2, post3, post4, post5, post6];
+const MotionImage = motion.create(Image);
 
 interface PhoneProps {
   /** 0 = before (B&W, low followers), 1 = after (color, viral) */
@@ -90,8 +92,8 @@ export function Phone({ progress }: PhoneProps) {
                 {/* Profile row */}
                 <div className="flex items-center gap-4 px-4 pt-4">
                   <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-lime/0">
-                    <motion.img style={{ opacity: beforeOpacity }} src={avatarBefore.src} alt="" className="absolute inset-0 h-full w-full object-cover" />
-                    <motion.img style={{ opacity: afterOpacity }} src={avatarAfter.src} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                    <MotionImage style={{ opacity: beforeOpacity }} src={avatarBefore} alt="" className="object-cover" fill sizes="64px" />
+                    <MotionImage style={{ opacity: afterOpacity }} src={avatarAfter} alt="" className="object-cover" fill sizes="64px" />
                   </div>
                   <div className="flex flex-1 justify-around text-center">
                     <Stat label="posts" from={12} to={248} progress={progress} />
@@ -137,7 +139,7 @@ export function Phone({ progress }: PhoneProps) {
                       transition={{ delay: 0.3 + i * 0.05, duration: 0.6 }}
                       className="relative aspect-square overflow-hidden"
                     >
-                      <img src={p.src} alt="" className="h-full w-full object-cover" loading="lazy" />
+                      <Image src={p} alt="" className="object-cover" loading="lazy" fill sizes="(max-width: 768px) 33vw, 100px" />
                     </motion.div>
                   ))}
                 </div>

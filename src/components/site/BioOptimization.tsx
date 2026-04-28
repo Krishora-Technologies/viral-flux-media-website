@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import { AppInterface } from "./Inquiry";
 import avatarBefore from "@/assets/avatar-before.jpg";
@@ -51,17 +52,19 @@ export function BioOptimization() {
   const copyLeftOpacity = useTransform(p, [0.2, 0.5], [0, 1]);
 
   const clipPath = useTransform(scanProgress, (val) => `inset(0 0 ${val}% 0)`);
+  const bgMarkOpacity = useTransform(p, [0.2, 0.8], [0, 1]);
 
   return (
     <section
       ref={sectionRef}
       className="relative bg-cream h-[150vh] md:h-[250vh]"
+      style={{ position: "relative" }}
       aria-label="Profile Optimization"
     >
       <div className="pointer-events-none sticky top-0 h-screen w-full overflow-hidden">
         {/* Background mark */}
         <motion.div
-          style={{ opacity: useTransform(p, [0.2, 0.8], [0, 1]) }}
+          style={{ opacity: bgMarkOpacity }}
           className="absolute inset-x-0 top-1/2 -translate-y-1/2 text-center"
         >
           <div className="font-display text-[20vw] leading-none text-ink/[0.035] select-none">
@@ -199,8 +202,8 @@ function OldBio() {
 
       {/* Profile Info */}
       <div className="flex items-center gap-4 mb-4">
-        <div className="h-16 w-16 shrink-0 rounded-full overflow-hidden bg-gray-300">
-          <img src={avatarBefore.src} alt="Avatar" className="h-full w-full object-cover" />
+        <div className="relative h-16 w-16 shrink-0 rounded-full overflow-hidden bg-gray-300">
+          <Image src={avatarBefore} alt="Avatar" className="object-cover" fill sizes="64px" />
         </div>
         <div className="flex flex-1 justify-around text-center text-sm">
           <div>
@@ -241,8 +244,8 @@ function OldBio() {
       {/* Grid */}
       <div className="grid grid-cols-3 gap-1">
         {posts.map((img, i) => (
-          <div key={i} className="aspect-square bg-gray-200 overflow-hidden">
-            <img src={img.src} alt="" className="h-full w-full object-cover opacity-80" />
+          <div key={i} className="relative aspect-square bg-gray-200 overflow-hidden">
+            <Image src={img} alt="" className="object-cover opacity-80" fill sizes="(max-width: 768px) 33vw, 150px" />
           </div>
         ))}
       </div>
@@ -279,8 +282,8 @@ function NewBio({
       {/* Profile Info */}
       <div className="flex items-center gap-5 mb-5">
         <div className="h-20 w-20 shrink-0 rounded-full border border-lime p-1">
-           <div className="h-full w-full rounded-full overflow-hidden bg-ink/10">
-             <img src={avatarAfter.src} alt="Avatar" className="h-full w-full object-cover" />
+           <div className="relative h-full w-full rounded-full overflow-hidden bg-ink/10">
+             <Image src={avatarAfter} alt="Avatar" className="object-cover" fill sizes="80px" />
            </div>
         </div>
         <div className="flex flex-1 justify-around text-center text-sm text-ink">
@@ -328,7 +331,7 @@ function NewBio({
       <div className="grid grid-cols-3 gap-[2px]">
         {posts.map((img, i) => (
           <div key={i} className="aspect-[4/5] bg-ink/5 relative overflow-hidden group">
-            <img src={img.src} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <Image src={img} alt="" className="object-cover transition-transform duration-500 group-hover:scale-105" fill sizes="(max-width: 768px) 33vw, 150px" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
           </div>
         ))}
