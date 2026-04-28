@@ -21,12 +21,20 @@ export function CTA() {
           Ready to grow your brand on social media?<br />
           Let’s start your journey today.
         </p>
-        <a
-          href="#inquiry"
+        <button
+          onClick={() => {
+            const inquirySection = document.getElementById("inquiry");
+            if (inquirySection) {
+              const rect = inquirySection.getBoundingClientRect();
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              const targetScroll = (scrollTop + rect.top - window.innerHeight) + rect.height * 0.7;
+              window.scrollTo({ top: targetScroll, behavior: "smooth" });
+            }
+          }}
           className="inline-flex items-center gap-3 mt-16 rounded-full bg-ink text-cream px-10 py-6 font-mono-label hover:bg-cream hover:text-ink transition-colors"
         >
           Start an Inquiry <span className="text-xl">↗</span>
-        </a>
+        </button>
       </div>
     </section>
   );

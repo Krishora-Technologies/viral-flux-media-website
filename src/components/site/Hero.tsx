@@ -78,7 +78,7 @@ export function Hero() {
                     // p is from "start end" to "end end" (distance: height + innerHeight)
                     // At p=0, scroll is sectionTop - innerHeight
                     // At p=0.65, scroll is (sectionTop - innerHeight) + 0.65 * (height + innerHeight)
-                    const targetScroll = (scrollTop + rect.top - window.innerHeight) + (rect.height + window.innerHeight) * 0.65;
+                    const targetScroll = (scrollTop + rect.top - window.innerHeight) + rect.height * 0.7;
                     
                     window.scrollTo({
                       top: targetScroll,

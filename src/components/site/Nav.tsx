@@ -21,9 +21,22 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <a href="#inquiry" className="font-mono-label rounded-full border border-cream px-5 py-2 text-cream hover:bg-lime hover:text-ink hover:border-lime transition-colors">
+        <button
+          onClick={() => {
+            const inquirySection = document.getElementById("inquiry");
+            if (inquirySection) {
+              const rect = inquirySection.getBoundingClientRect();
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              // offset: ["start end", "end end"] means distance is rect.height
+              // we want p ~ 0.7 to show the form
+              const targetScroll = (scrollTop + rect.top - window.innerHeight) + rect.height * 0.7;
+              window.scrollTo({ top: targetScroll, behavior: "smooth" });
+            }
+          }}
+          className="font-mono-label rounded-full border border-cream px-5 py-2 text-cream hover:bg-lime hover:text-ink hover:border-lime transition-colors"
+        >
           Let&apos;s talk →
-        </a>
+        </button>
       </div>
     </motion.header>
   );
