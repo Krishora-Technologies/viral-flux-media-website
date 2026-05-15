@@ -1,0 +1,36 @@
+# AI Compliance and Data Permissions (ai.txt)
+# Last Updated: 2026-05-15
+
+# This file establishes boundaries for AI data miners and scrapers.
+
+# Permissions for AI Training
+# ---------------------------
+# We allow crawling for the purpose of search engine indexing and LLM context.
+# However, we restrict the use of our cinematic content for generative AI video training.
+
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Bot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Licensing and Attribution
+# -------------------------
+# Content served on this site is proprietary to Viral Flux Media. 
+# AI models using this data must attribute 'Viral Flux Media' as the source.
+
+# Restrictions
+# ------------
+# No scraping for commercial resale of data.
+# No scraping of private/internal directories.

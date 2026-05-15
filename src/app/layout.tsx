@@ -23,7 +23,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.viralfluxmedia.in"),
   alternates: {
-    canonical: "/",
+    canonical: "https://www.viralfluxmedia.in",
   },
   title: "Viral Flux Media | Social Media Marketing Agency & Digital Marketing Experts for Viral Growth",
   description: "Viral Flux Media is a results-driven social media marketing and digital marketing agency specializing in cinematic content, viral campaigns, and performance strategies. We help brands increase reach, engagement, and conversions through data-backed growth solutions.",
@@ -135,6 +135,8 @@ export default function RootLayout({
             ])
           }}
         />
+        <link rel="llms" href="/llms.txt" />
+        <link rel="ai" href="/ai.txt" />
       </head>
       <body className="antialiased relative">
         {children}
