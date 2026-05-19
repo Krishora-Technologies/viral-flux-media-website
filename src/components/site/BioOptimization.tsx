@@ -5,14 +5,10 @@ import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "fra
 import { AppInterface } from "./Inquiry";
 import avatarBefore from "@/assets/avatar-before.jpg";
 import avatarAfter from "@/assets/avatar-after.jpg";
-import post1 from "@/assets/post-1.jpg";
-import post2 from "@/assets/post-2.jpg";
-import post3 from "@/assets/post-3.jpg";
-import post4 from "@/assets/post-4.jpg";
-import post5 from "@/assets/post-5.jpg";
-import post6 from "@/assets/post-6.jpg";
-
-const posts = [post1, post2, post3, post4, post5, post6, post1, post2, post3, post4, post5, post6];
+const posts = [
+  "/post1.jpg", "/post2.jpg", "/post3.jpg", 
+  "/post4.jpg", "/post5.jpg", "/post6.jpg"
+];
 
 export function BioOptimization() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -193,7 +189,7 @@ function OldBio() {
     <div className="flex h-full flex-col px-5 text-gray-800">
       {/* Top Bar */}
       <div className="flex items-center justify-between mb-4 mt-2">
-        <span className="text-xl font-bold">jane_doe_official</span>
+        <span className="text-xl font-bold">_anshaaa____</span>
         <div className="flex gap-4">
           <div className="w-5 h-5 bg-gray-300 rounded-sm" />
           <div className="w-5 h-5 bg-gray-300 rounded-sm" />
@@ -202,33 +198,31 @@ function OldBio() {
 
       {/* Profile Info */}
       <div className="flex items-center gap-4 mb-4">
-        <div className="relative h-16 w-16 shrink-0 rounded-full overflow-hidden bg-gray-300">
-          <Image src={avatarBefore} alt="Avatar" className="object-cover" fill sizes="64px" />
+        <div className="relative h-16 w-16 shrink-0 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center text-gray-500 font-display font-bold text-xs">
+          vfm.
         </div>
         <div className="flex flex-1 justify-around text-center text-sm">
           <div>
-            <div className="font-bold">124</div>
+            <div className="font-bold">0</div>
             <div className="text-xs text-gray-500">posts</div>
           </div>
           <div>
-            <div className="font-bold">2.4K</div>
+            <div className="font-bold">0</div>
             <div className="text-xs text-gray-500">followers</div>
           </div>
           <div>
-            <div className="font-bold">450</div>
+            <div className="font-bold">0</div>
             <div className="text-xs text-gray-500">following</div>
           </div>
         </div>
       </div>
 
       {/* Bio Text */}
-      <div className="mb-4 text-sm leading-tight">
-        <div className="font-bold mb-1">Jane Doe ✨</div>
-        <div className="text-gray-500 mb-1">Digital Creator</div>
-        <div>Just a girl living her best life 🌸</div>
-        <div>Coffee addict ☕️ | Traveler ✈️</div>
-        <div>Dm for collabs! 💌</div>
-        <div className="text-blue-500 mt-1">linktr.ee/janedoeofficial</div>
+      <div className="mb-4 text-sm leading-snug">
+        <div className="font-bold text-base mb-1">Akki🌼</div>
+        <div className="text-ink/60 mb-2 text-xs uppercase tracking-wider font-mono-label">Public Figure</div>
+        <div className="text-ink/90">Building the aesthetics of tomorrow.</div>
+        <div className="text-ink/90">Curating premium digital experiences.</div>
       </div>
 
       {/* Buttons */}
@@ -241,13 +235,12 @@ function OldBio() {
         </div>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-3 gap-1">
-        {posts.map((img, i) => (
-          <div key={i} className="relative aspect-square bg-gray-200 overflow-hidden">
-            <Image src={img} alt="" className="object-cover opacity-80" fill sizes="(max-width: 768px) 33vw, 150px" />
-          </div>
-        ))}
+      {/* No Posts Yet */}
+      <div className="flex-1 flex flex-col items-center justify-center border-t border-gray-200/80 mt-4 pt-10 text-gray-400">
+        <div className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center mb-2">
+          <span className="text-xl">📷</span>
+        </div>
+        <div className="text-sm font-semibold text-gray-700">No Posts Yet</div>
       </div>
     </div>
   );
@@ -266,7 +259,7 @@ function NewBio({
     <div className="flex h-full flex-col px-5 pointer-events-auto">
       {/* Top Bar */}
       <div className="flex items-center justify-between mb-4 mt-2">
-        <span className="text-xl font-bold font-display tracking-tight text-ink">JANEDOE</span>
+        <span className="text-xl font-bold font-display tracking-tight text-ink">_anshaaa____</span>
         <div className="flex gap-4">
           <div className="w-5 h-5 rounded-sm border border-ink/20 flex items-center justify-center">
              <div className="w-3 h-[2px] bg-ink"/>
@@ -280,33 +273,33 @@ function NewBio({
       </div>
 
       {/* Profile Info */}
-      <div className="flex items-center gap-5 mb-5">
-        <div className="h-20 w-20 shrink-0 rounded-full border border-lime p-1">
-           <div className="relative h-full w-full rounded-full overflow-hidden bg-ink/10">
-             <Image src={avatarAfter} alt="Avatar" className="object-cover" fill sizes="80px" />
+      <div className="flex items-center gap-4 mb-4">
+        <div className="relative h-16 w-16 shrink-0">
+           <div className="absolute inset-0 rounded-full overflow-hidden bg-ink/10">
+             <Image src="/pfp-hd-anshaaa.jpg" alt="Avatar" className="object-cover" fill unoptimized />
            </div>
+           <Image src="/pfp-ring.png" alt="Ring" className="absolute inset-0 z-10 object-contain pointer-events-none scale-[1.15]" fill unoptimized />
         </div>
         <div className="flex flex-1 justify-around text-center text-sm text-ink">
           <div>
-            <div className="font-bold text-lg">1.2M</div>
+            <div className="font-bold text-base">1,451</div>
             <div className="text-[10px] uppercase tracking-widest text-ink/50">Followers</div>
           </div>
           <div>
-            <div className="font-bold text-lg">45M</div>
-            <div className="text-[10px] uppercase tracking-widest text-ink/50">Likes</div>
+            <div className="font-bold text-base">10</div>
+            <div className="text-[10px] uppercase tracking-widest text-ink/50">Following</div>
           </div>
         </div>
       </div>
 
       {/* Bio Text */}
-      <div className="mb-5 text-sm leading-snug">
-        <div className="font-display font-medium text-lime mb-1 text-base">Jane Doe</div>
-        <div className="text-ink/60 mb-2 text-xs uppercase tracking-wider font-mono-label">Creative Director</div>
-        <div className="text-ink/90">Building the aesthetics of tomorrow.</div>
-        <div className="text-ink/90">Curating premium digital experiences.</div>
-        <div className="mt-3 inline-block rounded-full bg-lime/20 px-3 py-1 text-xs text-lime font-mono-label">
-          vfm.link/jane
-        </div>
+      <div className="mb-4 text-sm leading-tight">
+        <div className="font-bold mb-1">Akki🌼</div>
+        <div className="text-gray-500 mb-1">Personal Blog</div>
+        <div>Just posting my life 🌸</div>
+        <div>Coffee addict ☕️ | Traveler ✈️</div>
+        <div>Dm for collabs! 💌</div>
+        <div className="text-blue-500 mt-1">linktr.ee/akki</div>
       </div>
 
       {/* Buttons */}
@@ -331,7 +324,7 @@ function NewBio({
       <div className="grid grid-cols-3 gap-[2px]">
         {posts.map((img, i) => (
           <div key={i} className="aspect-[4/5] bg-ink/5 relative overflow-hidden group">
-            <Image src={img} alt="" className="object-cover transition-transform duration-500 group-hover:scale-105" fill sizes="(max-width: 768px) 33vw, 150px" />
+            <Image src={img} alt="" className="object-cover object-top transition-transform duration-500 group-hover:scale-105" fill sizes="(max-width: 768px) 33vw, 150px" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
           </div>
         ))}

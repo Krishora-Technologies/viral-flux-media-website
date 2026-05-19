@@ -31,11 +31,8 @@ export function Phone({ progress }: PhoneProps) {
   const afterOpacity = useTransform(progress, [0, 0.5, 1], [0, 0.5, 1]);
 
   const handleFollow = () => {
-    setIsFollowed(!isFollowed);
-    if (!isFollowed) {
-      setShowPower(true);
-      setTimeout(() => setShowPower(false), 2500);
-    }
+    window.open("https://instagram.com/viralfluxmedia", "_blank");
+    setIsFollowed(true);
   };
 
   return (
@@ -82,7 +79,7 @@ export function Phone({ progress }: PhoneProps) {
               >
                 {/* IG header */}
                 <div className="flex items-center justify-between px-4 pt-3">
-                  <div className="font-display text-base italic">viral.flux</div>
+                  <div className="font-display text-base italic">viralfluxmedia</div>
                   <div className="flex gap-3 text-ink">
                     <span className="text-lg">+</span>
                     <span className="text-lg">≡</span>
@@ -91,9 +88,14 @@ export function Phone({ progress }: PhoneProps) {
 
                 {/* Profile row */}
                 <div className="flex items-center gap-4 px-4 pt-4">
-                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-lime/0">
-                    <MotionImage style={{ opacity: beforeOpacity }} src={avatarBefore} alt="" className="object-cover" fill sizes="64px" />
-                    <MotionImage style={{ opacity: afterOpacity }} src={avatarAfter} alt="" className="object-cover" fill sizes="64px" />
+                  <div className="relative h-16 w-16 shrink-0">
+                    <div className="absolute inset-0 overflow-hidden rounded-full bg-ink/5">
+                      <motion.div style={{ opacity: beforeOpacity }} className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500 font-display font-bold text-[10px]">
+                        vfm.
+                      </motion.div>
+                      <MotionImage style={{ opacity: afterOpacity }} src="/pfp.jpeg" alt="" className="object-cover" fill unoptimized />
+                    </div>
+                    <MotionImage style={{ opacity: afterOpacity }} src="/pfp-ring.png" alt="" className="absolute inset-0 object-contain z-10 pointer-events-none scale-[1.15]" fill unoptimized />
                   </div>
                   <div className="flex flex-1 justify-around text-center">
                     <Stat label="posts" from={12} to={248} progress={progress} />
@@ -104,7 +106,7 @@ export function Phone({ progress }: PhoneProps) {
 
                 {/* Bio */}
                 <div className="px-4 pt-3 text-[11px] leading-snug">
-                  <div className="font-semibold">Maya Chen</div>
+                  <div className="font-semibold">Viral Flux Media</div>
                   <BioMorph progress={progress} />
                 </div>
 
@@ -215,13 +217,15 @@ function BioMorph({ progress }: { progress: MotionValue<number> }) {
   const beforeOp = useTransform(progress, [0, 0.4], [1, 0]);
   const afterOp = useTransform(progress, [0.5, 1], [0, 1]);
   return (
-    <div className="relative h-10">
+    <div className="relative h-16">
       <motion.div style={{ opacity: beforeOp }} className="absolute inset-0 text-muted-foreground">
-        just vibes ☁️<br />dm for collab maybe
+        Social Media Agency<br />We post content everyday<br />Contact us for business
       </motion.div>
       <motion.div style={{ opacity: afterOp }} className="absolute inset-0">
-        Creative director · Featured in Vogue & Dazed<br />
-        <span className="text-lime font-semibold">↗ linktr.ee/maya</span>
+        🚀 Turning Content into Influence<br />
+        📈 Political | Branding | Growth Strategy<br />
+        🎯 We don’t post. We make impact.<br />
+        📩 DM for collaborations
       </motion.div>
     </div>
   );

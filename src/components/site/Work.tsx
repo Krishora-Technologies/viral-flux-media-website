@@ -221,7 +221,7 @@ export function Work() {
   }, [smoothProgress, x, isMobile]);
 
   const barWidth    = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
-  const hintOpacity = useTransform(smoothProgress, [0, 0.1], [1, 0]);
+  const hintOpacity = useTransform(smoothProgress, [0, 1], [1, 0]);
 
   return (
     <div
@@ -236,10 +236,20 @@ export function Work() {
           <div className="mb-12 md:mb-16">
             <div className="flex items-center justify-between mb-5">
               <div className="font-mono-label text-cream/50">— Impact Metrics</div>
-              {isMobile && (
+              {isMobile ? (
                 <div className="text-lime animate-pulse flex items-center gap-3 font-mono-label text-[10px] uppercase tracking-widest">
                   drag <span className="text-3xl leading-none mb-1">→</span>
                 </div>
+              ) : (
+                <motion.div
+                  style={{ opacity: hintOpacity }}
+                  className="text-lime flex items-center gap-2 font-mono-label text-[10px] uppercase tracking-widest select-none"
+                >
+                  scroll down to explore
+                  <motion.span animate={{ x: [0, 4, 0] }} transition={{ repeat: Infinity, duration: 1.3, ease: "easeInOut" }}>
+                    →
+                  </motion.span>
+                </motion.div>
               )}
             </div>
             <h2 className="font-display text-5xl md:text-7xl font-light leading-[0.93] text-cream">
@@ -248,19 +258,6 @@ export function Work() {
               <br />promises.
             </h2>
           </div>
-
-          {/* Scroll hint */}
-          {!isMobile && (
-            <motion.div
-              style={{ opacity: hintOpacity }}
-              className="absolute top-8 right-6 md:right-12 flex items-center gap-2 font-mono-label text-cream/35 text-[10px] pointer-events-none select-none"
-            >
-              scroll to explore
-              <motion.span animate={{ y: [0, 4, 0] }} transition={{ repeat: Infinity, duration: 1.3, ease: "easeInOut" }}>
-                ↓
-              </motion.span>
-            </motion.div>
-          )}
 
           {/* Cards row — 4 visible, clipped on desktop, native drag on mobile */}
           <div ref={clipRef} className={isMobile ? "overflow-x-auto no-scrollbar snap-x snap-mandatory -mx-6 px-6" : "overflow-hidden"}>

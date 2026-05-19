@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Nav() {
   return (
@@ -12,7 +13,7 @@ export function Nav() {
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6 md:px-12">
         <Link href="/" className="font-display text-xl tracking-tight text-cream">
-          Viral Flux<span className="text-lime">.</span>
+          Viral Flux Media<span className="text-lime">.</span>
         </Link>
         <nav className="hidden gap-10 md:flex">
           {["Services", "Process", "Studio"].map((l) => (

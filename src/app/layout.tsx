@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   title: "Viral Flux Media | Social Media Marketing Agency & Digital Marketing Experts for Viral Growth",
   description: "Viral Flux Media is a results-driven social media marketing and digital marketing agency specializing in cinematic content, viral campaigns, and performance strategies. We help brands increase reach, engagement, and conversions through data-backed growth solutions.",
-  keywords: ["Social Media Marketing", "Digital Marketing Agency", "Viral Growth", "Cinematic Content", "Viral Campaigns", "Performance Marketing", "Social Media Management", "Content Creation", "Brand Growth"],
+  keywords: ["Social Media Marketing", "Digital Marketing Agency", "Viral Growth", "Cinematic Content", "Viral Campaigns", "Performance Marketing", "Social Media Management", "Content Creation", "Brand Growth", "Viralfluxmedia", "Viral Flixmedia", "Viral Flix media", "ViralFlux Media", "Viral Flux Media"],
   authors: [{ name: "Viral Flux Media" }],
   creator: "Viral Flux Media",
   publisher: "Viral Flux Media",

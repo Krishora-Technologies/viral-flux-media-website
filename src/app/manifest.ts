@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Viral Flux Media",
-    short_name: "Viral Flux",
+    short_name: "Viral Flux Media",
     description: "Viral Flux Media is a results-driven social media marketing and digital marketing agency specializing in cinematic content and viral growth.",
     start_url: "/",
     display: "standalone",
