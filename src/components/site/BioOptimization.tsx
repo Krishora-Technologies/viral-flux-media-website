@@ -5,10 +5,14 @@ import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "fra
 import { AppInterface } from "./Inquiry";
 import avatarBefore from "@/assets/avatar-before.jpg";
 import avatarAfter from "@/assets/avatar-after.jpg";
-const posts = [
-  "/post1.jpg", "/post2.jpg", "/post3.jpg", 
-  "/post4.jpg", "/post5.jpg", "/post6.jpg"
-];
+import post1 from "@/assets/post-1.jpg";
+import post2 from "@/assets/post-2.jpg";
+import post3 from "@/assets/post-3.jpg";
+import post4 from "@/assets/post-4.jpg";
+import post5 from "@/assets/post-5.jpg";
+import post6 from "@/assets/post-6.jpg";
+
+const posts = [post1, post2, post3, post4, post5, post6];
 
 export function BioOptimization() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -87,8 +91,8 @@ We eliminate noise, craft positioning, and build a system that turns attention i
           </motion.div>
 
           {/* Center: phone */}
-          <div className="col-span-1 flex justify-center md:col-span-8 mt-0 md:mt-0" style={{ perspective: 1600 }}>
-            <div className="scale-[0.5] sm:scale-[0.6] md:scale-100 origin-top">
+          <div className="col-span-1 flex justify-center md:col-span-8 mt-16 md:mt-24" style={{ perspective: 1600 }}>
+            <div className="scale-[0.5] sm:scale-[0.6] md:scale-[0.85] origin-top">
               <motion.div
                 style={{
                   y: phoneY,
@@ -189,7 +193,7 @@ function OldBio() {
     <div className="flex h-full flex-col px-5 text-gray-800">
       {/* Top Bar */}
       <div className="flex items-center justify-between mb-4 mt-2">
-        <span className="text-xl font-bold">_anshaaa____</span>
+        <span className="text-xl font-bold">viralfluxmedia</span>
         <div className="flex gap-4">
           <div className="w-5 h-5 bg-gray-300 rounded-sm" />
           <div className="w-5 h-5 bg-gray-300 rounded-sm" />
@@ -203,15 +207,15 @@ function OldBio() {
         </div>
         <div className="flex flex-1 justify-around text-center text-sm">
           <div>
-            <div className="font-bold">0</div>
+            <div className="font-bold">12</div>
             <div className="text-xs text-gray-500">posts</div>
           </div>
           <div>
-            <div className="font-bold">0</div>
+            <div className="font-bold">342</div>
             <div className="text-xs text-gray-500">followers</div>
           </div>
           <div>
-            <div className="font-bold">0</div>
+            <div className="font-bold">891</div>
             <div className="text-xs text-gray-500">following</div>
           </div>
         </div>
@@ -219,10 +223,10 @@ function OldBio() {
 
       {/* Bio Text */}
       <div className="mb-4 text-sm leading-snug">
-        <div className="font-bold text-base mb-1">Akki🌼</div>
-        <div className="text-ink/60 mb-2 text-xs uppercase tracking-wider font-mono-label">Public Figure</div>
-        <div className="text-ink/90">Building the aesthetics of tomorrow.</div>
-        <div className="text-ink/90">Curating premium digital experiences.</div>
+        <div className="font-bold text-base mb-1">Viral Flux Media</div>
+        <div className="text-ink/60 mb-2 text-xs uppercase tracking-wider font-mono-label">Social Media Agency</div>
+        <div className="text-ink/90">We post content everyday</div>
+        <div className="text-ink/90">Contact us for business</div>
       </div>
 
       {/* Buttons */}
@@ -259,7 +263,7 @@ function NewBio({
     <div className="flex h-full flex-col px-5 pointer-events-auto">
       {/* Top Bar */}
       <div className="flex items-center justify-between mb-4 mt-2">
-        <span className="text-xl font-bold font-display tracking-tight text-ink">_anshaaa____</span>
+        <span className="text-xl font-bold font-display tracking-tight text-ink">viralfluxmedia</span>
         <div className="flex gap-4">
           <div className="w-5 h-5 rounded-sm border border-ink/20 flex items-center justify-center">
              <div className="w-3 h-[2px] bg-ink"/>
@@ -276,17 +280,21 @@ function NewBio({
       <div className="flex items-center gap-4 mb-4">
         <div className="relative h-16 w-16 shrink-0">
            <div className="absolute inset-0 rounded-full overflow-hidden bg-ink/10">
-             <Image src="/pfp-hd-anshaaa.jpg" alt="Avatar" className="object-cover" fill unoptimized />
+             <Image src="/pfp.jpeg" alt="Avatar" className="object-cover" fill unoptimized />
            </div>
            <Image src="/pfp-ring.png" alt="Ring" className="absolute inset-0 z-10 object-contain pointer-events-none scale-[1.15]" fill unoptimized />
         </div>
         <div className="flex flex-1 justify-around text-center text-sm text-ink">
           <div>
-            <div className="font-bold text-base">1,451</div>
+            <div className="font-bold text-base">248</div>
+            <div className="text-[10px] uppercase tracking-widest text-ink/50">Posts</div>
+          </div>
+          <div>
+            <div className="font-bold text-base">184K</div>
             <div className="text-[10px] uppercase tracking-widest text-ink/50">Followers</div>
           </div>
           <div>
-            <div className="font-bold text-base">10</div>
+            <div className="font-bold text-base">412</div>
             <div className="text-[10px] uppercase tracking-widest text-ink/50">Following</div>
           </div>
         </div>
@@ -294,12 +302,12 @@ function NewBio({
 
       {/* Bio Text */}
       <div className="mb-4 text-sm leading-tight">
-        <div className="font-bold mb-1">Akki🌼</div>
-        <div className="text-gray-500 mb-1">Personal Blog</div>
-        <div>Just posting my life 🌸</div>
-        <div>Coffee addict ☕️ | Traveler ✈️</div>
-        <div>Dm for collabs! 💌</div>
-        <div className="text-blue-500 mt-1">linktr.ee/akki</div>
+        <div className="font-bold mb-1">Viral Flux Media</div>
+        <div className="text-gray-500 mb-1">Social Media Agency</div>
+        <div>🚀 Turning Content into Influence</div>
+        <div>📈 Political | Branding | Growth Strategy</div>
+        <div>🎯 We don’t post. We make impact.</div>
+        <div>📩 DM for collaborations</div>
       </div>
 
       {/* Buttons */}

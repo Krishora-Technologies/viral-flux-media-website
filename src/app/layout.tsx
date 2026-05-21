@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
+import { CustomCursor } from "@/components/site/CustomCursor";
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -138,7 +139,8 @@ export default function RootLayout({
         <link rel="llms" href="/llms.txt" />
         <link rel="ai" href="/ai.txt" />
       </head>
-      <body className="antialiased relative">
+      <body className="antialiased relative cursor-none">
+        <CustomCursor />
         {children}
       </body>
     </html>
