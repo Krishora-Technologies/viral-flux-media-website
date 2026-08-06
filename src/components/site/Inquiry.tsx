@@ -317,7 +317,7 @@ export function AppInterface({ onClose }: { onClose?: () => void }) {
                   type="email"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="maya@example.com"
+                  placeholder="omkar@viralfluxmedia.in"
                   maxLength={100}
                   className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-ink/30"
                 />
