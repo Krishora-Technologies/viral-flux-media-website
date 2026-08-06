@@ -258,7 +258,6 @@ export default function GrowthPartnerProgramPage() {
           <div className="bg-[#0f1011] text-[#f9f8f3] p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <h4 className="font-display text-2xl font-light text-[#c8f542]">Let&apos;s Grow Together!</h4>
-              <p className="font-sans text-xs text-white/70 mt-1">Become a Viral Flux Media Growth Partner Today.</p>
             </div>
 
             <div className="bg-[#c8f542] text-[#0f1011] p-3.5 px-6 rounded-xl font-mono-label font-bold text-sm text-center">
