@@ -89,16 +89,17 @@ export function Hero() {
                 label="Grow" 
                 sub="organic engine" 
               />
-              <ActionButton 
-                active={mode === "viral"} 
-                onClick={() => {
-                  handleClick("viral");
-                  document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
-                }} 
-                label="Viral Flux Media" 
-                sub="full studio" 
-                variant="dark" 
-              />
+              <a href="https://get.viralfluxmedia.in/">
+                <ActionButton 
+                  active={mode === "viral"} 
+                  onClick={() => {
+                    handleClick("viral");
+                  }} 
+                  label="Viral Flux Media" 
+                  sub="full studio" 
+                  variant="dark" 
+                />
+              </a>
             </div>
           </motion.div>
 
