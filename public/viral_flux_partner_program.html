@@ -25,12 +25,12 @@
       print-color-adjust: exact;
     }
 
-    /* Page Container - Fixed A4 Dimensions */
+    /* Page Container - Perfectly Proportioned A4 Dimensions */
     .page {
       width: 210mm;
       height: 297mm;
       max-height: 297mm;
-      padding: 12mm 14mm;
+      padding: 14mm 16mm;
       background: #f9f8f3;
       position: relative;
       page-break-after: always;
@@ -38,9 +38,20 @@
       overflow: hidden;
       margin: 0 auto;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .page:last-of-type {
       page-break-after: avoid;
+    }
+
+    /* Content Wrapper */
+    .page-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* Header & Branding */
@@ -48,13 +59,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 14px;
+      padding-bottom: 16px;
       border-bottom: 2px solid #0f1011;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
     .logo {
       font-family: 'Instrument Serif', serif;
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 400;
       color: #0f1011;
       letter-spacing: -0.5px;
@@ -70,7 +81,7 @@
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
       letter-spacing: 1px;
       display: inline-flex;
@@ -82,9 +93,9 @@
     .hero {
       background: #0f1011;
       color: #f9f8f3;
-      padding: 24px;
-      border-radius: 16px;
-      margin-bottom: 20px;
+      padding: 28px 30px;
+      border-radius: 18px;
+      margin-bottom: 24px;
       position: relative;
     }
     .hero-subtitle {
@@ -94,14 +105,14 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .hero-title {
       font-family: 'Instrument Serif', serif;
-      font-size: 38px;
+      font-size: 42px;
       font-weight: 300;
-      line-height: 1.05;
-      margin-bottom: 10px;
+      line-height: 1.04;
+      margin-bottom: 12px;
     }
     .hero-title em {
       font-style: italic;
@@ -109,12 +120,12 @@
     }
     .hero-desc {
       color: rgba(249, 248, 243, 0.85);
-      font-size: 13px;
-      line-height: 1.5;
-      max-width: 95%;
+      font-size: 13.5px;
+      line-height: 1.55;
+      max-width: 96%;
     }
     .hero-cta-bar {
-      margin-top: 16px;
+      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -126,7 +137,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       font-size: 12px;
-      padding: 10px 20px;
+      padding: 11px 22px;
       border-radius: 999px;
       text-decoration: none;
       display: inline-flex;
@@ -139,8 +150,8 @@
       border: 1px solid rgba(249, 248, 243, 0.2);
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 11px;
-      padding: 8px 14px;
+      font-size: 11.5px;
+      padding: 9px 16px;
       border-radius: 999px;
       text-decoration: none;
       display: inline-flex;
@@ -150,21 +161,21 @@
 
     /* Section Header */
     .section-header {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .section-tag {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 10px;
+      font-size: 11px;
       color: #666;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
     .section-title {
       font-family: 'Instrument Serif', serif;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 400;
       color: #0f1011;
     }
@@ -173,14 +184,14 @@
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 20px;
     }
     .grid-3 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 16px;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
     /* Card */
@@ -188,36 +199,36 @@
       background: #ffffff;
       border: 1px solid rgba(15, 16, 17, 0.1);
       border-radius: 12px;
-      padding: 12px 14px;
+      padding: 13px 15px;
     }
     .card-dark {
       background: #0f1011;
       color: #f9f8f3;
-      border-radius: 12px;
-      padding: 14px;
+      border-radius: 14px;
+      padding: 16px 18px;
     }
 
     /* Partner Grid */
     .partner-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 6px 10px;
-      margin-bottom: 18px;
+      gap: 8px 12px;
+      margin-bottom: 22px;
     }
     .partner-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       background: #fff;
-      padding: 8px 12px;
-      border-radius: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
       border: 1px solid rgba(15, 16, 17, 0.08);
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 500;
     }
     .partner-icon {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       background: #c8f542;
       border-radius: 50%;
       border: 1px solid #0f1011;
@@ -228,71 +239,75 @@
     .step-card {
       background: #fff;
       border: 1px solid rgba(15, 16, 17, 0.1);
-      border-radius: 12px;
-      padding: 14px;
+      border-radius: 14px;
+      padding: 16px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
     .step-num {
       font-family: 'Instrument Serif', serif;
-      font-size: 24px;
+      font-size: 26px;
       color: #8bb308;
       font-style: italic;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
     .step-title {
       font-weight: 700;
-      font-size: 13px;
-      margin-bottom: 4px;
+      font-size: 13.5px;
+      margin-bottom: 6px;
     }
     .step-desc {
-      font-size: 11px;
+      font-size: 11.5px;
       color: #555;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
     /* Services List */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 6px 10px;
-      margin-bottom: 16px;
+      gap: 8px 12px;
+      margin-bottom: 20px;
     }
     .service-tag {
       background: #0f1011;
       color: #f9f8f3;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 11px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 11.5px;
       font-weight: 500;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
     .service-tag::before {
       content: "✦";
       color: #c8f542;
-      font-size: 9px;
+      font-size: 10px;
     }
 
     /* Benefits List */
     .benefit-item {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 8px;
-      font-size: 12px;
-      line-height: 1.35;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 12.5px;
+      line-height: 1.4;
     }
     .benefit-bullet {
       background: #c8f542;
       color: #0f1011;
       font-weight: bold;
-      width: 18px;
-      height: 18px;
+      width: 19px;
+      height: 19px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
+      font-size: 10.5px;
       flex-shrink: 0;
       margin-top: 1px;
     }
@@ -301,40 +316,40 @@
     .contact-footer {
       background: #0f1011;
       color: #f9f8f3;
-      padding: 16px 20px;
-      border-radius: 14px;
-      margin-top: 12px;
+      padding: 20px 24px;
+      border-radius: 16px;
+      margin-top: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .contact-left h4 {
       font-family: 'Instrument Serif', serif;
-      font-size: 22px;
+      font-size: 25px;
       font-weight: 300;
       color: #c8f542;
     }
     .contact-left p {
-      font-size: 11px;
+      font-size: 11.5px;
       color: rgba(249, 248, 243, 0.7);
       margin-top: 2px;
     }
     .phone-actions {
       display: flex;
-      gap: 6px;
+      gap: 8px;
     }
     .phone-btn {
       background: #c8f542;
       color: #0f1011;
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 10px;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 12.5px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
   </style>
 </head>
@@ -347,62 +362,68 @@
       <div class="badge">✦ Growth Partner Program</div>
     </div>
 
-    <div class="hero">
-      <div class="hero-subtitle">Official Referral Program</div>
-      <h1 class="hero-title">Refer Businesses.<br />Earn <em>Attractive Rewards</em>.</h1>
-      <p class="hero-desc">
-        Do you know restaurants, cafés, salons, gyms, clinics, hotels, real estate companies, or local businesses looking to grow online? Refer them to Viral Flux Media and earn exciting commissions for every successful client.
-      </p>
-      
-      <div class="hero-cta-bar">
-        <a href="https://get.viralfluxmedia.in/contact" class="btn-lime">
-          Apply as Partner Now →
-        </a>
-        <a href="tel:8108181650" class="btn-phone">
-          📞 Call 8108181650
-        </a>
-        <a href="tel:8108181651" class="btn-phone">
-          📞 Call 8108181651
-        </a>
+    <div class="page-content">
+      <div class="hero">
+        <div class="hero-subtitle">Official Referral Program</div>
+        <h1 class="hero-title">Refer Businesses.<br />Earn <em>Attractive Rewards</em>.</h1>
+        <p class="hero-desc">
+          Do you know restaurants, cafés, salons, gyms, clinics, hotels, real estate companies, or local businesses looking to grow online? Refer them to Viral Flux Media and earn exciting commissions for every successful client.
+        </p>
+        
+        <div class="hero-cta-bar">
+          <a href="https://get.viralfluxmedia.in/contact" class="btn-lime">
+            Apply as Partner Now →
+          </a>
+          <a href="tel:8108181650" class="btn-phone">
+            📞 Call 8108181650
+          </a>
+          <a href="tel:8108181651" class="btn-phone">
+            📞 Call 8108181651
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div class="section-header">
-      <span class="section-tag">— 01</span>
-      <h2 class="section-title">Who Can Become a Partner?</h2>
-    </div>
-    <div class="partner-grid">
-      <div class="partner-item"><span class="partner-icon"></span> Instagram Influencers</div>
-      <div class="partner-item"><span class="partner-icon"></span> Food Bloggers</div>
-      <div class="partner-item"><span class="partner-icon"></span> YouTubers</div>
-      <div class="partner-item"><span class="partner-icon"></span> Local News Pages</div>
-      <div class="partner-item"><span class="partner-icon"></span> Content Creators</div>
-      <div class="partner-item"><span class="partner-icon"></span> Freelancers</div>
-      <div class="partner-item"><span class="partner-icon"></span> Marketing Professionals</div>
-      <div class="partner-item"><span class="partner-icon"></span> Business Owners</div>
-      <div class="partner-item"><span class="partner-icon"></span> Students</div>
-      <div class="partner-item"><span class="partner-icon"></span> Anyone with a Business Network</div>
-    </div>
+      <div>
+        <div class="section-header">
+          <span class="section-tag">— 01</span>
+          <h2 class="section-title">Who Can Become a Partner?</h2>
+        </div>
+        <div class="partner-grid">
+          <div class="partner-item"><span class="partner-icon"></span> Instagram Influencers</div>
+          <div class="partner-item"><span class="partner-icon"></span> Food Bloggers</div>
+          <div class="partner-item"><span class="partner-icon"></span> YouTubers</div>
+          <div class="partner-item"><span class="partner-icon"></span> Local News Pages</div>
+          <div class="partner-item"><span class="partner-icon"></span> Content Creators</div>
+          <div class="partner-item"><span class="partner-icon"></span> Freelancers</div>
+          <div class="partner-item"><span class="partner-icon"></span> Marketing Professionals</div>
+          <div class="partner-item"><span class="partner-icon"></span> Business Owners</div>
+          <div class="partner-item"><span class="partner-icon"></span> Students</div>
+          <div class="partner-item"><span class="partner-icon"></span> Anyone with a Business Network</div>
+        </div>
+      </div>
 
-    <div class="section-header">
-      <span class="section-tag">— 02</span>
-      <h2 class="section-title">How It Works</h2>
-    </div>
-    <div class="grid-3">
-      <div class="step-card">
-        <div class="step-num">Step 1</div>
-        <div class="step-title">Refer a Business</div>
-        <div class="step-desc">Share your unique referral link or introduce a business owner directly to our growth team.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">Step 2</div>
-        <div class="step-title">We Do the Work</div>
-        <div class="step-desc">Our team handles strategy, content creation, social media management, ads, and client onboarding.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">Step 3</div>
-        <div class="step-title">Earn Commission</div>
-        <div class="step-desc">Once the client signs the agreement and completes payment, your commission is instantly released.</div>
+      <div>
+        <div class="section-header">
+          <span class="section-tag">— 02</span>
+          <h2 class="section-title">How It Works</h2>
+        </div>
+        <div class="grid-3">
+          <div class="step-card">
+            <div class="step-num">Step 1</div>
+            <div class="step-title">Refer a Business</div>
+            <div class="step-desc">Share your unique referral link or introduce a business owner directly to our growth team.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">Step 2</div>
+            <div class="step-title">We Do the Work</div>
+            <div class="step-desc">Our team handles strategy, content creation, social media management, ads, and client onboarding.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">Step 3</div>
+            <div class="step-title">Earn Commission</div>
+            <div class="step-desc">Once the client signs the agreement and completes payment, your commission is instantly released.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -414,90 +435,96 @@
       <div class="badge">Services & Partner Benefits</div>
     </div>
 
-    <div class="section-header">
-      <span class="section-tag">— 03</span>
-      <h2 class="section-title">Services We Offer</h2>
-    </div>
-    <div class="services-grid">
-      <div class="service-tag">Social Media Management</div>
-      <div class="service-tag">Instagram & Facebook Growth</div>
-      <div class="service-tag">Professional Reels & Video Editing</div>
-      <div class="service-tag">Graphic Design & Motion Graphics</div>
-      <div class="service-tag">AI Content Creation</div>
-      <div class="service-tag">Meta Ads (Facebook & Instagram)</div>
-      <div class="service-tag">Personal Branding</div>
-      <div class="service-tag">Website Development</div>
-      <div class="service-tag">WhatsApp Marketing</div>
-      <div class="service-tag">Political Campaign Management</div>
-    </div>
-
-    <div class="grid-2">
+    <div class="page-content">
       <div>
         <div class="section-header">
-          <span class="section-tag">— 04</span>
-          <h2 class="section-title">Why Businesses Choose Us</h2>
+          <span class="section-tag">— 03</span>
+          <h2 class="section-title">Services We Offer</h2>
         </div>
-        <div class="card" style="margin-bottom: 6px;">
-          <div style="font-weight: 600; font-size: 12px;">✓ Creative & High-Quality Content</div>
+        <div class="services-grid">
+          <div class="service-tag">Social Media Management</div>
+          <div class="service-tag">Instagram & Facebook Growth</div>
+          <div class="service-tag">Professional Reels & Video Editing</div>
+          <div class="service-tag">Graphic Design & Motion Graphics</div>
+          <div class="service-tag">AI Content Creation</div>
+          <div class="service-tag">Meta Ads (Facebook & Instagram)</div>
+          <div class="service-tag">Personal Branding</div>
+          <div class="service-tag">Website Development</div>
+          <div class="service-tag">WhatsApp Marketing</div>
+          <div class="service-tag">Political Campaign Management</div>
         </div>
-        <div class="card" style="margin-bottom: 6px;">
-          <div style="font-weight: 600; font-size: 12px;">✓ Dedicated Marketing Team</div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <div class="section-header">
+            <span class="section-tag">— 04</span>
+            <h2 class="section-title">Why Businesses Choose Us</h2>
+          </div>
+          <div class="card" style="margin-bottom: 7px;">
+            <div style="font-weight: 600; font-size: 12.5px;">✓ Creative & High-Quality Content</div>
+          </div>
+          <div class="card" style="margin-bottom: 7px;">
+            <div style="font-weight: 600; font-size: 12.5px;">✓ Dedicated Marketing Team</div>
+          </div>
+          <div class="card" style="margin-bottom: 7px;">
+            <div style="font-weight: 600; font-size: 12.5px;">✓ AI-Powered Content Solutions</div>
+          </div>
+          <div class="card" style="margin-bottom: 7px;">
+            <div style="font-weight: 600; font-size: 12.5px;">✓ Monthly Growth & Performance Reports</div>
+          </div>
+          <div class="card">
+            <div style="font-weight: 600; font-size: 12.5px;">✓ Affordable Packages for Every Business</div>
+          </div>
         </div>
-        <div class="card" style="margin-bottom: 6px;">
-          <div style="font-weight: 600; font-size: 12px;">✓ AI-Powered Content Solutions</div>
-        </div>
-        <div class="card" style="margin-bottom: 6px;">
-          <div style="font-weight: 600; font-size: 12px;">✓ Monthly Growth & Performance Reports</div>
-        </div>
-        <div class="card">
-          <div style="font-weight: 600; font-size: 12px;">✓ Affordable Packages for Every Business</div>
+
+        <div>
+          <div class="section-header">
+            <span class="section-tag">— 05</span>
+            <h2 class="section-title">Partner Benefits</h2>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-bullet">✓</div>
+            <div><strong>Attractive Commission</strong> on every successful referral.</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-bullet">✓</div>
+            <div><strong>Bonus Rewards</strong> for long-term retained clients.</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-bullet">✓</div>
+            <div><strong>Unlimited Opportunities</strong> with no earning caps.</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-bullet">✓</div>
+            <div><strong>Dedicated Support</strong> & ready marketing materials.</div>
+          </div>
         </div>
       </div>
 
       <div>
         <div class="section-header">
-          <span class="section-tag">— 05</span>
-          <h2 class="section-title">Partner Benefits</h2>
+          <span class="section-tag">— 06</span>
+          <h2 class="section-title">Terms & Conditions</h2>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-bullet">✓</div>
-          <div><strong>Attractive Commission</strong> on every successful referral.</div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-bullet">✓</div>
-          <div><strong>Bonus Rewards</strong> for long-term retained clients.</div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-bullet">✓</div>
-          <div><strong>Unlimited Opportunities</strong> with no earning caps.</div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-bullet">✓</div>
-          <div><strong>Dedicated Support</strong> & ready marketing materials.</div>
+        <div class="card-dark">
+          <div style="font-size: 11.5px; line-height: 1.55; color: rgba(249,248,243,0.85);">
+            • Commission is paid only after the client's first successful payment.<br />
+            • The referred business must be a new client of Viral Flux Media.<br />
+            • There is no limit to the number of referrals you can make.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="section-header" style="margin-top: 8px;">
-      <span class="section-tag">— 06</span>
-      <h2 class="section-title">Terms & Conditions</h2>
-    </div>
-    <div class="card-dark" style="margin-bottom: 10px;">
-      <div style="font-size: 11px; line-height: 1.5; color: rgba(249,248,243,0.85);">
-        • Commission is paid only after the client's first successful payment.<br />
-        • The referred business must be a new client of Viral Flux Media.<br />
-        • There is no limit to the number of referrals you can make.
-      </div>
-    </div>
-
-    <div class="contact-footer">
-      <div class="contact-left">
-        <h4>Let's Grow Together!</h4>
-        <p>Become a Viral Flux Media Growth Partner Today at <a href="https://get.viralfluxmedia.in/" style="color: #c8f542; text-decoration: underline;">get.viralfluxmedia.in</a></p>
-      </div>
-      <div class="phone-actions">
-        <a href="tel:8108181650" class="phone-btn">📞 8108181650</a>
-        <a href="tel:8108181651" class="phone-btn">📞 8108181651</a>
+      <div class="contact-footer">
+        <div class="contact-left">
+          <h4>Let's Grow Together!</h4>
+          <p>Become a Viral Flux Media Growth Partner Today at <a href="https://get.viralfluxmedia.in/" style="color: #c8f542; text-decoration: underline;">get.viralfluxmedia.in</a></p>
+        </div>
+        <div class="phone-actions">
+          <a href="tel:8108181650" class="phone-btn">📞 8108181650</a>
+          <a href="tel:8108181651" class="phone-btn">📞 8108181651</a>
+        </div>
       </div>
     </div>
   </div>
