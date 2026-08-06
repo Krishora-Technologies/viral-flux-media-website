@@ -1,11 +1,47 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { Phone, ArrowRight, CheckCircle2, Download, Sparkles, UserCheck, Briefcase, Zap, ShieldCheck } from "lucide-react";
+
+// Inline SVG Icon Helper Components
+const PhoneIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+  </svg>
+);
+
+const ArrowRightIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+);
+
+const CheckCircleIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+);
+
+const DownloadIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+  </svg>
+);
+
+const SparklesIcon = ({ className = "w-3.5 h-3.5" }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+  </svg>
+);
+
+const ShieldCheckIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+  </svg>
+);
 
 export default function GrowthPartnerProgramPage() {
   return (
@@ -27,7 +63,7 @@ export default function GrowthPartnerProgramPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-lime/40 bg-lime/10 px-4 py-1.5 text-xs font-mono-label text-lime-800 font-semibold mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-lime-700" /> Viral Flux Media Growth Partner Program
+              <SparklesIcon className="w-3.5 h-3.5 text-lime-700" /> Viral Flux Media Growth Partner Program
             </div>
 
             <h1 className="font-display text-5xl md:text-8xl font-light leading-[0.92] max-w-5xl">
@@ -45,7 +81,7 @@ export default function GrowthPartnerProgramPage() {
                 className="inline-flex items-center gap-3 rounded-full bg-lime text-ink px-8 py-4 font-mono-label font-bold text-sm hover:scale-105 transition-all shadow-lg hover:shadow-lime/30"
               >
                 <span>Apply as Partner Now</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRightIcon className="w-4 h-4" />
               </a>
 
               <a
@@ -53,7 +89,7 @@ export default function GrowthPartnerProgramPage() {
                 download="Viral_Flux_Partner_Program.pdf"
                 className="inline-flex items-center gap-3 rounded-full bg-ink text-cream px-8 py-4 font-mono-label text-sm hover:bg-cream hover:text-ink transition-colors border border-ink"
               >
-                <Download className="w-4 h-4 text-lime" />
+                <DownloadIcon className="w-4 h-4 text-lime" />
                 <span>Download Official Brochure PDF</span>
               </a>
             </div>
@@ -62,7 +98,7 @@ export default function GrowthPartnerProgramPage() {
             <div className="mt-12 p-6 rounded-2xl border border-ink/10 bg-paper/60 flex flex-col sm:flex-row items-center justify-between gap-6 max-w-3xl">
               <div className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-lime text-ink flex items-center justify-center font-bold shrink-0">
-                  <Phone className="w-5 h-5" />
+                  <PhoneIcon className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="font-display text-lg font-light">Have questions? Speak to our team</div>
@@ -141,19 +177,16 @@ export default function GrowthPartnerProgramPage() {
                 step: "Step 01",
                 title: "Refer a Business",
                 desc: "Share your unique referral link or introduce a business owner directly to our growth team.",
-                icon: UserCheck,
               },
               {
                 step: "Step 02",
                 title: "We Do the Work",
                 desc: "Our team handles strategy, content creation, social media management, ads, and client onboarding.",
-                icon: Briefcase,
               },
               {
                 step: "Step 03",
                 title: "Earn Commission",
                 desc: "Once the client signs the agreement and completes payment, your commission is instantly released.",
-                icon: Zap,
               },
             ].map((item, idx) => (
               <motion.div
@@ -226,7 +259,7 @@ export default function GrowthPartnerProgramPage() {
                   "Affordable Packages for Every Business",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 p-4 rounded-xl border border-ink/10 bg-cream">
-                    <CheckCircle2 className="w-5 h-5 text-lime-700 shrink-0" />
+                    <CheckCircleIcon className="w-5 h-5 text-lime-700 shrink-0" />
                     <span className="font-medium text-sm">{item}</span>
                   </div>
                 ))}
@@ -248,7 +281,7 @@ export default function GrowthPartnerProgramPage() {
                   "No Registration Fee • No Investment Required",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 p-4 rounded-xl border border-lime/30 bg-lime/10">
-                    <ShieldCheck className="w-5 h-5 text-lime-800 shrink-0" />
+                    <ShieldCheckIcon className="w-5 h-5 text-lime-800 shrink-0" />
                     <span className="font-semibold text-sm text-ink">{item}</span>
                   </div>
                 ))}
@@ -274,21 +307,21 @@ export default function GrowthPartnerProgramPage() {
               className="inline-flex items-center gap-3 rounded-full bg-ink text-cream px-10 py-5 font-mono-label hover:bg-cream hover:text-ink transition-colors font-semibold text-sm shadow-xl"
             >
               <span>Apply as Partner Now</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRightIcon className="w-4 h-4" />
             </a>
 
             <a
               href="tel:8108181650"
               className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-8 py-5 font-mono-label text-sm font-bold hover:bg-ink hover:text-lime transition-all"
             >
-              <Phone className="w-4 h-4" /> Call 8108181650
+              <PhoneIcon className="w-4 h-4" /> Call 8108181650
             </a>
 
             <a
               href="tel:8108181651"
               className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-8 py-5 font-mono-label text-sm font-bold hover:bg-ink hover:text-lime transition-all"
             >
-              <Phone className="w-4 h-4" /> Call 8108181651
+              <PhoneIcon className="w-4 h-4" /> Call 8108181651
             </a>
           </div>
         </div>
