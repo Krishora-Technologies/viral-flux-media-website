@@ -283,7 +283,7 @@ export function AppInterface({ onClose }: { onClose?: () => void }) {
                 <input
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="Maya Chen"
+                  placeholder="Omkar"
                   maxLength={80}
                   className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-ink/30"
                 />
