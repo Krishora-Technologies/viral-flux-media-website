@@ -17,10 +17,13 @@ export function Nav() {
         </Link>
         <nav className="hidden gap-10 md:flex">
           {["Services", "Process", "Studio"].map((l) => (
-            <a key={l} href={`#${l.toLowerCase()}`} className="font-mono-label text-cream hover:text-lime transition-colors">
+            <a key={l} href={`/#${l.toLowerCase()}`} className="font-mono-label text-cream hover:text-lime transition-colors">
               {l}
             </a>
           ))}
+          <Link href="/program" className="font-mono-label text-lime hover:underline font-semibold">
+            Partner Program ✦
+          </Link>
         </nav>
         <button
           onClick={() => {
