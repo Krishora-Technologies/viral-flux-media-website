@@ -66,6 +66,17 @@ export function Hero() {
             </p>
 
             <div className="mt-5 md:mt-10 flex flex-wrap gap-3">
+              <a href="https://get.viralfluxmedia.in/">
+                <ActionButton 
+                  active={mode === "viral"} 
+                  onClick={() => {
+                    handleClick("viral");
+                  }} 
+                  label="Partner Program" 
+                  sub="earn up to 15%" 
+                  variant="lime" 
+                />
+              </a>
               <ActionButton 
                 active={mode === "grow"} 
                 onClick={() => {
@@ -74,10 +85,6 @@ export function Hero() {
                   if (inquirySection) {
                     const rect = inquirySection.getBoundingClientRect();
                     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    // We want p ~ 0.65. 
-                    // p is from "start end" to "end end" (distance: height + innerHeight)
-                    // At p=0, scroll is sectionTop - innerHeight
-                    // At p=0.65, scroll is (sectionTop - innerHeight) + 0.65 * (height + innerHeight)
                     const targetScroll = (scrollTop + rect.top - window.innerHeight) + rect.height * 0.7;
                     
                     window.scrollTo({
@@ -86,20 +93,10 @@ export function Hero() {
                     });
                   }
                 }} 
-                label="Grow" 
-                sub="organic engine" 
+                label="Grow Brand" 
+                sub="organic content engine" 
+                variant="dark" 
               />
-              <a href="https://get.viralfluxmedia.in/">
-                <ActionButton 
-                  active={mode === "viral"} 
-                  onClick={() => {
-                    handleClick("viral");
-                  }} 
-                  label="Viral Flux Media" 
-                  sub="full studio" 
-                  variant="dark" 
-                />
-              </a>
             </div>
           </motion.div>
 
