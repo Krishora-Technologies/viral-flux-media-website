@@ -73,7 +73,7 @@ export function Hero() {
                     handleClick("viral");
                   }} 
                   label="Partner Program" 
-                  sub="earn up to 15%" 
+                  sub="earn 20% flat" 
                   variant="lime" 
                 />
               </a>

@@ -117,13 +117,13 @@ export default function GrowthPartnerProgramPage() {
               {[
                 {
                   step: "Step 1",
-                  title: "Refer a Business",
-                  desc: "Share your unique referral link or introduce a business owner directly to our growth team.",
+                  title: "Convince & Refer",
+                  desc: "Pitch the vision and convince interested business owners, then connect them directly with our growth team.",
                 },
                 {
                   step: "Step 2",
-                  title: "We Do the Work",
-                  desc: "Our team handles strategy, content creation, social media management, ads, and client onboarding.",
+                  title: "We Finalize & Execute",
+                  desc: "Our team handles proposals, contract signing, content creation, social media management, ads, and full campaign execution.",
                 },
                 {
                   step: "Step 3",
