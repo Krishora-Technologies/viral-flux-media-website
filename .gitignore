@@ -1,6 +1,9 @@
-# Next.js
+# Next.js & Cloudflare
 .next/
 out/
+.open-next/
+.wrangler/
+.dev.vars
 
 # Logs
 logs
