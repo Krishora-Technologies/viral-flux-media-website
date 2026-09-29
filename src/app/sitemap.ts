@@ -3,14 +3,24 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.viralfluxmedia.in";
 
-  // In a real app, you might fetch dynamic routes from an API or CMS
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
+      changeFrequency: "weekly",
+      priority: 1.0,
     },
-    // Add more routes as needed
+    {
+      url: `${baseUrl}/program`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/launch`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 }

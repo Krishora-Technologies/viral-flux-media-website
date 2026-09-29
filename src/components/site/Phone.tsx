@@ -13,6 +13,14 @@ import avatarBefore from "@/assets/avatar-before.jpg";
 import avatarAfter from "@/assets/avatar-after.jpg";
 
 const posts = [post1, post2, post3, post4, post5, post6];
+export const postLinks = [
+  "https://www.instagram.com/viralfluxmedia/p/Dc-QaVBjfcQ/",
+  "https://www.instagram.com/p/DcAdWLoDK2W/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/p/Db2KKdeCEDv/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/p/DbzlXKljpwz/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/p/Dao3QVdMcoj/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+  "https://www.instagram.com/p/DY6QXJQMg0Y/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+];
 const MotionImage = motion.create(Image);
 
 interface PhoneProps {
@@ -79,7 +87,7 @@ export function Phone({ progress }: PhoneProps) {
               >
                 {/* IG header */}
                 <div className="flex items-center justify-between px-4 pt-3">
-                  <div className="font-display text-base italic">viralfluxmedia</div>
+                  <a href="https://www.instagram.com/viralfluxmedia/" target="_blank" rel="noopener noreferrer" className="font-display text-base italic hover:underline">viralfluxmedia</a>
                   <div className="flex gap-3 text-ink">
                     <span className="text-lg">+</span>
                     <span className="text-lg">≡</span>
@@ -93,9 +101,9 @@ export function Phone({ progress }: PhoneProps) {
                       <motion.div style={{ opacity: beforeOpacity }} className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500 font-display font-bold text-[10px]">
                         vfm.
                       </motion.div>
-                      <MotionImage style={{ opacity: afterOpacity }} src="/pfp.jpeg" alt="" className="object-cover" fill unoptimized />
+                      <MotionImage style={{ opacity: afterOpacity }} src="/pfp.jpeg" alt="Viral Flux Media Profile Avatar" className="object-cover" fill unoptimized />
                     </div>
-                    <MotionImage style={{ opacity: afterOpacity }} src="/pfp-ring.png" alt="" className="absolute inset-0 object-contain z-10 pointer-events-none scale-[1.15]" fill unoptimized />
+                    <MotionImage style={{ opacity: afterOpacity }} src="/pfp-ring.png" alt="Viral Flux Media Verified Ring" className="absolute inset-0 object-contain z-10 pointer-events-none scale-[1.15]" fill unoptimized />
                   </div>
                   <div className="flex flex-1 justify-around text-center">
                     <Stat label="posts" from={12} to={248} progress={progress} />
@@ -134,15 +142,29 @@ export function Phone({ progress }: PhoneProps) {
                 {/* Grid */}
                 <div className="mt-4 grid grid-cols-3 gap-[2px] px-[2px]">
                   {posts.map((p, i) => (
-                    <motion.div
+                    <motion.a
                       key={i}
+                      href={postLinks[i] || "https://www.instagram.com/viralfluxmedia/"}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 + i * 0.05, duration: 0.6 }}
-                      className="relative aspect-square overflow-hidden"
+                      className="relative aspect-square overflow-hidden block group cursor-pointer"
+                      title="View on Instagram"
                     >
-                      <Image src={p} alt="" className="object-cover" loading="lazy" fill sizes="(max-width: 768px) 33vw, 100px" />
-                    </motion.div>
+                      <Image
+                        src={p}
+                        alt={`Viral Flux Media Campaign Showcase ${i + 1}`}
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        fill
+                        sizes="(max-width: 768px) 33vw, 100px"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 text-white text-xs drop-shadow">↗</span>
+                      </div>
+                    </motion.a>
                   ))}
                 </div>
 

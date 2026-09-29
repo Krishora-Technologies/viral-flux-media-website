@@ -26,14 +26,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.viralfluxmedia.in",
   },
-  title: "Viral Flux Media | Social Media Marketing Agency & Digital Marketing Experts for Viral Growth",
-  description: "Viral Flux Media is a results-driven social media marketing and digital marketing agency specializing in cinematic content, viral campaigns, and performance strategies. We help brands increase reach, engagement, and conversions through data-backed growth solutions.",
-  keywords: ["Social Media Marketing", "Digital Marketing Agency", "Viral Growth", "Cinematic Content", "Viral Campaigns", "Performance Marketing", "Social Media Management", "Content Creation", "Brand Growth", "Viralfluxmedia", "Viral Flixmedia", "Viral Flix media", "ViralFlux Media", "Viral Flux Media"],
+  title: "Viral Flux Media | Social Media Marketing Agency & Viral Growth Studio",
+  description: "Viral Flux Media is a results-driven social media marketing and digital growth agency specializing in cinematic content, viral campaigns, and performance strategies for brands worldwide.",
+  keywords: [
+    "Social Media Marketing",
+    "Digital Marketing Agency",
+    "Viral Growth",
+    "Cinematic Content",
+    "Viral Campaigns",
+    "Performance Marketing",
+    "Social Media Management",
+    "Content Creation",
+    "Brand Growth",
+    "Viral Flux Media",
+    "Viralfluxmedia",
+    "ViralFlux Media",
+    "Social Media Agency India",
+    "Digital Marketing Agency US",
+    "Viral Marketing Agency UK"
+  ],
   authors: [{ name: "Viral Flux Media" }],
   creator: "Viral Flux Media",
   publisher: "Viral Flux Media",
   openGraph: {
-    title: "Viral Flux Media Social Media & Digital Marketing That Drives Viral Growth",
+    title: "Viral Flux Media | Social Media & Digital Marketing That Drives Viral Growth",
     description: "Beyond basic marketing. Viral Flux Media delivers high-impact social media and digital marketing with cinematic content, scroll-stopping creatives, and proven growth strategies that turn brands into attention magnets.",
     url: "https://www.viralfluxmedia.in",
     siteName: "Viral Flux Media",
@@ -50,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Viral Flux Media Social Media & Digital Marketing That Drives Viral Growth",
+    title: "Viral Flux Media | Social Media & Digital Marketing That Drives Viral Growth",
     description: "Beyond basic marketing. Viral Flux Media delivers high-impact social media and digital marketing with cinematic content, scroll-stopping creatives, and proven growth strategies that turn brands into attention magnets.",
     images: ["/og-image.jpg"],
   },
@@ -107,15 +123,14 @@ export default function RootLayout({
             __html: JSON.stringify([
               {
                 "@context": "https://schema.org",
-                "@type": "Organization",
+                "@type": ["Organization", "ProfessionalService"],
                 "name": "Viral Flux Media",
                 "url": "https://www.viralfluxmedia.in",
+                "email": "viralfluxmedia@gmail.com",
                 "logo": "https://www.viralfluxmedia.in/og-image.jpg",
-                "description": "Viral Flux Media is a results-driven social media marketing and digital marketing agency specializing in cinematic content, viral campaigns, and performance strategies.",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressCountry": "Global"
-                },
+                "description": "Viral Flux Media is a results-driven social media marketing and digital growth agency specializing in cinematic content, viral campaigns, and performance strategies for brands worldwide.",
+                "disambiguatingDescription": "Viral Flux Media is an independent creative social media and performance marketing agency. It is not affiliated with any online earning platform, task-based scheme, or viralflux.com.ng.",
+                "areaServed": "Worldwide",
                 "sameAs": [
                   "https://instagram.com/viralfluxmedia",
                   "https://linkedin.com/company/viralfluxmedia"
@@ -129,7 +144,7 @@ export default function RootLayout({
                   "@type": "Organization",
                   "name": "Viral Flux Media"
                 },
-                "description": "High-impact social media and digital marketing with cinematic content and proven growth strategies.",
+                "description": "High-impact social media and digital marketing with cinematic content and proven growth strategies for brands worldwide.",
                 "areaServed": "Worldwide",
                 "hasOfferCatalog": {
                   "@type": "OfferCatalog",

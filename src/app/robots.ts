@@ -6,18 +6,14 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/private/", "/api/"],
+        disallow: ["/api/"],
       },
       {
-        userAgent: ["GPTBot", "Claude-Bot", "PerplexityBot"],
+        userAgent: ["GPTBot", "Claude-Bot", "PerplexityBot", "Applebot-Extended"],
         allow: "/",
-      },
-      {
-        userAgent: "CCBot",
-        disallow: "/",
+        disallow: ["/api/"],
       },
     ],
     sitemap: "https://www.viralfluxmedia.in/sitemap.xml",
   };
 }
-

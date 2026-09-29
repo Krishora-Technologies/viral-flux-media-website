@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import { AppInterface } from "./Inquiry";
+import { postLinks } from "./Phone";
 import avatarBefore from "@/assets/avatar-before.jpg";
 import avatarAfter from "@/assets/avatar-after.jpg";
 import post1 from "@/assets/post-1.jpg";
@@ -263,7 +264,7 @@ function NewBio({
     <div className="flex h-full flex-col px-5 pointer-events-auto">
       {/* Top Bar */}
       <div className="flex items-center justify-between mb-4 mt-2">
-        <span className="text-xl font-bold font-display tracking-tight text-ink">viralfluxmedia</span>
+        <a href="https://www.instagram.com/viralfluxmedia/" target="_blank" rel="noopener noreferrer" className="text-xl font-bold font-display tracking-tight text-ink hover:underline">viralfluxmedia</a>
         <div className="flex gap-4">
           <div className="w-5 h-5 rounded-sm border border-ink/20 flex items-center justify-center">
              <div className="w-3 h-[2px] bg-ink"/>
@@ -280,9 +281,9 @@ function NewBio({
       <div className="flex items-center gap-4 mb-4">
         <div className="relative h-16 w-16 shrink-0">
            <div className="absolute inset-0 rounded-full overflow-hidden bg-ink/10">
-             <Image src="/pfp.jpeg" alt="Avatar" className="object-cover" fill unoptimized />
+             <Image src="/pfp.jpeg" alt="Viral Flux Media Profile Avatar" className="object-cover" fill unoptimized />
            </div>
-           <Image src="/pfp-ring.png" alt="Ring" className="absolute inset-0 z-10 object-contain pointer-events-none scale-[1.15]" fill unoptimized />
+           <Image src="/pfp-ring.png" alt="Viral Flux Media Verified Ring" className="absolute inset-0 z-10 object-contain pointer-events-none scale-[1.15]" fill unoptimized />
         </div>
         <div className="flex flex-1 justify-around text-center text-sm text-ink">
           <div>
@@ -331,10 +332,25 @@ function NewBio({
       {/* Grid */}
       <div className="grid grid-cols-3 gap-[2px]">
         {posts.map((img, i) => (
-          <div key={i} className="aspect-[4/5] bg-ink/5 relative overflow-hidden group">
-            <Image src={img} alt="" className="object-cover object-top transition-transform duration-500 group-hover:scale-105" fill sizes="(max-width: 768px) 33vw, 150px" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-          </div>
+          <a
+            key={i}
+            href={postLinks[i] || "https://www.instagram.com/viralfluxmedia/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="aspect-[4/5] bg-ink/5 relative overflow-hidden group block cursor-pointer"
+            title="View on Instagram"
+          >
+            <Image
+              src={img}
+              alt={`Viral Flux Media Content Case Study ${i + 1}`}
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              fill
+              sizes="(max-width: 768px) 33vw, 150px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100 flex items-end justify-end p-1.5">
+              <span className="text-white text-[10px] drop-shadow font-mono">↗</span>
+            </div>
+          </a>
         ))}
       </div>
     </div>

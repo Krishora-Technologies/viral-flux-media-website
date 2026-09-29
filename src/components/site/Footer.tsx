@@ -1,4 +1,5 @@
 "use client";
+
 export function Footer() {
   return (
     <footer className="bg-ink text-cream py-16">
@@ -9,6 +10,11 @@ export function Footer() {
             <p className="font-mono-label text-cream/50 mt-4 leading-relaxed">
               Social media studio<br />Content · Influencer · Strategy
             </p>
+            <div className="mt-4">
+              <a href="mailto:viralfluxmedia@gmail.com" className="font-mono-label text-sm text-cream/70 hover:text-lime transition-colors">
+                viralfluxmedia@gmail.com
+              </a>
+            </div>
           </div>
           {[
             { h: "Studio", l: ["About", "Careers", "Press"] },
