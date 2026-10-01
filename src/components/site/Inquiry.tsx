@@ -283,7 +283,7 @@ export function AppInterface({ onClose }: { onClose?: () => void }) {
                 <input
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="Omkar"
+                  placeholder="Rohan Sharma"
                   maxLength={80}
                   className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-ink/30"
                 />
@@ -317,7 +317,7 @@ export function AppInterface({ onClose }: { onClose?: () => void }) {
                   type="email"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="omkar@viralfluxmedia.in"
+                  placeholder="rohan@viralfluxmedia.in"
                   maxLength={100}
                   className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-ink/30"
                 />
