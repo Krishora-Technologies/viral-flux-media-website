@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viral Flux Media - Salon Results & Growth Case Studies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      background-color: #0f1011;
+      color: #0f1011;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Page Container - Exactly 210mm x 297mm */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      padding: 10mm 13mm 10mm 13mm;
+      background: #fbfbf6;
+      position: relative;
+      page-break-after: always;
+      page-break-inside: avoid;
+      overflow: hidden;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .page:last-of-type {
+      page-break-after: avoid;
+    }
+
+    /* Content Flow Container to fill page evenly */
+    .page-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid rgba(15, 16, 17, 0.15);
+      margin-bottom: 10px;
+    }
+    .logo-wrapper {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: #0f1011;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .logo span {
+      color: #8bb309;
+    }
+    .tagline-sub {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #666;
+      font-weight: 600;
+    }
+    .badge {
+      background: #c8f542;
+      color: #0f1011;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #0f1011;
+    }
+
+    /* Hero Case Card */
+    .hero-card {
+      background: #0f1011;
+      color: #fbfbf6;
+      padding: 14px 18px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .hero-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .hero-tag {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #c8f542;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .hero-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 29px;
+      font-weight: 400;
+      line-height: 1.08;
+      margin-bottom: 5px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: #c8f542;
+    }
+    .hero-desc {
+      color: rgba(251, 251, 246, 0.82);
+      font-size: 11px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    /* Stats Ribbon */
+    .stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 8px 14px;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: #c8f542;
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 9px;
+      color: rgba(251, 251, 246, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    /* Visual Showcase Section - Side by Side */
+    .showcase-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .showcase-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 16, 17, 0.1);
+      border-radius: 12px;
+      padding: 9px 10px 10px 10px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .showcase-card.highlight {
+      border: 1.5px solid #c8f542;
+      box-shadow: 0 4px 18px rgba(200, 245, 66, 0.2);
+    }
+    .card-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+    }
+    .pill {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .pill-before {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .pill-after {
+      background: #c8f542;
+      color: #0f1011;
+    }
+    .metrics-tag {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0f1011;
+    }
+
+    /* Full Image Phone Frame - Sized to fill beautifully without cropping */
+    .full-image-frame {
+      width: 100%;
+      height: 520px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #222;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    }
+    .full-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #000;
+    }
+
+    /* Bottom Tags Under Images */
+    .card-footer-tags {
+      margin-top: 7px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 9px;
+      line-height: 1.3;
+      color: #333;
+    }
+    .tag-icon {
+      font-weight: 700;
+      font-size: 9.5px;
+      flex-shrink: 0;
+    }
+    .tag-icon.red { color: #dc2626; }
+    .tag-icon.green { color: #16a34a; }
+
+    /* Strategy 3-Col Bar */
+    .strategy-section {
+      background: #ffffff;
+      border: 1px solid rgba(15, 16, 17, 0.08);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+    .strategy-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #666;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .strat-col {
+      border-left: 2px solid #c8f542;
+      padding-left: 8px;
+    }
+    .strat-col-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      color: #0f1011;
+      margin-bottom: 2px;
+    }
+    .strat-col-text {
+      font-size: 9px;
+      line-height: 1.3;
+      color: #555;
+    }
+
+    /* Bottom Feature Highlights Bar on Page 1 */
+    .bottom-highlight-bar {
+      background: #0f1011;
+      color: #fbfbf6;
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .bottom-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 9px;
+      color: rgba(251, 251, 246, 0.85);
+    }
+    .bottom-highlight-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c8f542;
+    }
+
+    /* CTA Card on Page 2 */
+    .cta-card {
+      background: #0f1011;
+      color: #fbfbf6;
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .cta-left h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 3px;
+    }
+    .cta-left h3 em {
+      font-style: italic;
+      color: #c8f542;
+    }
+    .cta-left p {
+      font-size: 9.5px;
+      color: rgba(251, 251, 246, 0.75);
+    }
+    .cta-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+    .cta-btn {
+      background: #c8f542;
+      color: #0f1011;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 10.5px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .cta-contact {
+      font-size: 8.5px;
+      color: rgba(251, 251, 246, 0.6);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1px solid rgba(15, 16, 17, 0.12);
+      font-size: 8.5px;
+      color: #777;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .footer-brand {
+      font-weight: 600;
+      color: #0f1011;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1: YLG SALON CASE STUDY ==================== -->
+  <div class="page">
+    <div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Salon Growth & Social Engineering</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Salon Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Salon Case Study • YLG Salon (@ylg_salon)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">50+ SALON CHAIN</div>
+        </div>
+        <h1 class="hero-title">YLG Salon: <em>+346% Growth</em> from 2.6K to 11.6K Followers</h1>
+        <p class="hero-desc">
+          How Viral Flux Media overhauled the digital presence of <strong>YLG Salon</strong> across Bangalore, Chennai, Gurugram & Mysore—transitioning from unorganized static posts to signature luxury reel franchises that boosted audience engagement and drove high appointment footfall.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+346%</span>
+            <span class="stat-lbl">Follower Growth (2.6K → 11.6K)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+9,000</span>
+            <span class="stat-lbl">Net Organic Followers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">50+ Salons</span>
+            <span class="stat-lbl">Multi-City Chain Impact</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Full Image Showcase -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD (FULL SCREENSHOT) -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before: YLG Salon</span>
+            <span class="metrics-tag">2.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/ylg-before.png" alt="YLG Salon Full Screenshot Before" />
+          </div>
+          <div class="card-footer-tags">
+            <div class="tag-row"><span class="tag-icon red">✕</span> <strong>Stagnant Feed:</strong> 2.6K followers across 1,357 posts with flat engagement.</div>
+            <div class="tag-row"><span class="tag-icon red">✕</span> <strong>Inconsistent Visuals:</strong> Raw phone shots lacking premium salon prestige.</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD (FULL SCREENSHOT) -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After: YLG Salon (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">11.6K Followers (+346%)</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/ylg-after.png" alt="YLG Salon Full Screenshot After" />
+          </div>
+          <div class="card-footer-tags">
+            <div class="tag-row"><span class="tag-icon green">✓</span> <strong>11.6K Active Followers:</strong> High-intent organic audience across South & North metros.</div>
+            <div class="tag-row"><span class="tag-icon green">✓</span> <strong>Signature Pillars:</strong> "Hairstylist Core", "Make Over", "Show Reel", "Hair Spa".</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy 3-Col Bar -->
+      <div class="strategy-section">
+        <div class="strategy-title">Strategic Growth Levers for YLG Salon</div>
+        <div class="strategy-grid">
+          <div class="strat-col">
+            <div class="strat-col-title">1. Signature Brand Aesthetics</div>
+            <div class="strat-col-text">Unified typography, warm salon studio lighting, and cohesive editorial cover art across all reels.</div>
+          </div>
+          <div class="strat-col">
+            <div class="strat-col-title">2. Transformation Formats</div>
+            <div class="strat-col-text">Engineered short-form haircut and styling transformations that capture high algorithmic retention.</div>
+          </div>
+          <div class="strat-col">
+            <div class="strat-col-title">3. Frictionless Appointment Bio</div>
+            <div class="strat-col-text">Revamped bio architecture and highlights with direct appointment booking links driving real store visits.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Feature Highlights Bar -->
+      <div class="bottom-highlight-bar">
+        <div class="bottom-highlight-item"><span class="bottom-highlight-dot"></span> <strong>Format:</strong> 9:16 Short-Form Reels</div>
+        <div class="bottom-highlight-item"><span class="bottom-highlight-dot"></span> <strong>Focus:</strong> Footfall & Chair Appointments</div>
+        <div class="bottom-highlight-item"><span class="bottom-highlight-dot"></span> <strong>Result:</strong> +9K Followers & Authority</div>
+        <div class="bottom-highlight-item"><span class="bottom-highlight-dot"></span> <strong>Studio:</strong> Viral Flux Media</div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Salon Case Study Series: YLG Salon</div>
+      <div>Page 01 of 02</div>
+    </footer>
+  </div>
+
+
+  <!-- ==================== PAGE 2: NAMASTEY SALON CASE STUDY ==================== -->
+  <div class="page">
+    <div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Salon Growth & Social Engineering</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Salon Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Salon Case Study • Namastey Salon & Spa (@namasteysalon)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">MUMBAI DESTINATION</div>
+        </div>
+        <h1 class="hero-title">Namastey Salon: <em>+379% Surge</em> to 20.6K & Meta Verified</h1>
+        <p class="hero-desc">
+          How Viral Flux Media positioned <strong>Namastey Salon & Spa</strong> as Mumbai's viral hair transformation hub, taking the account from 4.3K to 20.6K followers, securing official Meta verification, and powering a direct WhatsApp appointment engine.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+379%</span>
+            <span class="stat-lbl">Follower Surge (4.3K → 20.6K)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Verified</span>
+            <span class="stat-lbl">Official Meta Blue Badge Acquired</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+16.3K</span>
+            <span class="stat-lbl">High-Ticket Client Followers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Full Image Showcase -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD (FULL SCREENSHOT) -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before: Namastey Salon</span>
+            <span class="metrics-tag">4.3K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/namastey-before.png" alt="Namastey Salon Full Screenshot Before" />
+          </div>
+          <div class="card-footer-tags">
+            <div class="tag-row"><span class="tag-icon red">✕</span> <strong>Stagnant Reach:</strong> 4.3K followers with flat local viral distribution.</div>
+            <div class="tag-row"><span class="tag-icon red">✕</span> <strong>Unverified Profile:</strong> Missing industry authority validation and booking funnel.</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD (FULL SCREENSHOT) -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After: Namastey Salon (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">20.6K Followers (+379%)</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/namastey-after.png" alt="Namastey Salon Full Screenshot After" />
+          </div>
+          <div class="card-footer-tags">
+            <div class="tag-row"><span class="tag-icon green">✓</span> <strong>Official Blue Badge:</strong> Meta Verified profile building immediate high-ticket client trust.</div>
+            <div class="tag-row"><span class="tag-icon green">✓</span> <strong>Viral Pinned Transformations:</strong> "Cool Ash", "Iced Vanilla", "Balayage".</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy 3-Col Bar -->
+      <div class="strategy-section">
+        <div class="strategy-title">The Viral Flux Growth Playbook for Namastey Salon</div>
+        <div class="strategy-grid">
+          <div class="strat-col">
+            <div class="strat-col-title">1. High-Contrast Hair Hooks</div>
+            <div class="strat-col-text">Created dramatic "White to Ash" & balayage reveals that maximize watch-time and reel shareability.</div>
+          </div>
+          <div class="strat-col">
+            <div class="strat-col-title">2. 1-Tap WhatsApp Funnel</div>
+            <div class="strat-col-text">Implemented direct wa.me link architecture to convert reel viewers into instant high-ticket bookings.</div>
+          </div>
+          <div class="strat-col">
+            <div class="strat-col-title">3. Curated Social Proof</div>
+            <div class="strat-col-text">Structured 10K Celebration & treatment highlight stories to drive social validation and booking velocity.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call To Action Banner -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Ready to Scale Your <em>Salon or Clinic</em>?</h3>
+          <p>We turn local salons and beauty brands into high-revenue viral sensations with cinematic content.</p>
+        </div>
+        <div class="cta-right">
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+          <span class="cta-contact">viralfluxmedia@gmail.com • www.viralfluxmedia.in</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Salon Case Study Series: Namastey Salon & Spa</div>
+      <div>Page 02 of 02</div>
+    </footer>
+  </div>
+
+</body>
+</html>
