@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.viralfluxmedia.in",
   },
-  title: "Viral Flux Media | Social Media Marketing Agency & Viral Growth Studio",
-  description: "Viral Flux Media is a results-driven social media marketing and digital growth agency specializing in cinematic content, viral campaigns, and performance strategies for brands worldwide.",
+  title: "Viral Flux Media | Social Media & Viral Growth Agency",
+  description: "Viral Flux Media is a results-driven social media and digital marketing agency delivering cinematic content, viral campaigns, and rapid brand growth.",
   keywords: [
     "Social Media Marketing",
     "Digital Marketing Agency",
@@ -49,15 +49,15 @@ export const metadata: Metadata = {
   creator: "Viral Flux Media",
   publisher: "Viral Flux Media",
   openGraph: {
-    title: "Viral Flux Media | Social Media & Digital Marketing That Drives Viral Growth",
-    description: "Beyond basic marketing. Viral Flux Media delivers high-impact social media and digital marketing with cinematic content, scroll-stopping creatives, and proven growth strategies that turn brands into attention magnets.",
+    title: "Viral Flux Media | Social Media & Viral Growth Agency",
+    description: "High-impact social media marketing, cinematic content, and viral growth strategies that make brands impossible to ignore.",
     url: "https://www.viralfluxmedia.in",
     siteName: "Viral Flux Media",
     images: [
       {
         url: "/og-image.png",
-        width: 1024,
-        height: 375,
+        width: 1200,
+        height: 630,
         alt: "Viral Flux Media - We Make Brands Impossible to Ignore",
       },
     ],
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Viral Flux Media | Social Media & Digital Marketing That Drives Viral Growth",
-    description: "Beyond basic marketing. Viral Flux Media delivers high-impact social media and digital marketing with cinematic content, scroll-stopping creatives, and proven growth strategies that turn brands into attention magnets.",
+    title: "Viral Flux Media | Social Media & Viral Growth Agency",
+    description: "High-impact social media marketing, cinematic content, and viral growth strategies that make brands impossible to ignore.",
     images: ["/og-image.png"],
   },
   robots: {
