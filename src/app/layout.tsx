@@ -55,10 +55,10 @@ export const metadata: Metadata = {
     siteName: "Viral Flux Media",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Viral Flux Media - Social Growth, Engineered",
+        url: "/og-image.png",
+        width: 1024,
+        height: 375,
+        alt: "Viral Flux Media - We Make Brands Impossible to Ignore",
       },
     ],
     locale: "en_US",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Viral Flux Media | Social Media & Digital Marketing That Drives Viral Growth",
     description: "Beyond basic marketing. Viral Flux Media delivers high-impact social media and digital marketing with cinematic content, scroll-stopping creatives, and proven growth strategies that turn brands into attention magnets.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -127,7 +127,7 @@ export default function RootLayout({
                 "name": "Viral Flux Media",
                 "url": "https://www.viralfluxmedia.in",
                 "email": "viralfluxmedia@gmail.com",
-                "logo": "https://www.viralfluxmedia.in/og-image.jpg",
+                "logo": "https://www.viralfluxmedia.in/og-image.png",
                 "description": "Viral Flux Media is a results-driven social media marketing and digital growth agency specializing in cinematic content, viral campaigns, and performance strategies for brands worldwide.",
                 "disambiguatingDescription": "Viral Flux Media is an independent creative social media and performance marketing agency. It is not affiliated with any online earning platform, task-based scheme, or viralflux.com.ng.",
                 "areaServed": "Worldwide",

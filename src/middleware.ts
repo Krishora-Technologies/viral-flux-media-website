@@ -18,7 +18,6 @@ export function middleware(request: NextRequest) {
     // Block access to referral / earning documents for Nigerian and Ghanaian traffic
     if (
       pathname.startsWith("/program") ||
-      pathname.startsWith("/launch") ||
       pathname.toLowerCase().includes("partner_program")
     ) {
       return new NextResponse(
