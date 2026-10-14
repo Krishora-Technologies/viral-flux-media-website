@@ -1,0 +1,3059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viral Flux Media - Restaurants & Cafes Growth Case Studies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      background-color: #0f1011;
+      color: #0f1011;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Page Container - Exactly 210mm x 297mm */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      padding: 10mm 13mm 10mm 13mm;
+      background: #fbfbf6;
+      position: relative;
+      page-break-after: always;
+      page-break-inside: avoid;
+      overflow: hidden;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .page:last-of-type {
+      page-break-after: avoid;
+    }
+
+    /* Content Flow Container to fill page evenly */
+    .page-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid rgba(15, 16, 17, 0.12);
+      margin-bottom: 12px;
+    }
+    .logo-wrapper {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 30px;
+      font-weight: 400;
+      color: #0f1011;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .logo span {
+      color: #8bb309;
+    }
+    .tagline-sub {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #666;
+      font-weight: 600;
+    }
+    .badge {
+      background: #c8f542;
+      color: #0f1011;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #0f1011;
+    }
+
+    /* Hero Case Card - Minimal & Punchy */
+    .hero-card {
+      background: #0f1011;
+      color: #fbfbf6;
+      padding: 16px 20px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+    .hero-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .hero-tag {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #c8f542;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .hero-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 4px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: #c8f542;
+    }
+    .hero-desc {
+      color: rgba(251, 251, 246, 0.75);
+      font-size: 11.5px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    /* Big Bold Stats Ribbon */
+    .stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px 16px;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #c8f542;
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 9.5px;
+      color: rgba(251, 251, 246, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    /* Visual Showcase Section - Hero Focus */
+    .showcase-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .showcase-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 16, 17, 0.08);
+      border-radius: 14px;
+      padding: 10px 10px 10px 10px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .showcase-card.highlight {
+      border: 2px solid #c8f542;
+      box-shadow: 0 4px 20px rgba(200, 245, 66, 0.25);
+    }
+    .card-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .pill {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .pill-before {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .pill-after {
+      background: #c8f542;
+      color: #0f1011;
+    }
+    .metrics-tag {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f1011;
+    }
+
+    /* Full Image Phone Frame - Large & Uncropped */
+    .full-image-frame {
+      width: 100%;
+      height: 540px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #222;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    }
+    .full-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #000;
+    }
+
+    /* Concise Chips Under Images */
+    .card-chips {
+      margin-top: 8px;
+      display: flex;
+      gap: 6px;
+    }
+    .chip {
+      flex: 1;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 9px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .chip-red {
+      background: #fff1f2;
+      color: #b91c1c;
+      border: 1px solid #fecdd3;
+    }
+    .chip-green {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    /* Strategy 3-Pill Strip - Visual & Low Text */
+    .strategy-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .strat-pill-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 16, 17, 0.08);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .strat-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #c8f542;
+      color: #0f1011;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .strat-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .strat-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0f1011;
+    }
+    .strat-sub {
+      font-size: 9px;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    /* CTA Card on Page 2 */
+    .cta-card {
+      background: #0f1011;
+      color: #fbfbf6;
+      padding: 12px 18px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .cta-left h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+    .cta-left em {
+      font-style: italic;
+      color: #c8f542;
+    }
+    .cta-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cta-contact-text {
+      font-size: 9px;
+      color: rgba(251, 251, 246, 0.65);
+      font-family: 'Space Grotesk', sans-serif;
+      text-align: right;
+    }
+    .cta-btn {
+      background: #c8f542;
+      color: #0f1011;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 10.5px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1px solid rgba(15, 16, 17, 0.12);
+      font-size: 8.5px;
+      color: #777;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .footer-brand {
+      font-weight: 600;
+      color: #0f1011;
+    }
+  
+    /* Cover Page Specific Styling */
+    .page.cover-page {
+      background: #0f1011;
+      color: #fbfbf6;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 14mm 16mm 12mm 16mm;
+    }
+    .cover-top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(251, 251, 246, 0.15);
+    }
+    .cover-logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 38px;
+      font-weight: 400;
+      color: #fbfbf6;
+      letter-spacing: -0.5px;
+    }
+    .cover-logo span {
+      color: #c8f542;
+    }
+    .cover-tagline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #c8f542;
+      font-weight: 700;
+    }
+    .cover-hero {
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+    .cover-edition-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(200, 245, 66, 0.12);
+      border: 1px solid #c8f542;
+      color: #c8f542;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .cover-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 50px;
+      line-height: 1.02;
+      font-weight: 400;
+      color: #fbfbf6;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+    .cover-title em {
+      font-style: italic;
+      color: #c8f542;
+    }
+    .cover-desc {
+      font-size: 12.5px;
+      color: rgba(251, 251, 246, 0.75);
+      line-height: 1.5;
+      max-width: 90%;
+      margin-bottom: 16px;
+    }
+    .cover-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+    }
+    .cover-stat-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .cover-stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #c8f542;
+      line-height: 1;
+    }
+    .cover-stat-label {
+      font-size: 9px;
+      color: rgba(251, 251, 246, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .cover-index-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #c8f542;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cover-index-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .cover-index-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cover-index-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #c8f542;
+      color: #0f1011;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cover-index-text {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .cover-index-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cover-index-clients {
+      font-size: 8.5px;
+      color: rgba(251, 251, 246, 0.6);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cover-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid rgba(251, 251, 246, 0.15);
+      font-size: 8.5px;
+      color: rgba(251, 251, 246, 0.5);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .cover-bottom-bar strong {
+      color: #fbfbf6;
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <!-- ==================== PAGE 01: MASTER COVER & INDEX ==================== -->
+  <div class="page cover-page">
+    <div class="page-body" style="justify-content: space-between;">
+      
+      <!-- Cover Header -->
+      <header class="cover-top-header">
+        <div>
+          <div class="cover-logo">Viral Flux Media<span>.</span></div>
+          <div style="font-size: 9.5px; color: rgba(251, 251, 246, 0.6); font-family: 'Space Grotesk', sans-serif; margin-top: 2px;">
+            Content Studio & Growth Engine
+          </div>
+        </div>
+        <div class="cover-tagline">
+          • Master Case Study Portfolio •
+        </div>
+      </header>
+
+      <!-- Cover Hero -->
+      <div class="cover-hero">
+        <div class="cover-edition-badge">
+          <span>●</span> 2026 Complete Agency Edition
+        </div>
+        <h1 class="cover-title">
+          Scale Footfall, Trust & Revenue with <em>Viral Flux</em>.
+        </h1>
+        <p class="cover-desc">
+          A definitive compendium of 20 verified client transformations across 10 major high-ticket industries — proving hyper-targeted short-form video, structured conversion funnels, and organic viral reach.
+        </p>
+
+        <!-- Stats Ribbon -->
+        <div class="cover-stats-grid">
+          <div class="cover-stat-box">
+            <span class="cover-stat-number">20</span>
+            <span class="cover-stat-label">Verified Case Studies</span>
+          </div>
+          <div class="cover-stat-box">
+            <span class="cover-stat-number">10</span>
+            <span class="cover-stat-label">Core Local Niches</span>
+          </div>
+          <div class="cover-stat-box">
+            <span class="cover-stat-number">+480%</span>
+            <span class="cover-stat-label">Average Follower Scale</span>
+          </div>
+          <div class="cover-stat-box">
+            <span class="cover-stat-number">100M+</span>
+            <span class="cover-stat-label">Organic Impressions</span>
+          </div>
+        </div>
+
+        <!-- 10 Niches Index Grid -->
+        <div class="cover-index-title">
+          <span>❖</span> Master Industry Directory (Pages 02 – 21)
+        </div>
+        <div class="cover-index-grid">
+          <div class="cover-index-item">
+            <div class="cover-index-num">1</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Restaurants & Cafes</span>
+              <span class="cover-index-clients">The Bread Bar • Maasoli Lunch Home</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">2</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Salons & Beauty Parlours</span>
+              <span class="cover-index-clients">YLG Salon • Namastey Salon & Spa</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">3</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Gyms & Fitness Studios</span>
+              <span class="cover-index-clients">Fitness 5 Nerul • One Above Fitness</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">4</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Clinics — Dental & Skin</span>
+              <span class="cover-index-clients">The Esthetic Clinics • Musk Clinic</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">5</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Jewellery Showrooms</span>
+              <span class="cover-index-clients">Vishnusha • Nakshatra Jewellers</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">6</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Hotels & Banquet Halls</span>
+              <span class="cover-index-clients">Courtyard by Marriott • Athiva Hotels</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">7</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Education & Classes</span>
+              <span class="cover-index-clients">Ideal Classes • Namastey Classes</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">8</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Interior & Modular Kitchens</span>
+              <span class="cover-index-clients">Fancy Interiors • Vimaltara Kitchens</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">9</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Automobile & Detailing</span>
+              <span class="cover-index-clients">Detailing Devils • DRM Motors</span>
+            </div>
+          </div>
+          <div class="cover-index-item">
+            <div class="cover-index-num">10</div>
+            <div class="cover-index-text">
+              <span class="cover-index-name">Fashion & Clothing</span>
+              <span class="cover-index-clients">Covert Clothing • Tohfa Boutiques</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Cover Footer -->
+    <footer class="cover-bottom-bar">
+      <div><strong>Viral Flux Media</strong> • Official Growth Case Studies</div>
+      <div>Confidential & Proprietary • www.viralfluxmedia.in • viralfluxmedia@gmail.com</div>
+      <div>Cover • Page 01 of 21</div>
+    </footer>
+  </div>
+
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Restaurants & Cafes Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Restaurant Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">The Bread Bar (@thebreadbar_)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">ALL DAY BRUNCH & CAFE • MUMBAI</div>
+        </div>
+        <h1 class="hero-title">The Bread Bar: <em>+292% Scale</em> (4.8K → 18.8K)</h1>
+        <p class="hero-desc">
+          Transforming an artisanal bakery into Mumbai's trending brunch destination with viral recipe hooks and daily footfall surges.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+292%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+14.0K</span>
+            <span class="stat-lbl">High-Intent Foodies</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Chembur • Nerul</span>
+            <span class="stat-lbl">Multi-Outlet Dine-In Footfall</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">4.8K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/breadbar-before.png" alt="The Bread Bar Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Raw Casual Clips</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">18.8K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/breadbar-after.png" alt="The Bread Bar Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Viral Foodie Reels</div>
+            <div class="chip chip-green">✓ High Dine-In Footfall</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Sensory Food Reels</span>
+            <span class="strat-sub">Fresh croissants, desserts & bakery craft</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Founder & Chef Story</span>
+            <span class="strat-sub">"By @chefrachigupta" personal culinary brand</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Curated Dine-In Funnels</span>
+            <span class="strat-sub">Highlights for Menu, Press & Delivery</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Restaurant Case Study: The Bread Bar</div>
+      <div>Page 02 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Restaurants & Cafes Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Restaurant Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Maasoli Lunch Home (@lunchhomemaasoli)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">COASTAL SEAFOOD DINING • DADAR, BYCULLA, FORT</div>
+        </div>
+        <h1 class="hero-title">Maasoli Lunch Home: <em>+343% Surge</em> to 20.8K</h1>
+        <p class="hero-desc">
+          Positioning a legacy coastal seafood dining brand into Mumbai's most viral seafood thali and fresh catch dining hotspot.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+343%</span>
+            <span class="stat-lbl">Audience Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+16.1K</span>
+            <span class="stat-lbl">Seafood Lovers & Diners</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">3 Outlets</span>
+            <span class="stat-lbl">Dadar, Byculla & Fort Footfall</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">4.7K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/maasoli-before.png" alt="Maasoli Lunch Home Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Inconsistent Food Clips</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">20.8K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/maasoli-after.png" alt="Maasoli Lunch Home Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Viral Seafood Thali Reels</div>
+            <div class="chip chip-green">✓ Multi-Outlet Packed Lines</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Kitchen Secrets & Chef Story</span>
+            <span class="strat-sub">Owner & Chef Amit Haralkar recipes</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">High-Sensory Seafood Reels</span>
+            <span class="strat-sub">"Sizzle, Flip & Feast" fresh catch viral clips</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Curated Highlight Funnels</span>
+            <span class="strat-sub">Dedicated Crab, Biryani, Prawns & Outlets</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Restaurant, Cafe or Dining Lounge With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Restaurant Case Study: Maasoli Lunch Home</div>
+      <div>Page 03 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Salon Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Salon Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">YLG Salon (@ylg_salon)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">50+ OUTLETS</div>
+        </div>
+        <h1 class="hero-title">YLG Salon: <em>+346% Growth</em> (2.6K → 11.6K)</h1>
+        <p class="hero-desc">
+          Scaling a premier 50+ salon chain across 4 metros through cinematic short-form video franchises.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+346%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+9,000</span>
+            <span class="stat-lbl">New Followers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">50+ Salons</span>
+            <span class="stat-lbl">Footfall Scaled</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">2.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/ylg-before.png" alt="YLG Salon Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Flat Engagement</div>
+            <div class="chip chip-red">✕ Raw Phone Clips</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">11.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/ylg-after.png" alt="YLG Salon Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Signature Reel Series</div>
+            <div class="chip chip-green">✓ Direct Booking Flow</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Cinematic Studio Reels</span>
+            <span class="strat-sub">Uniform editorial aesthetic</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Viral Haircut Formats</span>
+            <span class="strat-sub">High-retention video hooks</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">1-Tap Booking Funnel</span>
+            <span class="strat-sub">Direct appointment links</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Salon Case Study: YLG Salon</div>
+      <div>Page 04 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Salon Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Salon Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Namastey Salon & Spa (@namasteysalon)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">MUMBAI DESTINATION</div>
+        </div>
+        <h1 class="hero-title">Namastey Salon: <em>+379% Surge</em> to 20.6K</h1>
+        <p class="hero-desc">
+          Turning a luxury Mumbai salon into a viral transformation destination and acquiring official Meta Verification.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+379%</span>
+            <span class="stat-lbl">Follower Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Verified</span>
+            <span class="stat-lbl">Meta Blue Badge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+16.3K</span>
+            <span class="stat-lbl">High-Intent Clients</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">4.3K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/namastey-before.png" alt="Namastey Salon Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Flat Distribution</div>
+            <div class="chip chip-red">✕ Unverified Profile</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">20.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/namastey-after.png" alt="Namastey Salon Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Meta Blue Badge</div>
+            <div class="chip chip-green">✓ Viral Hair Reels</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Scroll-Stopping Hooks</span>
+            <span class="strat-sub">Before & after hair reveals</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">WhatsApp Booking Funnel</span>
+            <span class="strat-sub">1-tap consultation routing</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Category Authority</span>
+            <span class="strat-sub">Curated proof & verification</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Salon With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Salon Case Study: Namastey Salon & Spa</div>
+      <div>Page 05 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Gym & Fitness Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Fitness Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">OneAbove Fitness (@oneabove_fitness)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">MUMBAI • NAVI MUMBAI • NAGPUR</div>
+        </div>
+        <h1 class="hero-title">OneAbove Fitness: <em>+314% Scale</em> (2.8K → 11.6K)</h1>
+        <p class="hero-desc">
+          Transforming casual gym selfies into viral cinematic fitness reels and structured multi-location member acquisition funnels.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+314%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+8.8K</span>
+            <span class="stat-lbl">New Active Members</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">11.6K</span>
+            <span class="stat-lbl">Fitness Community</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">2.8K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/oneabove-before.png" alt="OneAbove Fitness Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Casual Raw Vlogs</div>
+            <div class="chip chip-red">✕ Zero Branch Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">11.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/oneabove-after.png" alt="OneAbove Fitness Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Cinematic Gym Reels</div>
+            <div class="chip chip-green">✓ Multi-Branch Highlights</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Cinematic Reel Direction</span>
+            <span class="strat-sub">High-energy equipment showcases</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Viral Relatable Formats</span>
+            <span class="strat-sub">"Gym Translator" & beginner tips</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Multi-Center Funnels</span>
+            <span class="strat-sub">Highlights for 6+ gym branches</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Gym Case Study: OneAbove Fitness</div>
+      <div>Page 06 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Gym & Fitness Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Fitness Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Fitness 5 Mumbai (@fitness5.mumbai)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">LUXURY FITNESS • ANDHERI WEST</div>
+        </div>
+        <h1 class="hero-title">Fitness 5 Mumbai: <em>+560% Surge</em> to 9.6K</h1>
+        <p class="hero-desc">
+          Positioning an Andheri gym into a premier luxury wellness destination through high-end amenity reels and event nights.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+560%</span>
+            <span class="stat-lbl">Audience Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+8.1K</span>
+            <span class="stat-lbl">New Local Members</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Luxury</span>
+            <span class="stat-lbl">High-Ticket Member Leads</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">1.4K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/fitness5-before.png" alt="Fitness 5 Mumbai Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Generic Hiring Posters</div>
+            <div class="chip chip-red">✕ Blurry Dark Workout Clips</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">9.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/fitness5-after.png" alt="Fitness 5 Mumbai Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Luxury Amenity Showcase</div>
+            <div class="chip chip-green">✓ High-Ticket Membership Drive</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Luxury Amenity Hooks</span>
+            <span class="strat-sub">Cold Plunge & Red Light therapy</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Community Event Nights</span>
+            <span class="strat-sub">"Fitness Night" DJ party campaigns</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Curated Bio & Story Bar</span>
+            <span class="strat-sub">Clear luxury branding & location</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Gym & Fitness Center With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Gym Case Study: Fitness 5 Mumbai</div>
+      <div>Page 07 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Aesthetic & Clinic Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Clinic Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">The Esthetic Clinics (@theestheticclinics)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">PAN-INDIA COSMETIC CHAIN</div>
+        </div>
+        <h1 class="hero-title">The Esthetic Clinics: <em>+592% Scale</em> (2.6K → 18K)</h1>
+        <p class="hero-desc">
+          Scaling India's premier cosmetic clinic chain through doctor authority reels, award proof, and real patient case journeys.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+592%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+15.4K</span>
+            <span class="stat-lbl">High-Intent Patients</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">1.5M+</span>
+            <span class="stat-lbl">Trusted Patient Reach</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">2.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/esthetic-before.png" alt="The Esthetic Clinics Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Uncurated Video Covers</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">18K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/esthetic-after.png" alt="The Esthetic Clinics Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Real Patient Case Results</div>
+            <div class="chip chip-green">✓ National Dermatology Awards</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Doctor Authority & Awards</span>
+            <span class="strat-sub">National awards & specialist tours</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Patient Journey Series</span>
+            <span class="strat-sub">"Real Lives Real Results" proof</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Curated Story Highlights</span>
+            <span class="strat-sub">Dedicated QR678 & medical facts</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Clinic Case Study: The Esthetic Clinics</div>
+      <div>Page 08 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Aesthetic & Clinic Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Clinic Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Musk Clinic (@muskclinic)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">MEDICAL & SURGICAL AESTHETICS</div>
+        </div>
+        <h1 class="hero-title">Musk Clinic: <em>+1,294% Surge</em> to 25.1K</h1>
+        <p class="hero-desc">
+          Positioning a state-of-the-art aesthetic center into a national luxury brand with cinematic surgical reels and tech spotlights.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+1,294%</span>
+            <span class="stat-lbl">Audience Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+23.3K</span>
+            <span class="stat-lbl">New Aesthetic Patients</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Top-Tier</span>
+            <span class="stat-lbl">Surgical & Laser Inquiries</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">1.8K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/musk-before.png" alt="Musk Clinic Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Cluttered Procedure Clips</div>
+            <div class="chip chip-red">✕ Bare One-Line Bio</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">25.1K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/musk-after.png" alt="Musk Clinic Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Cinematic Surgical Precision</div>
+            <div class="chip chip-green">✓ High-Ticket Procedure Leads</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Cinematic OT & Clinic Reels</span>
+            <span class="strat-sub">Surgeon precision & "Musk Lumière"</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Advanced Tech Spotlights</span>
+            <span class="strat-sub">ARTAS 9X robot & Exosome therapy</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Streamlined Booking Funnel</span>
+            <span class="strat-sub">Dedicated 1-tap consultation desk</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Aesthetic Clinic With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Clinic Case Study: Musk Clinic</div>
+      <div>Page 09 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Jewellery & Luxury Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Jewellery Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Tohfa Jewelry (@tohfajewelry)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">IMITATION & WHOLESALE JEWELLERY • MUMBAI</div>
+        </div>
+        <h1 class="hero-title">Tohfa Jewelry: <em>+452% Scale</em> (4.8K → 26.5K)</h1>
+        <p class="hero-desc">
+          Transforming a Mumbai jewellery wholesaler into an e-commerce powerhouse with festive campaigns and curated category funnels.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+452%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+21.7K</span>
+            <span class="stat-lbl">Wholesale & Retail Buyers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Pan-India</span>
+            <span class="stat-lbl">Nationwide B2B & B2C Orders</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">4.8K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/tohfa-before.png" alt="Tohfa Jewelry Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Uncurated Street Clips</div>
+            <div class="chip chip-red">✕ Zero Category Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">26.5K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/tohfa-after.png" alt="Tohfa Jewelry Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Festive Luxury Campaigns</div>
+            <div class="chip chip-green">✓ Nationwide Wholesale Funnel</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Festive & Occasion Reels</span>
+            <span class="strat-sub">Diwali, Navratri & bridal styling</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Category Story Highlights</span>
+            <span class="strat-sub">Curated bangles, earrings & hair</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Direct Wholesale Funnels</span>
+            <span class="strat-sub">Website catalog & direct DM orders</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Jewellery Case Study: Tohfa Jewelry</div>
+      <div>Page 10 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Jewellery & Luxury Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Jewellery Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Vishnusha Jewellery & Studio (@vishnusha_jewellery)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">BRIDAL, ANTIQUE & RENTAL JEWELLERY</div>
+        </div>
+        <h1 class="hero-title">Vishnusha Jewellery: <em>+318% Surge</em> to 31.8K</h1>
+        <p class="hero-desc">
+          Scaling an Indian bridal jewellery studio into a verified national brand with real bride trials and rental funnels.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+318%</span>
+            <span class="stat-lbl">Audience Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Verified</span>
+            <span class="stat-lbl">Meta Blue Badge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+24.2K</span>
+            <span class="stat-lbl">Brides & Rental Shoppers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">7.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/vishnusha-before.png" alt="Vishnusha Jewellery Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Static Print Ads</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">31.8K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/vishnusha-after.png" alt="Vishnusha Jewellery Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Meta Blue Verification</div>
+            <div class="chip chip-green">✓ In-Store Bridal Trial Reels</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Real Bride Trial Reels</span>
+            <span class="strat-sub">In-store bridal styling & makeovers</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Dual Purchase & Rental Funnel</span>
+            <span class="strat-sub">High-ticket haars & rental options</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Curated Bridal Highlights</span>
+            <span class="strat-sub">South Indian, antique, combo & delicate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Jewellery Brand & Studio With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Jewellery Case Study: Vishnusha Jewellery</div>
+      <div>Page 11 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Hotels & Banquets Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Hotels Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Courtyard by Marriott (@courtyardbymarriottnavimumbai)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">5-STAR HOTEL, RESORT & BANQUETS</div>
+        </div>
+        <h1 class="hero-title">Courtyard by Marriott: <em>+334% Surge</em> to 12.6K</h1>
+        <p class="hero-desc">
+          Elevating a premier 5-star hotel into Navi Mumbai's luxury staycation, fine dining, and wedding banquet destination.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+334%</span>
+            <span class="stat-lbl">Audience Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+9,700</span>
+            <span class="stat-lbl">Luxury Travellers & Guests</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">5-Star</span>
+            <span class="stat-lbl">Staycation & Banquet Leads</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">2.9K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/courtyard-before.png" alt="Courtyard by Marriott Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Static Promo Flyers</div>
+            <div class="chip chip-red">✕ Unstructured Room Photos</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">12.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/courtyard-after.png" alt="Courtyard by Marriott Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Infinity Pool & Lounge Reels</div>
+            <div class="chip chip-green">✓ High-Ticket Banquet Leads</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Luxury Lifestyle Reels</span>
+            <span class="strat-sub">Infinity pool & "The Box Lounge"</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Signature Culinary Spotlights</span>
+            <span class="strat-sub">Royal Thali & Malang restaurant</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Dedicated Amenity Highlights</span>
+            <span class="strat-sub">Nilaya Spa, Reviews & Banquet Desk</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Hotels Case Study: Courtyard by Marriott Navi Mumbai</div>
+      <div>Page 12 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Hotels & Banquets Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Hotels Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Athiva Hotels & Resorts (@athiva_hotels)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">RESORTS • KHANDALA & NAVI MUMBAI</div>
+        </div>
+        <h1 class="hero-title">Athiva Hotels: <em>+1,011% Scale</em> (1.7K → 18.9K)</h1>
+        <p class="hero-desc">
+          Scaling a luxury resort brand across Khandala & Navi Mumbai into a premier destination wedding and weekend staycation hub.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+1,011%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+17.2K</span>
+            <span class="stat-lbl">Couples & Luxury Guests</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Destination</span>
+            <span class="stat-lbl">Wedding & Resort Leads</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">1.7K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/athiva-before.png" alt="Athiva Hotels Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Uncurated Video Clips</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">18.9K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/athiva-after.png" alt="Athiva Hotels Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Destination Wedding Reels</div>
+            <div class="chip chip-green">✓ High-Ticket Resort Leads</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Destination Wedding Spotlights</span>
+            <span class="strat-sub">"Vivaah by Athiva" bridal & celebration</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Resort Experience Campaigns</span>
+            <span class="strat-sub">Poolside wellness & monsoon stays</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Curated Story Highlights</span>
+            <span class="strat-sub">Dedicated stories for Joy, Food & Vivaah</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Hotel, Resort or Banquet With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Hotels Case Study: Athiva Hotels & Resorts</div>
+      <div>Page 13 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Classes & Coaching Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Classes Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Vimaltara Academy (@vimaltara_academy)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">JEE • NEET • CET • BOARDS</div>
+        </div>
+        <h1 class="hero-title">Vimaltara Academy: <em>+1,088% Growth</em> (985 → 11.7K)</h1>
+        <p class="hero-desc">
+          Scaling a premier science coaching institute from under 1K to 11.7K followers through student conversion campaigns.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+1,088%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+10.7K</span>
+            <span class="stat-lbl">New Followers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">11.7K</span>
+            <span class="stat-lbl">Active Students & Parents</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">985 Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/vimaltara-before.png" alt="Vimaltara Academy Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Generic Festival Posts</div>
+            <div class="chip chip-red">✕ Zero Result Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">11.7K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/vimaltara-after.png" alt="Vimaltara Academy Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Toppers Results Proof</div>
+            <div class="chip chip-green">✓ Admission Campaigns</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Topper Results Branding</span>
+            <span class="strat-sub">Proof-driven scorecards</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Batch Admission Drives</span>
+            <span class="strat-sub">12th Science & CET campaigns</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Structured Highlights</span>
+            <span class="strat-sub">Curated rankers & batches</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Classes Case Study: Vimaltara Academy</div>
+      <div>Page 14 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Classes & Coaching Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Classes Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Ideal Career Center (@idealcareercenter)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">NEET-UG COUNSELLING</div>
+        </div>
+        <h1 class="hero-title">Ideal Career Center: <em>+412% Surge</em> to 13K</h1>
+        <p class="hero-desc">
+          Positioning a premier medical admission consultancy as Maharashtra's leading authority with high-converting guidance reels.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+412%</span>
+            <span class="stat-lbl">Follower Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+10.4K</span>
+            <span class="stat-lbl">New Followers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Pan-India</span>
+            <span class="stat-lbl">MBBS/BAMS Lead Funnel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">2.5K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/ideal-before.png" alt="Ideal Career Center Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Erratic Thumbnails</div>
+            <div class="chip chip-red">✕ Bare Unoptimized Bio</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">13K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/ideal-after.png" alt="Ideal Career Center Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ High-CTR Guidance Reels</div>
+            <div class="chip chip-green">✓ 1-Tap Call & Link Funnel</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">High-CTR Video Hooks</span>
+            <span class="strat-sub">Crucial cut-off & rule updates</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Direct Call & Form Funnel</span>
+            <span class="strat-sub">Direct counselling desk routing</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Student Proof Series</span>
+            <span class="strat-sub">MBBS & BAMS confirmations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Classes & Academy With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Classes Case Study: Ideal Career Center</div>
+      <div>Page 15 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Interior Design Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Interior Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Fancy Interiors (@fancyinteriors7)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">MUMBAI • NAVI MUMBAI</div>
+        </div>
+        <h1 class="hero-title">Fancy Interiors: <em>+171% Scale</em> (5.6K → 15.2K)</h1>
+        <p class="hero-desc">
+          Transforming raw site carpentry clips into viral smart-home reveals and high-ticket turnkey design inquiries.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+171%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+9.6K</span>
+            <span class="stat-lbl">Qualified Homeowners</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Turnkey</span>
+            <span class="stat-lbl">High-Ticket Client Inquiries</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">5.6K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/fancy-before.png" alt="Fancy Interiors Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Raw Construction Clips</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">15.2K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/fancy-after.png" alt="Fancy Interiors Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Smart Space-Saving Reveals</div>
+            <div class="chip chip-green">✓ Turnkey Homebuyer Inquiries</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Smart Space-Saving Hooks</span>
+            <span class="strat-sub">Hydraulic beds & mechanism demos</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Luxury Finish Reveals</span>
+            <span class="strat-sub">Gold-trim wardrobes & cove lighting</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Turnkey Funnel Direction</span>
+            <span class="strat-sub">Room-by-room story highlights & CTA</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Interior Design Case Study: Fancy Interiors</div>
+      <div>Page 16 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Interior Design Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Interior Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Nakshtra Interior Studio (@nakshtra_interior_studio)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">PUNE • MAHARASHTRA</div>
+        </div>
+        <h1 class="hero-title">Nakshtra Interior Studio: <em>+377% Surge</em> to 5.1K</h1>
+        <p class="hero-desc">
+          Positioning a Pune interior firm into an architectural authority with viral modular features and free 3D design funnels.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+377%</span>
+            <span class="stat-lbl">Follower Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+4,100</span>
+            <span class="stat-lbl">New Local Homeowners</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">3D Leads</span>
+            <span class="stat-lbl">Free Design Consultations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">1.0K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/nakshtra-before.png" alt="Nakshtra Interior Studio Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Dusty Carpentry Posts</div>
+            <div class="chip chip-red">✕ Bare One-Line Bio</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">5.1K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/nakshtra-after.png" alt="Nakshtra Interior Studio Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Viral Modular Kitchen Reels</div>
+            <div class="chip chip-green">✓ Free 3D Design Funnel</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Modular Smart Feature Reels</span>
+            <span class="strat-sub">Automated backlit cabinets & beds</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Architectural Mandir Tours</span>
+            <span class="strat-sub">Handcrafted temple & entryway design</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Lead Magnet Consultation CTA</span>
+            <span class="strat-sub">"Free 3D Design" WhatsApp inbound drive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Interior Design Studio With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Interior Design Case Study: Nakshtra Interior Studio</div>
+      <div>Page 17 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Automobile & Detailing Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Automobile Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Detailing Devils X-clusive (@detailingdevils.xclusive)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">PPF, CERAMIC & LUXURY DETAILING</div>
+        </div>
+        <h1 class="hero-title">Detailing Devils: <em>+407% Scale</em> (2.7K → 13.7K)</h1>
+        <p class="hero-desc">
+          Transforming a workshop into a high-ticket automotive detailing studio with honeycomb LED reveals and ceramic protection tests.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+407%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+11.0K</span>
+            <span class="stat-lbl">Luxury Car Owners</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">High-Ticket</span>
+            <span class="stat-lbl">PPF & Ceramic Inquiries</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">2.7K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/detailingdevils-before.png" alt="Detailing Devils Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Unpolished Workshop Clips</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">13.7K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/detailingdevils-after.png" alt="Detailing Devils Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Honeycomb Light Reveals</div>
+            <div class="chip chip-green">✓ High-Ticket PPF Inquiries</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Studio Honeycomb Reveals</span>
+            <span class="strat-sub">Cinematic LED lighting & hypercars</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Protection Testing Proof</span>
+            <span class="strat-sub">Hydrophobic & scratch resistance</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Structured Category Stories</span>
+            <span class="strat-sub">Highlights for PPF, Ceramic & Reviews</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Automobile Case Study: Detailing Devils X-clusive</div>
+      <div>Page 18 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Automobile & Detailing Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Automobile Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">DRM Motors (@drmmotors)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">MULTI-CAR LUXURY WORKSHOP • MUMBAI</div>
+        </div>
+        <h1 class="hero-title">DRM Motors: <em>+432% Surge</em> to 18.1K</h1>
+        <p class="hero-desc">
+          Repositioning a multi-car service garage as Mumbai's most trusted "car doctor" through transparent diagnostic reels and service guides.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+432%</span>
+            <span class="stat-lbl">Audience Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+14.7K</span>
+            <span class="stat-lbl">Luxury Car Owners</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">10+ Yrs</span>
+            <span class="stat-lbl">Trusted Multi-Car Service Desk</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">3.4K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/drmmotors-before.png" alt="DRM Motors Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Cluttered Graphic Thumbnails</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">18.1K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/drmmotors-after.png" alt="DRM Motors Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Trusted Workshop Storytelling</div>
+            <div class="chip chip-green">✓ Multi-Car Service Inquiries</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">"Car Doctor" Positioning</span>
+            <span class="strat-sub">High-trust mechanical & detailing voice</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Under-The-Hood Diagnostics</span>
+            <span class="strat-sub">Real problem-solving on German cars</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Direct Workshop Booking</span>
+            <span class="strat-sub">Clear Andheri West hub & 1-tap WhatsApp</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Automobile & Detailing Brand With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Automobile Case Study: DRM Motors</div>
+      <div>Page 19 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Fashion & Clothing Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Fashion Case Study #01
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Covert (@covertstore.in)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">D2C STREETWEAR LABEL</div>
+        </div>
+        <h1 class="hero-title">Covert: <em>+776% Scale</em> (1.3K → 11.4K)</h1>
+        <p class="hero-desc">
+          Transforming an early-stage apparel page into a verified cult streetwear label with viral drop storytelling.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+776%</span>
+            <span class="stat-lbl">Audience Growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Verified</span>
+            <span class="stat-lbl">Meta Blue Badge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+10.1K</span>
+            <span class="stat-lbl">Cult Streetwear Buyers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">1.3K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/covert-before.png" alt="Covert Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Uncurated Phone Clips</div>
+            <div class="chip chip-red">✕ Zero Story Highlights</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">11.4K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/covert-after.png" alt="Covert Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ Meta Blue Verification</div>
+            <div class="chip chip-green">✓ Viral Cult Drops</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Culture-Driven Drop Releases</span>
+            <span class="strat-sub">Acid-wash graphic tees & oversized fits</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Drop Storytelling & Teasers</span>
+            <span class="strat-sub">Behind-the-scenes & viral hooks</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">D2C Drop Funnels</span>
+            <span class="strat-sub">Streamlined linktree routing to store</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 1 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Fashion Case Study: Covert</div>
+      <div>Page 20 of 21</div>
+    </footer>
+  </div>
+
+<div class="page">
+<div class="page-body">
+      
+      <!-- Top Header -->
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">Viral Flux Media<span>.</span></div>
+          <div class="tagline-sub">• Fashion & Clothing Growth Engine</div>
+        </div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Fashion Case Study #02
+        </div>
+      </header>
+
+      <!-- Hero Summary Banner (Clean, Minimal Text) -->
+      <div class="hero-card">
+        <div class="hero-top-row">
+          <div class="hero-tag">Ink India Company (@inkindiaco)</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; color: #c8f542; font-weight: 700;">PREMIUM RESORT & EVERYDAY ESSENTIALS</div>
+        </div>
+        <h1 class="hero-title">Ink India Company: <em>+704% Surge</em> to 20.1K</h1>
+        <p class="hero-desc">
+          Elevating an everyday clothing brand through editorial magazine lookbooks and category-driven shopping funnels.
+        </p>
+
+        <div class="stats-ribbon">
+          <div class="stat-item">
+            <span class="stat-val">+704%</span>
+            <span class="stat-lbl">Follower Surge</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+17.6K</span>
+            <span class="stat-lbl">Modern Wardrobe Shoppers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">Scale</span>
+            <span class="stat-lbl">Direct E-Commerce Orders</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Showcase (Hero Focus) -->
+      <div class="showcase-container">
+        
+        <!-- BEFORE CARD -->
+        <div class="showcase-card">
+          <div class="card-header-bar">
+            <span class="pill pill-before">Before Viral Flux</span>
+            <span class="metrics-tag">2.5K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/inkindia-before.png" alt="Ink India Company Full Screenshot Before" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-red">✕ Static Brick-Wall Poses</div>
+            <div class="chip chip-red">✕ Generic Template Graphics</div>
+          </div>
+        </div>
+
+        <!-- AFTER CARD -->
+        <div class="showcase-card highlight">
+          <div class="card-header-bar">
+            <span class="pill pill-after">After Viral Flux (Scaled)</span>
+            <span class="metrics-tag" style="color: #65a30d;">20.1K Followers</span>
+          </div>
+          <div class="full-image-frame">
+            <img src="./case-studies/inkindia-after.png" alt="Ink India Company Full Screenshot After" />
+          </div>
+          <div class="card-chips">
+            <div class="chip chip-green">✓ High-Fashion Lookbooks</div>
+            <div class="chip chip-green">✓ Automated Website Sales</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Strategy Strip (Low Text, Icon + Label) -->
+      <div class="strategy-strip">
+        <div class="strat-pill-card">
+          <div class="strat-num">1</div>
+          <div class="strat-info">
+            <span class="strat-title">Editorial Lookbook Direction</span>
+            <span class="strat-sub">Seaside & magazine lifestyle shoots</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">2</div>
+          <div class="strat-info">
+            <span class="strat-title">Collection-Based Funnels</span>
+            <span class="strat-sub">Curated Shakets, Co-ords & Shirts</span>
+          </div>
+        </div>
+        <div class="strat-pill-card">
+          <div class="strat-num">3</div>
+          <div class="strat-info">
+            <span class="strat-title">Direct D2C Store Traffic</span>
+            <span class="strat-sub">Direct link routing to shop collections</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimal CTA Bar -->
+      <div class="cta-card">
+        <div class="cta-left">
+          <h3>Scale Your Clothing & Fashion Brand With <em>Viral Flux Media</em>.</h3>
+        </div>
+        <div class="cta-right">
+          <div class="cta-contact-text">
+            viralfluxmedia@gmail.com<br>www.viralfluxmedia.in
+          </div>
+          <a href="https://www.viralfluxmedia.in" class="cta-btn">Start a Project →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2 Footer -->
+    <footer class="footer">
+      <div><span class="footer-brand">Viral Flux Media</span> • Fashion Case Study: Ink India Company</div>
+      <div>Page 21 of 21</div>
+    </footer>
+  </div>
+
+</body>
+</html>
