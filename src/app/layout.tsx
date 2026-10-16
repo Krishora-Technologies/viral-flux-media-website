@@ -22,9 +22,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.viralfluxmedia.in"),
+  metadataBase: new URL("https://viralfluxmedia.in"),
   alternates: {
-    canonical: "https://www.viralfluxmedia.in",
+    canonical: "/",
   },
   title: "Viral Flux Media | Social Media & Viral Growth Agency",
   description: "Viral Flux Media is a results-driven social media and digital marketing agency delivering cinematic content, viral campaigns, and rapid brand growth.",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Viral Flux Media | Social Media & Viral Growth Agency",
     description: "High-impact social media marketing, cinematic content, and viral growth strategies that make brands impossible to ignore.",
-    url: "https://www.viralfluxmedia.in",
+    url: "https://viralfluxmedia.in",
     siteName: "Viral Flux Media",
     images: [
       {
@@ -125,9 +125,9 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": ["Organization", "ProfessionalService"],
                 "name": "Viral Flux Media",
-                "url": "https://www.viralfluxmedia.in",
+                "url": "https://viralfluxmedia.in",
                 "email": "viralfluxmedia@gmail.com",
-                "logo": "https://www.viralfluxmedia.in/og-image.png",
+                "logo": "https://viralfluxmedia.in/og-image.png",
                 "description": "Viral Flux Media is a results-driven social media marketing and digital growth agency specializing in cinematic content, viral campaigns, and performance strategies for brands worldwide.",
                 "disambiguatingDescription": "Viral Flux Media is an independent creative social media and performance marketing agency. It is not affiliated with any online earning platform, task-based scheme, or viralflux.com.ng.",
                 "areaServed": "Worldwide",

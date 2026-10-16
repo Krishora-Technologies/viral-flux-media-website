@@ -2,6 +2,39 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
+  const host = (
+    request.headers.get("x-forwarded-host") ||
+    request.headers.get("host") ||
+    request.nextUrl.host ||
+    ""
+  ).toLowerCase();
+
+  const proto = (
+    request.headers.get("x-forwarded-proto") ||
+    (request.nextUrl.protocol ? request.nextUrl.protocol.replace(":", "") : "")
+  ).toLowerCase();
+
+  // Canonical domain enforcement (301 Permanent Redirect)
+  // 1. Redirect all www.viralfluxmedia.in requests to https://viralfluxmedia.in in a single hop
+  if (host === "www.viralfluxmedia.in" || host.startsWith("www.viralfluxmedia.in:")) {
+    const targetUrl = new URL(
+      `${request.nextUrl.pathname}${request.nextUrl.search}`,
+      "https://viralfluxmedia.in"
+    );
+    return NextResponse.redirect(targetUrl, 301);
+  }
+
+  // 2. Redirect http://viralfluxmedia.in to https://viralfluxmedia.in
+  if (
+    (host === "viralfluxmedia.in" || host.startsWith("viralfluxmedia.in:")) &&
+    proto === "http"
+  ) {
+    const targetUrl = new URL(
+      `${request.nextUrl.pathname}${request.nextUrl.search}`,
+      "https://viralfluxmedia.in"
+    );
+    return NextResponse.redirect(targetUrl, 301);
+  }
   // Retrieve country code from Cloudflare or Vercel edge headers
   const country = (
     request.headers.get("cf-ipcountry") ||

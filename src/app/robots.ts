@@ -14,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://www.viralfluxmedia.in/sitemap.xml",
+    sitemap: "https://viralfluxmedia.in/sitemap.xml",
   };
 }
