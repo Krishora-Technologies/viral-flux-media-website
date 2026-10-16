@@ -26,9 +26,24 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  title: "Viral Flux Media | Social Media & Viral Growth Agency",
-  description: "Viral Flux Media is a results-driven social media and digital marketing agency delivering cinematic content, viral campaigns, and rapid brand growth.",
+  title: {
+    default: "Viral Flux Media - Digital Marketing Agency | Dombivli, Kalyan & Thane",
+    template: "%s | Viral Flux Media - Digital Marketing Agency",
+  },
+  description: "Viral Flux Media - Digital Marketing Agency is a premier performance and viral content studio in Dombivli (Thane), specializing in 4K Instagram reels, paid Meta & Google ads, and brand growth.",
   keywords: [
+    "Viral Flux Media - Digital Marketing Agency",
+    "Best Social Media Agency in Dombivli",
+    "Social Media Marketing Dombivli",
+    "Digital Marketing Agency Dombivli",
+    "Social Media Agency in Dombivli",
+    "Reel Makers Dombivli",
+    "Video Production Dombivli",
+    "Social Media Agency Kalyan",
+    "Digital Marketing Agency Kalyan",
+    "Social Media Agency Thane",
+    "Social Media Marketing Mumbai",
+    "Social Media Marketing Maharashtra",
     "Social Media Marketing",
     "Digital Marketing Agency",
     "Viral Growth",
@@ -40,34 +55,31 @@ export const metadata: Metadata = {
     "Brand Growth",
     "Viral Flux Media",
     "Viralfluxmedia",
-    "ViralFlux Media",
-    "Social Media Agency India",
-    "Digital Marketing Agency US",
-    "Viral Marketing Agency UK"
+    "ViralFlux Media"
   ],
-  authors: [{ name: "Viral Flux Media" }],
-  creator: "Viral Flux Media",
-  publisher: "Viral Flux Media",
+  authors: [{ name: "Viral Flux Media - Digital Marketing Agency" }],
+  creator: "Viral Flux Media - Digital Marketing Agency",
+  publisher: "Viral Flux Media - Digital Marketing Agency",
   openGraph: {
-    title: "Viral Flux Media | Social Media & Viral Growth Agency",
-    description: "High-impact social media marketing, cinematic content, and viral growth strategies that make brands impossible to ignore.",
+    title: "Viral Flux Media - Digital Marketing Agency | Dombivli, Kalyan & Thane",
+    description: "Viral Flux Media - Digital Marketing Agency is a premier performance and viral content studio in Dombivli (Thane), specializing in 4K Instagram reels, paid Meta & Google ads, and brand growth.",
     url: "https://viralfluxmedia.in",
-    siteName: "Viral Flux Media",
+    siteName: "Viral Flux Media - Digital Marketing Agency",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Viral Flux Media - We Make Brands Impossible to Ignore",
+        alt: "Viral Flux Media - Digital Marketing Agency in Dombivli",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Viral Flux Media | Social Media & Viral Growth Agency",
-    description: "High-impact social media marketing, cinematic content, and viral growth strategies that make brands impossible to ignore.",
+    title: "Viral Flux Media - Digital Marketing Agency | Dombivli, Kalyan & Thane",
+    description: "Viral Flux Media - Digital Marketing Agency is a premier performance and viral content studio in Dombivli (Thane), specializing in 4K Instagram reels, paid Meta & Google ads, and brand growth.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -123,52 +135,85 @@ export default function RootLayout({
             __html: JSON.stringify([
               {
                 "@context": "https://schema.org",
-                "@type": ["Organization", "ProfessionalService"],
-                "name": "Viral Flux Media",
+                "@type": ["LocalBusiness", "ProfessionalService"],
+                "name": "Viral Flux Media - Digital Marketing Agency",
+                "alternateName": "Viral Flux Media",
                 "url": "https://viralfluxmedia.in",
                 "email": "viralfluxmedia@gmail.com",
+                "telephone": "+918108181651",
                 "logo": "https://viralfluxmedia.in/og-image.png",
-                "description": "Viral Flux Media is a results-driven social media marketing and digital growth agency specializing in cinematic content, viral campaigns, and performance strategies for brands worldwide.",
-                "disambiguatingDescription": "Viral Flux Media is an independent creative social media and performance marketing agency. It is not affiliated with any online earning platform, task-based scheme, or viralflux.com.ng.",
-                "areaServed": "Worldwide",
+                "image": "https://viralfluxmedia.in/og-image.png",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "203, Jaywant Niwas, Star Colony, Gandhi Nagar",
+                  "addressLocality": "Dombivli",
+                  "addressRegion": "Maharashtra",
+                  "postalCode": "421201",
+                  "addressCountry": "IN"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 19.2056589,
+                  "longitude": 73.0952471
+                },
+                "hasMap": "https://maps.app.goo.gl/4JhZJxpZi2CPWz5z5",
+                "openingHoursSpecification": [
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "10:00",
+                    "closes": "19:00"
+                  }
+                ],
+                "description": "Viral Flux Media is a results-driven social media marketing and digital marketing agency in Dombivli (Thane), specializing in cinematic content, viral campaigns, 4K Instagram reels, and Meta ads.",
+                "disambiguatingDescription": "Viral Flux Media is an independent marketing agency located at 203, Jaywant Niwas, Star Colony, Gandhi Nagar, Dombivli, Maharashtra 421201. It is not affiliated with any online earning platform, task-based scheme, viralflux.com.ng, or Up Flux Media.",
+                "areaServed": [
+                  { "@type": "City", "name": "Dombivli" },
+                  { "@type": "City", "name": "Kalyan" },
+                  { "@type": "City", "name": "Thane" },
+                  { "@type": "City", "name": "Mumbai" },
+                  { "@type": "AdministrativeArea", "name": "Maharashtra" },
+                  { "@type": "Country", "name": "India" }
+                ],
                 "sameAs": [
                   "https://instagram.com/viralfluxmedia",
-                  "https://linkedin.com/company/viralfluxmedia"
+                  "https://www.linkedin.com/company/viral-flux-media-digital-marketing-agency/",
+                  "https://maps.app.goo.gl/4JhZJxpZi2CPWz5z5"
                 ]
               },
               {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "serviceType": "Social Media Marketing",
+                "serviceType": "Social Media Marketing Agency",
                 "provider": {
-                  "@type": "Organization",
+                  "@type": "LocalBusiness",
                   "name": "Viral Flux Media"
                 },
-                "description": "High-impact social media and digital marketing with cinematic content and proven growth strategies for brands worldwide.",
-                "areaServed": "Worldwide",
+                "description": "Results-driven social media management, cinematic reel creation, and paid advertising campaigns in Dombivli, Kalyan, Thane, and Mumbai.",
+                "areaServed": ["Dombivli", "Kalyan", "Thane", "Mumbai", "Maharashtra", "Worldwide"],
                 "hasOfferCatalog": {
                   "@type": "OfferCatalog",
-                  "name": "Social Media Marketing Services",
+                  "name": "Agency Services",
                   "itemListElement": [
                     {
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "Cinematic Content Creation"
+                        "name": "Social Media Marketing in Dombivli"
                       }
                     },
                     {
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "Viral Campaign Management"
+                        "name": "Reels & Video Production"
                       }
                     },
                     {
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "Performance Growth Strategies"
+                        "name": "Performance Marketing & Paid Ads"
                       }
                     }
                   ]

@@ -1,5 +1,5 @@
 # AI Compliance and Data Permissions (ai.txt)
-# Entity: Viral Flux Media (Global Social Media & Marketing Agency)
+# Entity: Viral Flux Media - Digital Marketing Agency (Social Media Marketing & Video Production)
 
 User-agent: *
 Allow: /
@@ -22,5 +22,5 @@ Allow: /
 Disallow: /api/
 
 # Entity Classification & Scope:
-# Viral Flux Media is a professional social media marketing and digital growth agency serving brands and businesses worldwide.
-# Not affiliated with any Nigerian online earning platforms or viralflux.com.ng.
+# Viral Flux Media - Digital Marketing Agency is a professional social media marketing and cinematic video production agency headquartered in Dombivli (Thane), Maharashtra, India.
+# Not affiliated with any Nigerian online earning platforms, viralflux.com.ng, or Up Flux Media.

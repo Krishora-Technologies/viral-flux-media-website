@@ -15,12 +15,19 @@ export function Nav() {
         <Link href="/" className="font-display text-xl tracking-tight text-cream">
           Viral Flux Media<span className="text-lime">.</span>
         </Link>
-        <nav className="hidden gap-10 md:flex">
-          {["Services", "Process", "Studio"].map((l) => (
-            <a key={l} href={`/#${l.toLowerCase()}`} className="font-mono-label text-cream hover:text-lime transition-colors">
-              {l}
-            </a>
-          ))}
+        <nav className="hidden gap-8 md:flex items-center">
+          <Link href="/social-media-marketing-agency-dombivli" className="font-mono-label text-cream hover:text-lime transition-colors">
+            Services
+          </Link>
+          <Link href="/video-production-reel-editing-dombivli" className="font-mono-label text-cream hover:text-lime transition-colors">
+            Reel Studio
+          </Link>
+          <Link href="/blog" className="font-mono-label text-cream hover:text-lime transition-colors">
+            Blog
+          </Link>
+          <a href="/#faq" className="font-mono-label text-cream hover:text-lime transition-colors">
+            FAQ
+          </a>
           <Link href="/program" className="font-mono-label text-lime hover:underline font-semibold">
             Partner Program ✦
           </Link>

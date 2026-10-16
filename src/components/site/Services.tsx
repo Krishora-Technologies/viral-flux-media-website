@@ -16,10 +16,13 @@ export function Services() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
           <div className="md:col-span-4 md:sticky md:top-32 self-start">
-            <div className="font-mono-label text-muted-foreground mb-6">— Services / VI</div>
+            <div className="font-mono-label text-muted-foreground mb-6">— Services / VI · Dombivli & Kalyan</div>
             <h2 className="font-display text-5xl md:text-7xl font-light leading-[0.95]">
               Six things,<br />done <em className="text-lime not-italic">obsessively</em>.
             </h2>
+            <p className="font-mono-label text-muted-foreground/70 text-xs mt-4">
+              Premium content production, Meta ads & social media management tailored for businesses across Dombivli, Kalyan, Thane, Mumbai & worldwide.
+            </p>
           </div>
           <div className="md:col-span-8">
             {services.map((s, i) => (

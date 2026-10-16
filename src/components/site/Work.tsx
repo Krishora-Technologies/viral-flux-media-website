@@ -130,10 +130,15 @@ function Card({
 }
 
 function CountMetric({ prefix, num, suffix, active, delay = 0 }: { prefix: string; num: number; suffix: string; active: boolean; delay?: number }) {
+  const [hasHydrated, setHasHydrated] = useState(false);
   const count = useCountUp(num, 1.6, active, delay);
 
+  useEffect(() => {
+    setHasHydrated(true);
+  }, []);
+
   return (
-    <motion.div
+    <div
       className="font-display font-light leading-none"
       style={{
         fontSize: "clamp(2.6rem, 3.8vw, 3.8rem)",
@@ -142,10 +147,20 @@ function CountMetric({ prefix, num, suffix, active, delay = 0 }: { prefix: strin
         textShadow: `0 0 24px ${LIME}22`,
       }}
     >
-      {prefix}
-      <motion.span>{count}</motion.span>
-      {suffix}
-    </motion.div>
+      {/* Raw HTML / Google crawler read the actual metrics immediately without waiting for JS */}
+      <span className="sr-only">
+        {prefix}{num}{suffix}
+      </span>
+      <span aria-hidden="true">
+        {prefix}
+        {hasHydrated ? (
+          <motion.span>{count}</motion.span>
+        ) : (
+          <span>{num}</span>
+        )}
+        {suffix}
+      </span>
+    </div>
   );
 }
 

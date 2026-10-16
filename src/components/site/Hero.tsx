@@ -54,7 +54,7 @@ export function Hero() {
           {/* Left copy */}
           <motion.div style={{ y: titleY }} className="md:col-span-5 z-10 pt-4 md:pt-0">
             <div className="font-mono-label mb-3 md:mb-6 flex items-center gap-3 text-muted-foreground text-xs md:text-sm">
-              <span className="h-px w-8 bg-ink/40" /> We turn content into viral moments.
+              <span className="h-px w-8 bg-ink/40" /> Dombivli · Kalyan · Thane · Mumbai
             </div>
             <h1 className="font-display text-5xl md:text-[clamp(3rem,7vw,6.5rem)] font-light leading-[0.92]">
               Silent feeds<br />
@@ -62,7 +62,7 @@ export function Hero() {
               <span className="italic">moments.</span>
             </h1>
             <p className="mt-4 md:mt-8 max-w-md text-sm md:text-lg text-muted-foreground">
-                Viral Flux Media is a performance-driven social media studio. We turn brands into content machines that people can’t ignore.
+              A performance-driven social media marketing studio in Dombivli turning brands across Mumbai, Thane, and Kalyan into content machines that people can&apos;t ignore.
             </p>
 
             <div className="mt-5 md:mt-10 flex flex-wrap gap-3">

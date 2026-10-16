@@ -6,6 +6,7 @@ import { Marquee } from "@/components/site/Marquee";
 import { Services } from "@/components/site/Services";
 import { Work } from "@/components/site/Work";
 import { Process } from "@/components/site/Process";
+import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { Footer } from "@/components/site/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Services />
       <Work />
       <Process />
+      <FAQ />
       <CTA />
       <Footer />
     </main>

@@ -9,7 +9,14 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
       {
-        userAgent: ["GPTBot", "Claude-Bot", "PerplexityBot", "Applebot-Extended"],
+        userAgent: [
+          "GPTBot",
+          "OAI-SearchBot",
+          "Claude-Bot",
+          "PerplexityBot",
+          "Google-Extended",
+          "Applebot-Extended"
+        ],
         allow: "/",
         disallow: ["/api/"],
       },
