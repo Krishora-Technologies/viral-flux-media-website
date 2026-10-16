@@ -245,6 +245,7 @@ export function Work() {
       className="relative bg-ink grain"
       style={{ height: wrapperHeight, position: "relative" }}
     >
+      <div id="studio" className="absolute -top-20 pointer-events-none" />
       <div ref={sectionRef} className={`flex flex-col justify-center text-cream ${isMobile ? "py-20" : "sticky top-0 h-screen overflow-hidden"}`}>
         <div className="mx-auto w-full max-w-[1600px] px-6 md:px-12">
           {/* Heading */}
