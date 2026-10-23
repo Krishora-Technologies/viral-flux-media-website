@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,9 +31,21 @@ export function Nav() {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50 bg-[#0e0e0e]/95 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20"
     >
-      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4 md:px-12">
-        <Link href="/" className="font-display text-xl md:text-2xl tracking-tight text-cream">
-          Viral Flux Media<span className="text-lime">.</span>
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-3.5 md:px-12">
+        <Link href="/" className="flex items-center gap-2.5 md:gap-3 group">
+          <div className="relative w-8 h-8 md:w-9 md:h-9 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+            <Image
+              src="/logo.png"
+              alt="Viral Flux Media Logo"
+              width={74}
+              height={38}
+              priority
+              className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(217,70,239,0.35)]"
+            />
+          </div>
+          <span className="font-display text-xl md:text-2xl tracking-tight text-cream group-hover:text-white transition-colors">
+            Viral Flux Media<span className="text-lime">.</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

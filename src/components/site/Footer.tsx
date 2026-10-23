@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -15,8 +16,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Brand & NAP Details */}
           <div className="md:col-span-4">
-            <Link href="/" className="font-display text-3xl block">
-              Viral Flux Media<span className="text-lime">.</span>
+            <Link href="/" className="inline-flex items-center gap-3.5 group mb-1">
+              <div className="relative w-10 h-10 md:w-11 md:h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/logo.png"
+                  alt="Viral Flux Media Logo"
+                  width={88}
+                  height={45}
+                  className="w-full h-full object-contain filter drop-shadow-[0_0_14px_rgba(34,211,238,0.35)]"
+                />
+              </div>
+              <span className="font-display text-3xl text-cream group-hover:text-white transition-colors">
+                Viral Flux Media<span className="text-lime">.</span>
+              </span>
             </Link>
             <p className="font-mono-label text-cream/70 mt-3 text-sm leading-relaxed max-w-sm">
               Premier social media marketing & cinematic video production studio headquartered in Dombivli, serving brands across Kalyan, Thane, Mumbai, and worldwide.
