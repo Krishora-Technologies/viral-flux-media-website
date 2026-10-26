@@ -4,7 +4,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog & Local Marketing Insights | Viral Flux Media - Digital Marketing Agency",
+  title: "Blog & Local Marketing Insights",
   description: "Guides, agency comparisons, and data-backed social media growth strategies for businesses in Dombivli, Kalyan, Thane, and Mumbai.",
   alternates: {
     canonical: "/blog",
@@ -101,6 +101,60 @@ export default function BlogHubPage() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Regional Services & Core Solutions Cluster */}
+        <div className="mt-24 pt-16 border-t border-white/10">
+          <div className="font-mono-label text-xs text-lime uppercase tracking-wider mb-3">
+            Service Coverage
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl text-cream font-light mb-8">
+            Specialized Marketing Services Across Maharashtra
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-mono-label text-xs">
+            <Link
+              href="/social-media-marketing-agency-dombivli"
+              className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-all group"
+            >
+              <span className="text-lime font-bold text-sm block mb-2 group-hover:translate-x-1 transition-transform">Dombivli Agency Hub →</span>
+              <p className="text-cream/70 text-xs leading-relaxed">Local social media management, organic reach, and on-site cinema video production in Dombivli East & West.</p>
+            </Link>
+            <Link
+              href="/social-media-marketing-agency-kalyan"
+              className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-all group"
+            >
+              <span className="text-lime font-bold text-sm block mb-2 group-hover:translate-x-1 transition-transform">Kalyan Agency Hub →</span>
+              <p className="text-cream/70 text-xs leading-relaxed">Targeted visual content, commercial reel shoots, and paid ads across Khadakpada, Wayle Nagar, and Kalyan West.</p>
+            </Link>
+            <Link
+              href="/social-media-marketing-agency-thane"
+              className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-all group"
+            >
+              <span className="text-lime font-bold text-sm block mb-2 group-hover:translate-x-1 transition-transform">Thane Agency Hub →</span>
+              <p className="text-cream/70 text-xs leading-relaxed">Performance advertising, video marketing, and brand scaling in Majiwada, Ghodbunder Road, and Naupada.</p>
+            </Link>
+            <Link
+              href="/social-media-marketing-agency-mumbai"
+              className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-all group"
+            >
+              <span className="text-lime font-bold text-sm block mb-2 group-hover:translate-x-1 transition-transform">Mumbai Agency Hub →</span>
+              <p className="text-cream/70 text-xs leading-relaxed">High-impact social media management and brand films across the Mumbai Metropolitan Region.</p>
+            </Link>
+            <Link
+              href="/video-production-reel-editing-dombivli"
+              className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-all group"
+            >
+              <span className="text-lime font-bold text-sm block mb-2 group-hover:translate-x-1 transition-transform">4K Reel Production Studio →</span>
+              <span className="text-cream/70 text-xs leading-relaxed block">Professional 4K cinema rigs, 1.5-second retention hooks, studio color grading, and dynamic audio design.</span>
+            </Link>
+            <Link
+              href="/performance-marketing-paid-ads"
+              className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-all group"
+            >
+              <span className="text-lime font-bold text-sm block mb-2 group-hover:translate-x-1 transition-transform">Paid Ads & Performance Marketing →</span>
+              <span className="text-cream/70 text-xs leading-relaxed block">Data-driven Meta & Google ad funnels, CAPI tracking, and direct Click-to-WhatsApp lead funnels.</span>
+            </Link>
+          </div>
         </div>
       </section>
 

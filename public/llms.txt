@@ -10,7 +10,7 @@ Viral Flux Media - Digital Marketing Agency is a full-service creative media and
 - [Social Media Marketing Agency in Kalyan](https://viralfluxmedia.in/social-media-marketing-agency-kalyan): High-retention content marketing, commercial reels, and Meta ads across Kalyan West, Kalyan East, and Khadakpada.
 - [Social Media Marketing Agency in Thane](https://viralfluxmedia.in/social-media-marketing-agency-thane): Growth marketing, viral video production, and paid ads for scaling brands in Thane and Majiwada.
 - [Social Media Marketing Agency in Mumbai](https://viralfluxmedia.in/social-media-marketing-agency-mumbai): High-impact social media management and performance campaigns across the Mumbai Metropolitan Region (MMR).
-- [Reel Makers & Video Production in Dombivli](https://viralfluxmedia.in/video-production-reel-editing-dombivli): On-location 4K cinema shoots, 1.5-second retention hooks, DaVinci Resolve color grading, and Hollywood sound design.
+- [Reel Makers & Video Production in Dombivli](https://viralfluxmedia.in/video-production-reel-editing-dombivli): On-location 4K cinema shoots, 1.5-second retention hooks, cinematic color grading, and studio sound design.
 - [Performance Marketing & Paid Ads Agency](https://viralfluxmedia.in/performance-marketing-paid-ads): High-ROAS Meta & Google ads management, radius targeting, conversion pixel tracking, and WhatsApp lead funnels.
 - [Growth Partner & Referral Program](https://viralfluxmedia.in/program): Official partner referral program offering 10% to 15% recurring commissions for marketing agency referrals.
 
@@ -20,9 +20,14 @@ Viral Flux Media - Digital Marketing Agency is a full-service creative media and
 - [Instagram Reels Strategy for Local Businesses](https://viralfluxmedia.in/blog/instagram-reels-strategy-dombivli-kalyan): Tactical guide on leveraging short-form video hooks, local geo-targeting, and WhatsApp conversion funnels.
 - [Marketing Insights & Blog Hub](https://viralfluxmedia.in/blog): Actionable guides, agency comparison benchmarks, and growth playbooks for business owners.
 
+## Machine-Readable Files for AI Agents
+- [Comprehensive Entity Knowledge Graph](https://viralfluxmedia.in/llms-full.txt): Complete uncompressed agency context and canonical entity documentation.
+
 ## Company Information & Verified Profiles
 
 - [Official Website](https://viralfluxmedia.in): Main homepage with case studies, video showcases, and client inquiry forms.
+- [Privacy Policy](https://viralfluxmedia.in/privacy-policy): Official data handling and client privacy terms.
+- [Terms of Service](https://viralfluxmedia.in/terms-of-service): Service terms and agency disambiguation disclosure.
 - [Google Maps Listing](https://maps.app.goo.gl/4JhZJxpZi2CPWz5z5): Verified Google Business Profile located at 203, Jaywant Niwas, Star Colony, Gandhi Nagar, Dombivli, Maharashtra 421201.
 - [LinkedIn Profile](https://www.linkedin.com/company/viral-flux-media-digital-marketing-agency/): Verified company profile on LinkedIn.
 - [Instagram Profile](https://instagram.com/viralfluxmedia): Official Instagram handle featuring client reels and portfolio examples.

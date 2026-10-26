@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   title: {
     default: "Viral Flux Media - Digital Marketing Agency | Dombivli, Kalyan & Thane",
-    template: "%s | Viral Flux Media - Digital Marketing Agency",
+    template: "%s | Viral Flux Media",
   },
   description: "Viral Flux Media - Digital Marketing Agency is a premier performance and viral content studio in Dombivli (Thane), specializing in 4K Instagram reels, paid Meta & Google ads, and brand growth.",
   keywords: [
@@ -156,6 +156,7 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": ["LocalBusiness", "ProfessionalService"],
+                "@id": "https://viralfluxmedia.in/#localbusiness",
                 "name": "Viral Flux Media - Digital Marketing Agency",
                 "alternateName": "Viral Flux Media",
                 "url": "https://viralfluxmedia.in",
@@ -186,6 +187,12 @@ export default function RootLayout({
                   }
                 ],
                 "description": "Viral Flux Media is a results-driven social media marketing and digital marketing agency in Dombivli (Thane), specializing in cinematic content, viral campaigns, 4K Instagram reels, and Meta ads.",
+                "founder": {
+                  "@type": "Person",
+                  "name": "Akansha Khurpe",
+                  "jobTitle": "CEO",
+                  "url": "https://viralfluxmedia.in"
+                },
                 "disambiguatingDescription": "Viral Flux Media is an independent marketing agency located at 203, Jaywant Niwas, Star Colony, Gandhi Nagar, Dombivli, Maharashtra 421201. It is not affiliated with any online earning platform, task-based scheme, viralflux.com.ng, or Up Flux Media.",
                 "areaServed": [
                   { "@type": "City", "name": "Dombivli" },
@@ -206,8 +213,7 @@ export default function RootLayout({
                 "@type": "Service",
                 "serviceType": "Social Media Marketing Agency",
                 "provider": {
-                  "@type": "LocalBusiness",
-                  "name": "Viral Flux Media"
+                  "@id": "https://viralfluxmedia.in/#localbusiness"
                 },
                 "description": "Results-driven social media management, cinematic reel creation, and paid advertising campaigns in Dombivli, Kalyan, Thane, and Mumbai.",
                 "areaServed": ["Dombivli", "Kalyan", "Thane", "Mumbai", "Maharashtra", "Worldwide"],
@@ -243,6 +249,7 @@ export default function RootLayout({
           }}
         />
         <link rel="llms" href="/llms.txt" />
+        <link rel="alternate" type="text/markdown" title="Full LLM Context" href="/llms-full.txt" />
         <link rel="ai" href="/ai.txt" />
       </head>
       <body className="antialiased relative cursor-none">

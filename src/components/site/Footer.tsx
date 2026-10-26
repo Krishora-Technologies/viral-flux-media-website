@@ -239,6 +239,11 @@ export function Footer() {
         {/* Bottom copyright & local disclaimer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-cream/10 font-mono-label text-cream/40 text-xs">
           <span>© 2026 Viral Flux Media. All rights reserved. Registered in Dombivli, Maharashtra, India.</span>
+          <div className="flex items-center gap-3">
+            <Link href="/privacy-policy" className="hover:text-lime transition-colors">Privacy Policy</Link>
+            <span>·</span>
+            <Link href="/terms-of-service" className="hover:text-lime transition-colors">Terms of Service</Link>
+          </div>
           <span>Content that converts, engineered for attention.</span>
         </div>
       </div>

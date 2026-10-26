@@ -49,7 +49,7 @@ export function Nav() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden gap-10 md:flex items-center">
+        <nav className="hidden gap-8 lg:gap-10 md:flex items-center">
           {samePageLinks.map((item) => (
             <a
               key={item.label}
@@ -59,6 +59,12 @@ export function Nav() {
               {item.label}
             </a>
           ))}
+          <Link
+            href="/blog"
+            className="font-mono-label text-xs uppercase tracking-wider text-cream/70 hover:text-lime transition-colors"
+          >
+            Blog
+          </Link>
           <Link
             href="/program"
             className="font-mono-label text-xs uppercase tracking-wider text-lime hover:underline font-semibold flex items-center gap-1"
@@ -110,6 +116,13 @@ export function Nav() {
                   {item.label}
                 </a>
               ))}
+              <Link
+                href="/blog"
+                onClick={() => setMobileOpen(false)}
+                className="font-mono-label text-sm uppercase tracking-wider text-cream/80 hover:text-lime transition-colors"
+              >
+                Blog
+              </Link>
               <Link
                 href="/program"
                 onClick={() => setMobileOpen(false)}

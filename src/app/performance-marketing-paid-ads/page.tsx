@@ -4,7 +4,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Performance Marketing & Paid Ads Agency | Meta & Google Ads | Viral Flux Media - Digital Marketing Agency",
+  title: "Performance Marketing & Paid Ads Agency",
   description: "Stop wasting money boosting posts. Viral Flux Media is a performance marketing and paid ads agency in Dombivli & Thane running high-ROAS Meta ads, Google ads, and WhatsApp lead campaigns.",
   alternates: {
     canonical: "/performance-marketing-paid-ads",
@@ -31,8 +31,63 @@ export const metadata: Metadata = {
 };
 
 export default function PerformanceMarketingPage() {
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is running ads via Meta Ads Manager better than boosting posts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boosting posts optimizes primarily for superficial likes and bot impressions. Ads Manager enables custom pixel conversion tracking (CAPI), hyper-local radius targeting (Dombivli, Kalyan, Thane, Mumbai), Lookalike audiences, and direct Click-to-WhatsApp funnels that bring actual paying customers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you optimize ad campaigns for local businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We structure campaigns with disciplined phased testing to allow Meta's machine learning algorithm to exit the learning phase efficiently and optimize for the lowest cost per qualified lead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Click-to-WhatsApp advertising work for Indian buyers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a prospect clicks your Instagram Reel or Story ad, it opens a pre-filled WhatsApp chat directly with your sales team. This bypasses slow website landing pages and increases inquiry conversion rates by up to 3x."
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://viralfluxmedia.in"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Performance Marketing & Paid Ads",
+          "item": "https://viralfluxmedia.in/performance-marketing-paid-ads"
+        }
+      ]
+    }
+  ];
+
   return (
     <main className="relative bg-[#0e0e0e] text-[#f9f8f3] min-h-screen selection:bg-lime selection:text-ink">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       <Nav />
 
       {/* Hero Section */}
@@ -63,6 +118,27 @@ export default function PerformanceMarketingPage() {
           >
             Calculate Projected ROAS
           </Link>
+        </div>
+      </section>
+
+      {/* AI Answer Snippet & Conversion Architecture Block */}
+      <section className="py-12 px-6 md:px-12 max-w-[1400px] mx-auto border-b border-white/10 bg-white/[0.01]">
+        <div className="p-8 md:p-10 rounded-3xl bg-white/[0.02] border border-lime/20 relative overflow-hidden">
+          <div className="font-mono-label text-lime text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-lime" />
+            Verified Answer &amp; Acquisition Architecture
+          </div>
+          <h2 className="font-display text-2xl md:text-3xl text-cream font-light mb-4">
+            How does Click-to-WhatsApp paid advertising generate leads for Indian businesses?
+          </h2>
+          <p className="font-mono-label text-sm md:text-base text-cream/90 leading-relaxed max-w-4xl">
+            Click-to-WhatsApp paid advertising directs high-intent prospects from Meta feeds directly into an encrypted WhatsApp conversation with sales teams. Viral Flux Media pairs geo-targeted Facebook and Instagram ads with server-side CAPI tracking and automated CRM routing, eliminating slow landing page bounce rates and generating qualified customer conversations for local and regional Indian businesses.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4 text-xs font-mono-label text-cream/60 pt-4 border-t border-white/10">
+            <span>✓ Platform: Meta Ads Manager &amp; Conversions API (CAPI)</span>
+            <span>✓ Funnel: Direct-to-WhatsApp Frictionless Inquiries</span>
+            <span>✓ Geotargeting: Dombivli, Kalyan, Thane, Mumbai &amp; All-India</span>
+          </div>
         </div>
       </section>
 
@@ -132,6 +208,94 @@ export default function PerformanceMarketingPage() {
               Direct Indian buyers straight from Instagram Reels into instant WhatsApp chats with automated qualification bots and instant sales team notification.
             </p>
             <div className="font-mono-label text-xs text-lime">Conversion Rate: 28%+</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Regional Network & Related Guides */}
+      <section className="py-16 px-6 md:px-12 max-w-[1400px] mx-auto border-b border-white/10">
+        <div className="font-mono-label text-lime text-xs uppercase tracking-wider mb-3">
+          Agency Growth Network
+        </div>
+        <h2 className="font-display text-2xl md:text-4xl font-light mb-8 text-cream">
+          Comprehensive Regional Marketing Solutions
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 font-mono-label text-xs">
+          <Link
+            href="/social-media-marketing-agency-dombivli"
+            className="p-5 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-colors"
+          >
+            <span className="text-lime font-bold block mb-1">Dombivli Agency Hub →</span>
+            <span className="text-cream/70 text-[11px] block">Full-service studio headquarters & shoots</span>
+          </Link>
+          <Link
+            href="/social-media-marketing-agency-kalyan"
+            className="p-5 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-colors"
+          >
+            <span className="text-lime font-bold block mb-1">Kalyan Agency Hub →</span>
+            <span className="text-cream/70 text-[11px] block">Retail, clinic & real estate reels</span>
+          </Link>
+          <Link
+            href="/social-media-marketing-agency-thane"
+            className="p-5 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-colors"
+          >
+            <span className="text-lime font-bold block mb-1">Thane Agency Hub →</span>
+            <span className="text-cream/70 text-[11px] block">Performance ad campaigns & scaling retail</span>
+          </Link>
+          <Link
+            href="/video-production-reel-editing-dombivli"
+            className="p-5 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-lime/40 transition-colors"
+          >
+            <span className="text-lime font-bold block mb-1">4K Reel Production Studio →</span>
+            <span className="text-cream/70 text-[11px] block">On-location camera rigs &amp; cinematic color grading</span>
+          </Link>
+        </div>
+
+        <div className="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div className="font-display text-lg text-cream">Related Market Intelligence Guides:</div>
+            <p className="font-mono-label text-xs text-cream/70 mt-1">Read our technical breakdowns on local agency comparisons and reels strategy authored by our strategy team.</p>
+          </div>
+          <div className="flex flex-wrap gap-3 font-mono-label text-xs">
+            <Link
+              href="/blog/best-social-media-marketing-agencies-dombivli-kalyan"
+              className="text-lime hover:underline border border-lime/30 px-3 py-1.5 rounded-full"
+            >
+              Top 7 Dombivli & Kalyan Agencies →
+            </Link>
+            <Link
+              href="/blog/instagram-reels-strategy-dombivli-kalyan"
+              className="text-lime hover:underline border border-lime/30 px-3 py-1.5 rounded-full"
+            >
+              Local Reels Strategy Playbook →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Performance Marketing FAQs */}
+      <section className="py-24 px-6 md:px-12 max-w-[1000px] mx-auto border-b border-white/10">
+        <h2 className="font-display text-3xl md:text-5xl font-light mb-12 text-center">
+          Performance Marketing FAQs
+        </h2>
+        <div className="space-y-6">
+          <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+            <h3 className="font-display text-xl text-lime mb-2">Why is Meta Ads Manager superior to &ldquo;Boost Post&rdquo;?</h3>
+            <p className="font-mono-label text-sm text-cream/70 leading-relaxed">
+              Boosting optimizes for superficial vanity clicks. Ads Manager unlocks custom Conversions API tracking, negative radius geo-fencing, retargeting pools, and direct CRM integrations.
+            </p>
+          </div>
+          <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+            <h3 className="font-display text-xl text-lime mb-2">How do Click-to-WhatsApp ads convert better in India?</h3>
+            <p className="font-mono-label text-sm text-cream/70 leading-relaxed">
+              Indian consumers prefer chatting over filling complex forms. Direct WhatsApp ad funnels take potential buyers straight into a 1-on-1 chat, resulting in 28%+ conversion rates.
+            </p>
+          </div>
+          <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+            <h3 className="font-display text-xl text-lime mb-2">How do you report ad performance?</h3>
+            <p className="font-mono-label text-sm text-cream/70 leading-relaxed">
+              You receive weekly live reporting dashboards tracking exact spend, cost-per-lead (CPL), Return on Ad Spend (ROAS), and verified store walk-ins or sales.
+            </p>
           </div>
         </div>
       </section>

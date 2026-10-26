@@ -57,6 +57,7 @@ export function Hero() {
               <span className="h-px w-8 bg-ink/40" /> Dombivli · Kalyan · Thane · Mumbai
             </div>
             <h1 className="font-display text-5xl md:text-[clamp(3rem,7vw,6.5rem)] font-light leading-[0.92]">
+              <span className="sr-only">Viral Flux Media — Social Media Marketing Agency in Dombivli, Kalyan &amp; Thane. </span>
               Silent feeds<br />
               into <em className="text-lime not-italic">viral</em><br />
               <span className="italic">moments.</span>

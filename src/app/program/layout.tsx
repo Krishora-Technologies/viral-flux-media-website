@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Growth Partner Program | Viral Flux Media - Digital Marketing Agency",
+  title: "Growth Partner Program",
   description: "Official Growth Partner & Client Referral Program for Viral Flux Media - Digital Marketing Agency.",
   alternates: {
     canonical: "/program",
