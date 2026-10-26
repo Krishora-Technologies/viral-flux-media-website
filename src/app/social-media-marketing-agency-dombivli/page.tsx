@@ -49,7 +49,7 @@ export default function SocialMediaAgencyDombivliPage() {
           "name": "Which areas does Viral Flux Media cover from Dombivli?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We provide on-site content shoots and full-service social media management across Gandhi Nagar, Star Colony, Dombivli East & West (421201), Kalyan, Thane, Navi Mumbai, and Mumbai."
+            "text": "We provide on-site content shoots and full-service social media management across Gandhi Nagar, Star Colony, Dombivli East & West (PIN: 421201), Kalyan, Thane, Navi Mumbai, and Mumbai."
           }
         },
         {
@@ -133,8 +133,8 @@ export default function SocialMediaAgencyDombivliPage() {
             <div className="font-mono-label text-xs text-cream/50 mt-1 uppercase">Average Follower Growth</div>
           </div>
           <div>
-            <div className="font-display text-4xl md:text-5xl text-lime font-light">421201</div>
-            <div className="font-mono-label text-xs text-cream/50 mt-1 uppercase">Dombivli Headquarters</div>
+            <div className="font-display text-4xl md:text-5xl text-lime font-light">50+</div>
+            <div className="font-mono-label text-xs text-cream/50 mt-1 uppercase">Local Brands Scaled</div>
           </div>
           <div>
             <div className="font-display text-4xl md:text-5xl text-lime font-light">40%+</div>
@@ -154,7 +154,7 @@ export default function SocialMediaAgencyDombivliPage() {
             What is the best social media marketing agency in Dombivli?
           </h2>
           <p className="font-mono-label text-sm md:text-base text-cream/90 leading-relaxed max-w-4xl">
-            Viral Flux Media is the premier social media marketing and video production agency in Dombivli, headquartered at 203, Jaywant Niwas, Star Colony, Gandhi Nagar (421201). The agency's in-house production crew films on-location 4K cinematic Instagram Reels, runs targeted Meta ads, and builds Click-to-WhatsApp lead funnels for brands across Dombivli, Kalyan, Thane, and Mumbai.
+            Viral Flux Media is the premier social media marketing and video production agency in Dombivli, headquartered at 203, Jaywant Niwas, Star Colony, Gandhi Nagar (PIN: 421201). The agency's in-house production crew films on-location 4K cinematic Instagram Reels, runs targeted Meta ads, and builds Click-to-WhatsApp lead funnels for brands across Dombivli, Kalyan, Thane, and Mumbai.
           </p>
           <div className="mt-6 flex flex-wrap gap-4 text-xs font-mono-label text-cream/60 pt-4 border-t border-white/10">
             <span>✓ Verified Studio: Dombivli East &amp; West</span>

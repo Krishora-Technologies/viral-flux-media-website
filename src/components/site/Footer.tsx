@@ -182,7 +182,7 @@ export function Footer() {
             <ul className="space-y-2.5 font-mono-label text-sm text-cream/70">
               <li>
                 <Link href="/social-media-marketing-agency-dombivli" className="hover:text-lime transition-colors">
-                  Dombivli (421201)
+                  Dombivli East &amp; West
                 </Link>
               </li>
               <li>
