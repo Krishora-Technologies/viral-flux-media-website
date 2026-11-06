@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { CustomCursor } from "@/components/site/CustomCursor";
+import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -253,6 +254,7 @@ export default function RootLayout({
         <link rel="ai" href="/ai.txt" />
       </head>
       <body className="antialiased relative cursor-none">
+        <MicrosoftClarity />
         <CustomCursor />
         {children}
       </body>

@@ -1,0 +1,78 @@
+# MISSION: Full-Spectrum SEO, AEO & GEO Website Domination
+
+Act as an elite Search Engine Optimization (SEO), Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO) Architect. Your objective is to audit, optimize, and structure this entire website codebase to achieve #1 rankings on Google Search, Google Maps Local 3-Pack, and top citations across AI Answer Engines (ChatGPT Search, Perplexity, Claude, and Google AI Overviews).
+
+---
+
+## STEP 1: Install Required Marketing & SEO Skills
+
+Run this exact command in the project terminal to install the 7 specialized open-source skills into `.agents/skills/`:
+
+```bash
+npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit --skill ai-seo --skill schema --skill site-architecture --skill programmatic-seo --skill directory-submissions --skill link-building
+```
+
+---
+
+## STEP 2: Execute the 6-Phase Optimization Workflow
+
+Once installed, read and strictly adhere to each skill's instructions in `.agents/skills/<skill-name>/SKILL.md`:
+
+### Phase 1: Technical & Crawlability Foundation (`seo-audit`)
+1. Meta Tags & Canonicals:
+   - Verify every route has a unique, high-CTR `<title>` (under 60 characters).
+   - Write a compelling `<meta name="description">` (140–155 characters) for every page with clear value propositions and target keywords.
+   - Enforce explicit canonical tags on every page (`<link rel="canonical">`) to prevent duplicate indexing across HTTP/HTTPS and www/non-www.
+2. Crawl Directives (`robots.ts` or `/robots.txt`):
+   - Allow standard search engines (Googlebot, Bingbot).
+   - Explicitly allow AI search crawlers: `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `ClaudeBot`, `Claude-SearchBot`, `PerplexityBot`, `Perplexity-User`, `Google-Extended`, `Applebot-Extended`, `meta-webindexer`, `Amazonbot`, `cohere-ai`.
+   - Disallow private endpoints, auth pages, and `/api/` routes.
+   - Specify the exact absolute URL of `sitemap.xml`.
+3. XML Sitemap (`sitemap.ts` or `/sitemap.xml`):
+   - Generate a valid XML sitemap containing only canonical, status-200 HTML pages.
+   - Set accurate `lastModified` dates and proper priority ratings (1.0 for homepage, 0.9 for core services, 0.8 for blogs/location pages).
+4. Semantic HTML & Heading Hierarchy:
+   - Ensure strictly ONE `<h1>` per page reflecting the primary keyword intent.
+   - Organize secondary sections using clean `<h2>` and `<h3>` tags with natural semantic hierarchy.
+   - Add descriptive `alt` text to all images and unique `id` attributes to interactive elements.
+
+### Phase 2: Site Architecture & Topical Clustering (`site-architecture`)
+1. Create a logical site hierarchy where every vital service and conversion page is within 3 clicks of the homepage.
+2. Build contextual cross-links between relevant blog posts, case studies, service pages, and geographic landing pages.
+3. Add clean breadcrumb navigation paths to all deep subpages.
+
+### Phase 3: Structured Data & Knowledge Graph Grounding (`schema`)
+1. Inject valid JSON-LD schemas into the site layout and page heads:
+   - `Organization` / `LocalBusiness`: Exact legal name, verified address (NAP), phone number, geo-coordinates, opening hours, official website, and `sameAs` social profile URLs.
+   - `Service`: Itemized list of specific commercial service offerings.
+   - `FAQPage`: Schema markup wrapping all question-and-answer accordions.
+   - `BreadcrumbList`: Full navigation hierarchy on all sub-routes.
+   - `Article` / `BlogPosting`: Author bio, publisher info, and publish/modified timestamps.
+2. Add a `disambiguatingDescription` to the root entity to clarify brand identity and prevent confusion with third-party sites or legacy domains.
+
+### Phase 4: AEO & GEO Optimization for AI Search (`ai-seo`)
+1. Create AI Knowledge Bundles in `/public`:
+   - `/public/llms.txt`: A concise markdown summary of the business, core capabilities, canonical page links, and contact channels.
+   - `/public/llms-full.txt`: A detailed knowledge bundle containing the company's background, leadership bios, operational workflows, and verified answers to high-frequency customer queries.
+2. Implement Direct Answer Snippets (Definition Blocks):
+   - On the homepage and every core service/regional page, build a visible answer block answering a high-intent search query (e.g., *"What is the best [service] in [city]?"*).
+   - Format each answer strictly between **40–60 words** (the optimal length for Google Featured Snippets and LLM retrieval-augmented generation).
+   - Use objective, fact-dense language that search engines can extract verbatim.
+
+### Phase 5: Programmatic & Hyper-Local Landing Pages (`programmatic-seo`)
+1. For regional service businesses, create dedicated, high-intent location pages for target cities, districts, or commercial hubs (e.g., `/social-media-marketing-agency-[city]`).
+2. Include unique, hyper-local content on each page: localized case studies, nearby business districts served, customized FAQs, and local pain points to avoid thin content or doorway page penalties.
+
+### Phase 6: Local Citations, Directory Blueprint & Google Business Profile (`directory-submissions` & `link-building`)
+1. Generate a file named `LOCAL_CITATION_DIRECTORY_ACTION_PACK.md` in the workspace root with:
+   - Canonical NAP & Entity Truth Record: Business Name, Address, Phone, Coordinates, and primary categories.
+   - Google Business Profile (GBP) Configuration: Optimal Primary Category, Secondary Categories, Custom Services (with descriptions, zero pricing), and 4 ready-to-publish Google posts (What's New, Video Highlight, Lead Generation, and Free Audit).
+   - Directory Submission Roadmap: Prioritized list of high-DR directories (Google Business Profile, Bing Places, Apple Maps, Justdial, IndiaMart, Sulekha, TradeIndia, YellowPages, LinkedIn, Clutch) with submission URLs and verification methods.
+
+---
+
+## STEP 3: Verification & Quality Gate
+1. Validate all internal links and ensure zero 404 errors.
+2. Verify all structured data using the Google Rich Results standard.
+3. Run the production build (`npm run build` or framework equivalent) to ensure 0 TypeScript, lint, or syntax errors.
+4. Provide a concise summary of all changes made.
