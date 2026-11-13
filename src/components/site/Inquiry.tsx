@@ -1,8 +1,8 @@
 "use client";
-"use client";
 
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
+import { Clarity } from "@/components/analytics/MicrosoftClarity";
 
 /**
  * InquirySection — phone descends from the hero with a slow 3D spin,
@@ -79,7 +79,7 @@ export function Inquiry() {
               what&apos;s <em className="not-italic text-lime">next.</em>
             </h2>
             <p className="mt-6 max-w-xs text-sm text-muted-foreground">
-              Drop a brief inside the device. We reply within one business day with a tailored plan.
+              Direct WhatsApp inquiry inside the device. No forms — customize your brief and chat directly with our studio founders.
             </p>
           </motion.div>
 
@@ -137,8 +137,9 @@ export function Inquiry() {
             className="hidden md:col-span-3 md:block"
           >
             <div className="space-y-3">
-              <Chip label="avg reply" value="< 24h" />
-              <Chip label="onboarding" value="7 days" dark />
+              <Chip label="direct line" value="WhatsApp" dark />
+              <Chip label="avg reply" value="< 15 min" />
+              <Chip label="number" value="+91 81081 81651" />
               <div className="font-mono-label mt-6 text-muted-foreground">
                 ↳ trusted by 40+ brands across fashion, music & tech
               </div>
@@ -182,246 +183,100 @@ export function Clock() {
 }
 
 export function AppInterface({ onClose }: { onClose?: () => void }) {
-  const [step, setStep] = useState(0);
-  const [form, setForm] = useState({ name: "", brandName: "", phone: "+91 ", email: "", goal: "Get Seen", note: "" });
-  const [sent, setSent] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const customMessage = "Hey Viral Flux Media! I want to grow my brand / business. Let's connect!";
+  const whatsappUrl = `https://wa.me/918108181651?text=${encodeURIComponent(customMessage)}`;
 
-  const canContinue = () => {
-    if (step === 0) {
-      const isNameValid = form.name.trim().length > 0;
-      const isBrandValid = form.brandName.trim().length > 0;
-      const isPhoneValid = form.phone.replace(/[^0-9]/g, '').length > 4;
-      const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
-      return isNameValid && isBrandValid && isPhoneValid && isEmailValid;
-    }
-    return true;
-  };
-
-  const next = () => {
-    if (canContinue()) setStep((s) => Math.min(s + 1, 2));
-  };
-  const back = () => setStep((s) => Math.max(s - 1, 0));
-  const submit = async () => {
-    setIsSubmitting(true);
+  const handleOpenWhatsApp = () => {
     try {
-      const response = await fetch("/api/inquiry", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-      if (!response.ok) {
-        throw new Error("Failed to submit");
-      }
-      setSent(true);
-    } catch (e) {
-      console.error(e);
-      setSent(true);
-    } finally {
-      setIsSubmitting(false);
+      Clarity.event("whatsapp_inquiry_clicked");
+    } catch {
+      // ignore
     }
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <>
-      {/* App top bar */}
-      <div className="flex items-center justify-between px-5 pt-8">
-        <div className="font-mono-label text-[9px] text-ink"><Clock /></div>
-        <div className="font-mono-label text-[9px] text-ink">vfm </div>
-      </div>
-
-      <div className="flex items-center justify-between px-5 pt-3">
-        <div className="font-display text-xl italic leading-none">Project Brief</div>
-        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-lime text-[11px] font-bold text-ink">
-          {sent ? "✓" : step + 1}
+    <div className="flex h-full flex-col justify-between p-6 pt-10 text-ink select-none">
+      {/* Top status */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-1.5 font-mono-label text-[10px] text-ink/70">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="font-semibold text-emerald-700">Online Now</span>
         </div>
-      </div>
-
-      {/* Progress dots */}
-      <div className="mt-3 flex gap-1.5 px-5">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className={`h-1 flex-1 rounded-full transition-colors ${
-              i <= step ? "bg-ink" : "bg-ink/15"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Body */}
-      <div className="relative mt-5 flex-1 overflow-hidden px-5">
-        <AnimatePresence mode="wait">
-          {sent ? (
-            <motion.div
-              key="sent"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="flex h-full flex-col items-center justify-center text-center"
+        <div className="flex items-center gap-2">
+          <span className="font-mono-label text-[10px] text-ink/50"><Clock /></span>
+          {onClose && (
+            <button 
+              onClick={onClose}
+              className="flex h-5 w-5 items-center justify-center rounded-full bg-ink/10 text-xs font-bold text-ink hover:bg-ink/20 transition-colors"
+              aria-label="Close"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-lime text-2xl">
-                ✓
-              </div>
-              <div className="mt-5 font-display text-2xl">Brief received</div>
-              <p className="mt-2 px-4 text-xs text-muted-foreground">
-                We&apos;ll be in touch within 24 hours with a custom proposal.
-              </p>
-            </motion.div>
-          ) : step === 0 ? (
-            <motion.div
-              key="s0"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.25 }}
-              className="space-y-3"
-            >
-              <Field label="your name">
-                <input
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="Rohan Sharma"
-                  maxLength={80}
-                  className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-ink/30"
-                />
-              </Field>
-              <Field label="brand name">
-                <input
-                  value={form.brandName}
-                  onChange={(e) => setForm({ ...form, brandName: e.target.value })}
-                  placeholder="Studio Flux"
-                  maxLength={80}
-                  className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-ink/30"
-                />
-              </Field>
-              <Field label="phone number">
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    if (/^[\+0-9\s]*$/.test(val)) {
-                      setForm({ ...form, phone: val });
-                    }
-                  }}
-                  placeholder="+91 "
-                  maxLength={20}
-                  className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-ink/30"
-                />
-              </Field>
-              <Field label="email address">
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="rohan@viralfluxmedia.in"
-                  maxLength={100}
-                  className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-ink/30"
-                />
-              </Field>
-            </motion.div>
-          ) : step === 1 ? (
-            <motion.div
-              key="s1"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.25 }}
-              className="space-y-3"
-            >
-              <div>
-                <div className="font-mono-label mb-2 text-[9px] text-muted-foreground">
-                  primary goal
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    { v: "Get Seen", l: "Get Seen" },
-                    { v: "Build Attention", l: "Build Attention" },
-                    { v: "Drive Engagement", l: "Drive Engagement" },
-                    { v: "Convert Audience", l: "Convert Audience" },
-                  ].map((o) => (
-                    <button
-                      key={o.v}
-                      onClick={() => setForm({ ...form, goal: o.v })}
-                      className={`rounded-xl border px-3 py-2.5 text-xs font-semibold transition-colors ${
-                        form.goal === o.v
-                          ? "border-ink bg-ink text-cream"
-                          : "border-ink/15 bg-paper text-ink hover:border-ink/40"
-                      }`}
-                    >
-                      {o.l}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="s2"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.25 }}
-              className="space-y-3"
-            >
-              <Field label="tell us more">
-                <textarea
-                  value={form.note}
-                  onChange={(e) => setForm({ ...form, note: e.target.value })}
-                  placeholder="A few lines about your brand, audience, and timing…"
-                  rows={5}
-                  maxLength={500}
-                  className="w-full resize-none bg-transparent text-xs outline-none placeholder:text-ink/30"
-                />
-              </Field>
-              <div className="font-mono-label text-[9px] text-muted-foreground">
-                ↳ we read every brief personally
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Footer actions */}
-      {!sent && (
-        <div className="flex items-center justify-between gap-2 px-5 pb-6 pt-3">
-          <button
-            onClick={step === 0 ? onClose : back}
-            className="rounded-full px-4 py-2 text-xs font-semibold text-ink/60 hover:text-ink transition-colors"
-          >
-            ← back
-          </button>
-          {step < 2 ? (
-            <button
-              onClick={next}
-              disabled={!canContinue()}
-              className="rounded-full bg-ink px-5 py-2.5 text-xs font-semibold text-cream transition-transform hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed"
-            >
-              continue →
-            </button>
-          ) : (
-            <button
-              onClick={submit}
-              disabled={isSubmitting}
-              className="rounded-full bg-lime px-5 py-2.5 text-xs font-semibold text-ink transition-transform hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
-            >
-              {isSubmitting ? "sending..." : "send brief ↗"}
+              ×
             </button>
           )}
         </div>
-      )}
-    </>
-  );
-}
+      </div>
 
-export function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block rounded-xl border border-ink/10 bg-paper px-3.5 py-2.5 transition-colors focus-within:border-ink/40">
-      <div className="font-mono-label mb-1 text-[9px] text-muted-foreground">{label}</div>
-      {children}
-    </label>
+      {/* Middle: Clean Info & Aesthetic Screen */}
+      <div className="my-auto flex flex-col items-center text-center px-2">
+        {/* Studio Badge */}
+        <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-ink text-cream shadow-xl mb-5">
+          <span className="font-display text-2xl italic text-lime">vfm.</span>
+          <div className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md">
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+          </div>
+        </div>
+
+        <h3 className="font-display text-2xl font-light italic leading-tight text-ink">
+          Direct Studio Chat
+        </h3>
+        <p className="mt-2 text-xs text-muted-foreground leading-relaxed max-w-[220px]">
+          Skip the forms. Message our founders directly on WhatsApp to discuss reels, growth &amp; pricing.
+        </p>
+
+        {/* Minimal Info Badges */}
+        <div className="mt-5 flex flex-col gap-2 w-full max-w-[240px]">
+          <div className="flex items-center gap-2.5 rounded-xl bg-paper px-3 py-2 text-left border border-ink/5">
+            <span className="text-base">⚡</span>
+            <div className="text-[11px] leading-tight">
+              <span className="font-semibold text-ink block">Instant Response</span>
+              <span className="text-muted-foreground text-[10px]">Under 15 minutes</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-2.5 rounded-xl bg-paper px-3 py-2 text-left border border-ink/5">
+            <span className="text-base">🎬</span>
+            <div className="text-[11px] leading-tight">
+              <span className="font-semibold text-ink block">Custom Proposals</span>
+              <span className="text-muted-foreground text-[10px]">4K Reels, Ads &amp; Growth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom CTA Action */}
+      <div className="pb-4">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleOpenWhatsApp}
+          className="group relative flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-white py-3.5 px-5 font-semibold text-sm shadow-xl shadow-[#25D366]/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+        >
+          <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span>Chat on WhatsApp</span>
+          <span className="transition-transform group-hover:translate-x-1">↗</span>
+        </a>
+        <div className="mt-2 text-center font-mono-label text-[10px] text-muted-foreground">
+          Direct line: <span className="font-semibold text-ink">+91 81081 81651</span>
+        </div>
+      </div>
+    </div>
   );
 }
